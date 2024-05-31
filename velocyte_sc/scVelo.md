@@ -7,7 +7,12 @@ https://scvelo.readthedocs.io/en/stable/
 
 
 ![Resolving subpopulation kinetics and identifying dynamical genes in neurogenesis.](image.png)
+这段文字描述了在牙龈神经发生过程中使用动态模型和稳态模型来估计RNA速率的比较。主要观点如下：
 
+1. 动态模型更准确：在UMAP图上，动态模型准确地显示了神经母细胞发育为颗粒细胞的主要流向，并正确识别了其他细胞类型的状态，如终末状态的CR细胞和从OPC分化为OL的过程。
+2. 稳态模型的局限性：相比之下，稳态模型错误地为CR细胞分配了高速率，并错误地指示OPC远离OL，这表明它在捕捉细胞状态变化时不如动态模型准确。
+3. 基因层面的洞察：动态模型还能在基因层面提供更准确的信息。例如，它正确地识别了Tmsb10基因在神经母细胞分化为颗粒细胞过程中的关键作用，并准确地描述了Fam155a基因在CR细胞中的表达状态。
+4. 识别驱动基因：动态模型的一个独特优势是能够系统地识别可能的驱动基因，这些基因表现出明显的动态行为，而不是由噪音或不存在的瞬时状态所主导。
 
 # Generalizing RNA velocity to transient cell states through dynamical modeling
 
