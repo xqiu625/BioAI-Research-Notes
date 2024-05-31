@@ -1,7 +1,7 @@
 
 
 文章链接
-https://www.nature.com/articles/s41587-020-0591-3\
+https://www.nature.com/articles/s41587-020-0591-3 \
 
 doc链接
 https://scvelo.readthedocs.io/en/stable/
