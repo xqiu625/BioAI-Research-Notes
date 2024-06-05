@@ -9,6 +9,121 @@ https://scvelo.readthedocs.io/en/stable/
 中文操作笔记 
 https://www.jianshu.com/p/fb1cf5806912
 
+
+import scvelo as scv
+import scanpy as sc
+#import cellrank as cr
+import numpy as np
+import pandas as pd
+import anndata as ad
+
+import matplotlib.pyplot as plt
+
+scv.settings.verbosity = 3
+scv.settings.set_figure_params('scvelo', facecolor='white', dpi=100, 
+                               fontsize=6, color_map='viridis',
+                               frameon=False)
+
+#cr.settings.verbosity = 2
+#adata = sc.read_h5ad('my_data.h5ad')
+#adata=sc.read_loom(f'out/{type}.my_data.loom')
+
+#adata.obsm['X_pca'] = pca.to_numpy()
+#adata.obsm['X_umap'] = np.vstack((adata.obs['UMAP_1'].to_numpy(), adata.obs['UMAP_2'].to_numpy())).T
+
+#adata
+
+#这里展示了多个样本的处理方式。
+
+#load loom files for spliced/unspliced matrices for each sample:
+sample_loom_1="./velocyto/WT1/possorted_genome_bam_HA9DP.loom"
+ldata1 = scv.read( sample_loom_1, cache=True)
+ldata1
+
+ldata1.obs.index[0:2]
+#WT_1 -1_1
+barcodes = [bc.split(':')[1] for bc in ldata1.obs.index.tolist()]
+barcodes = [bc[0:len(bc)-1] + '-1_1' for bc in barcodes]
+ldata1.obs.index = barcodes
+ldata1.obs.index[0:5]
+
+#WT2 -1_2
+barcodes = [bc.split(':')[1] for bc in ldata2.obs.index.tolist()]
+barcodes = [bc[0:len(bc)-1] + '-1_2' for bc in barcodes]
+ldata2.obs.index = barcodes
+ldata2.obs.index[0:5]
+
+ldata1.var.head()
+
+
+ldata1.var_names_make_unique()
+ldata2.var_names_make_unique()
+
+#merge
+ldata = ldata1.concatenate([ldata2])
+ldata
+
+#merge matrices into the original adata object
+adata = scv.utils.merge(adata, ldata)
+adata
+
+保存数据
+adata.write_h5ad(f'data/{type}.adata_ldata.h5ad')
+
+
+scVelo 预处理
+adata = sc.read(f'data/{type}.adata_ldata.h5ad')
+adata
+
+#scv.pp.filter_and_normalize(adata, min_shared_counts=5, min_shared_cells=3, log=True)
+scv.pp.filter_and_normalize(adata)
+
+可选步骤:
+
+##clean some genes
+import re
+flag = [not bool(re.match('^Rp[ls]', i)) for i in adata.var_names]
+adata = adata[:,flag]
+adata = adata[:,adata.var_names != "Malat1"]
+adata
+
+scVelo
+scv.pp.moments(adata, n_neighbors=30, n_pcs=30)
+#this step will take a long while
+import gc
+gc.collect()
+
+temp_pre= f"{type}_nue.in_process2"
+if False==os.path.exists(f"{temp_pre}.velo.gz.h5ad"):
+    scv.tl.recover_dynamics(adata, var_names='all', n_jobs=64)
+    scv.tl.velocity(adata, mode='dynamical')
+    adata.write(f"{temp_pre}.velo.gz.h5ad", compression='gzip')
+    print(">>Write to file")
+else:
+    adata = sc.read(f"{temp_pre}.velo.gz.h5ad", compression='gzip', ext="h5ad")
+    print(">>read from file")
+
+scv.tl.velocity_graph(adata)
+scv.tl.velocity_embedding(adata, basis="umap")
+
+可视化
+##add colSet
+adata.obs["cluster_names"] = adata.obs["cluster_names"].astype('category')
+
+color = pd.read_csv(f"../merge/data/mergeR3.neutrophil.color.txt", #compression="gzip", 
+            sep=" ", header=0, index_col=0)
+#color.index=color.index.astype("str")
+color.index=color["cluster_names"]
+
+#对数据 按分类因子 排序
+adata.obs["cluster_names"].cat.reorder_categories(color["cluster_names"], inplace=True)
+
+#获取颜色列
+color_used = list(color.loc[adata.obs["cluster_names"].cat.categories,"color"])
+adata.uns['cluster_names_colors'] = color_used
+adata
+
+
 ![Resolving subpopulation kinetics and identifying dynamical genes in neurogenesis.](image.png)
 
 牙龈神经发生过程中使用动态模型和稳态模型来估计RNA速率的比较。

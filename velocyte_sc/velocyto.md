@@ -1,3 +1,5 @@
+https://github.com/DawnEve/txtBlog/blob/3ddf465df0f608ea43497bce6985cbe24d57654f/data/scSeq/RNA_Velocity_note.txt#L437 
+
 文章链接:
 https://www.nature.com/articles/s41586-018-0414-6
 
@@ -28,3 +30,96 @@ Principle-curve pseudotime: 是一种用于分析单细胞RNA测序数据的计�
 u 代表 unspliced reads，s 代表 spliced reads, γ 代表 RNA降解和剪接速率的估计，虚线是拟合出来的平衡态。\
 一般认为当 u> γs 时基因处于转录激活态，反之为抑制。这样，对于每个基因，拟合出 γ 后，就可以根据平衡态预测速率；再通过基因预测结果综合判断细胞的速率；最后计算细胞见速率相关性，最终完成轨迹推断。
 
+# velocyto run 生成 loom 文件 
+velocyto 命令行工具具有直接从 cellranger 输出目录运行的功能，只需要提供 .bam 文件，也可以在任何单细胞平台上使用。
+1. 安装
+依赖: numpy scipy cython numba matplotlib scikit-learn h5py click
+$ pip3 install velocyto  #0.17.17
+
+2. Tutorial
+(1) 该工具包含2部分：
+Velocyto consists of two main components:
+1) 命令行工具
+A command line interface (CLI), that is used to run the pipeline that generates spliced/unspliced expression matrices.
+2) 一个函数库
+A library including functions to estimate RNA velocity from the above mentioned data matrices.
+
+3. 准备文件 
+1)下载 GENCODE or Ensembl 的 gtf 文件。
+如果是 10x 的数据，从这里下载: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
+
+命令格式: cellranger mkgtf input.gtf output.gtf --attribute=key:allowable_value
+
+cellranger mkgtf Homo_sapiens.GRCh38.ensembl.gtf Homo_sapiens.GRCh38.ensembl.filtered.gtf \
+                   --attribute=gene_biotype:protein_coding \
+                   --attribute=gene_biotype:lincRNA \
+                   --attribute=gene_biotype:antisense \
+                   --attribute=gene_biotype:IG_LV_gene \
+                   --attribute=gene_biotype:IG_V_gene \
+                   --attribute=gene_biotype:IG_V_pseudogene \
+                   --attribute=gene_biotype:IG_D_gene \
+                   --attribute=gene_biotype:IG_J_gene \
+                   --attribute=gene_biotype:IG_J_pseudogene \
+                   --attribute=gene_biotype:IG_C_gene \
+                   --attribute=gene_biotype:IG_C_pseudogene \
+                   --attribute=gene_biotype:TR_V_gene \
+                   --attribute=gene_biotype:TR_V_pseudogene \
+                   --attribute=gene_biotype:TR_D_gene \
+                   --attribute=gene_biotype:TR_J_gene \
+                   --attribute=gene_biotype:TR_J_pseudogene \
+                   --attribute=gene_biotype:TR_C_gene
+
+多物种
+cellranger mkref --genome=GRCh38 --fasta=GRCh38.fa --genes=GRCh38-filtered-ensembl.gtf \
+                 --genome=mm10 --fasta=mm10.fa --genes=mm10-filtered-ensembl.gtf
+
+2) 下载 mask.gtf 文件
+human 和 mice可以 在 UCSC https://genome.ucsc.edu/cgi-bin/hgTables?hgsid=611454127_NtvlaW6xBSIRYJEBI0iRDEWisITa&clade=mammal&org=Mouse&db=mm10&hgta_group=allTracks&hgta_track=rmsk&hgta_table=0&hgta_regionType=genome&position=chr12%3A56694976-56714605&hgta_outputType=primaryTable&hgta_outputType=gff&hgta_outFileName=mm10_rmsk.gtf
+
+其他物种可以用RepeatMasker
+module load RepeatMasker/4-1-5
+RepeatMasker -species "Toxoplasma gondii"  -dir RepeatMasker_output fasta/genome.fa
+
+repeat_msk.gtf 原理
+repeat_msk.gtf file contains annotations of repetitive elements and masked genomic regions in relation to the original genome assembly.
+Masking repetitive sequences helps improve the accuracy and quality of the genome assembly by removing low-complexity regions, simple repeats, transposable elements, and other repetitive sequences that can complicate assembly and annotation.
+Properly accounting for masked repeats is important for obtaining accurate estimates of RNA velocity, as reads mapping to repetitive regions could introduce biases or noise in the analysis.
+
+4. 运行 10x 数据，生成 loom 文件(推荐使用 run 子命令)
+$ velocyto run10x -m repeat_msk.gtf mypath/sample01 somepath/refdata-cellranger-mm10-1.2.0/genes/genes.gtf
+参数说明:
+Where genes.gtf is the genome annotation file provided with the cellranger pipeline.  
+repeat_msk.gtf is the repeat masker file described in the Preparation section above. 可选。
+(就是重复区域不要。)
+
+通常一个样品运行3个小时。
+
+Execution time is ~3h for a typical sample but might vary significantly by sequencing depth and cpu power.
+
+输出:
+
+$ ls *
+outs/
+	cellsorted_possorted_genome_bam.bam
+velocyto/
+	cellranger.loom #后续使用R包分析，就是基于该文件。
+
+
+## loom 中间文件的使用 
+
+(1) A valid .loom file is simply an HDF5 file that contains specific groups representing the main matrix as well as row and column attributes. Because of this, .loom files can be created and read by any language that supports HDF5.
+
+(2) Merging multiple samples/lanes in a single file
+loompy.combine(files, output_filename, key="Accession")
+或者:
+
+files = ["file1.loom","file2.loom","file3.loom","file4.loom"]
+# on the command line do: cp file1.loom merged.loom
+ds = loompy.connect("merged.loom")
+for fn in files[1:]:
+    ds.add_loom(fn, batch_size=1000)
+
+(3) HDF5 的连接就像数据库一样，不是完全载入，只是在必须的时刻载入需要的数据，也可以修改、写入。
+ds = loompy.connect("filename.loom")
+# do something with the connection object ds
+ds.close()
