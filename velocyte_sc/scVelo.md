@@ -9,6 +9,7 @@ https://scvelo.readthedocs.io/en/stable/
 中文操作笔记 
 https://www.jianshu.com/p/fb1cf5806912
 
+```
 
 import scvelo as scv
 import scanpy as sc
@@ -123,6 +124,7 @@ color_used = list(color.loc[adata.obs["cluster_names"].cat.categories,"color"])
 adata.uns['cluster_names_colors'] = color_used
 adata
 
+```
 
 ![Resolving subpopulation kinetics and identifying dynamical genes in neurogenesis.](image.png)
 
