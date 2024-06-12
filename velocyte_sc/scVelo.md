@@ -9,6 +9,9 @@ https://scvelo.readthedocs.io/en/stable/
 中文操作笔记 
 https://www.jianshu.com/p/fb1cf5806912
 
+完整操作笔记 
+https://github.com/basilkhuder/Seurat-to-RNA-Velocity?tab=readme-ov-file 
+
 ```python
 
 import scvelo as scv
