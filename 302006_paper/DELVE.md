@@ -126,109 +126,87 @@ Aggregate scores
 
 1. 基线模型(Baseline Models):
 
-a. 监督方法:
-
-随机森林(Random Forest)
-
-
-b. 相似性方法:
-
-拉普拉斯评分(Laplacian Score, LS)
-邻域方差(Neighborhood Variance)
-Hotspot
+    a. 监督方法:
+    - 随机森林(Random Forest)
 
 
-c. 子空间学习方法:
+    b. 相似性方法:
+    - 拉普拉斯评分(Laplacian Score, LS)
+    - 邻域方差(Neighborhood Variance)
+    - Hotspot
 
-多集群特征选择(Multi-Cluster Feature Selection, MCFS)
-单细胞流形保持特征选择(Single-Cell Manifold-Preserving Feature Selection, SCMER)
+    c. 子空间学习方法:
+    - 多集群特征选择(Multi-Cluster Feature Selection, MCFS)
+    - 单细胞流形保持特征选择(Single-Cell Manifold-Preserving Feature Selection, SCMER)
 
 
-d. 方差方法:
+    d. 方差方法:
+    - 高变基因选择(Highly Variable Genes, HVG)
+    - 最大方差选择(Max Variance)
 
-高变基因选择(Highly Variable Genes, HVG)
-最大方差选择(Max Variance)
-
-e. 基线方法:
-
-全部特征(All Features)
-随机特征(Random Features)
-动态种子特征(Dynamic Seed Features,即DELVE的第一步输出)
+    e. 基线方法:
+    - 全部特征(All Features)
+    - 随机特征(Random Features)
+    - 动态种子特征(Dynamic Seed Features,即DELVE的第一步输出)
 
 2. 评估指标(Evaluation Metrics):
 
-a. 分类和回归性能:
+    a. 分类和回归性能:
+    - k近邻分类准确率
+    - 支持向量机(SVM)分类准确率和回归均方根误差(RMSE)
+    - Precision@k
 
-k近邻分类准确率
-支持向量机(SVM)分类准确率和回归均方根误差(RMSE)
-Precision@k
+    b. 无监督聚类性能:
+    - 标准化互信息(Normalized Mutual Information, NMI)
 
+    c. 蛋白质相互作用网络分析:
+    - 置换检验显著性
 
-b. 无监督聚类性能:
+    d. 轨迹推断和分析:
+    - 轨迹图相似性(Trajectory Graph Similarity)
+    - 伪时间相关性(Pseudotime Correlation)
+    - 回归分析显著性和生物学相关性
 
-标准化互信息(Normalized Mutual Information, NMI)
-
-
-c. 蛋白质相互作用网络分析:
-
-置换检验显著性
-
-
-d. 轨迹推断和分析:
-
-轨迹图相似性(Trajectory Graph Similarity)
-伪时间相关性(Pseudotime Correlation)
-回归分析显著性和生物学相关性
-
-
-e. 聚合评分(Aggregate Scores)
+    e. 聚合评分(Aggregate Scores)
 
 3. 数据集(Datasets):
 
-a. 模拟数据:
+    a. 模拟数据:
+    - Splatter单细胞RNA测序模拟数据
+    - SymSim单细胞RNA测序模拟数据
 
-Splatter单细胞RNA测序模拟数据
-SymSim单细胞RNA测序模拟数据
-
-
-b. 真实数据:
-
-视网膜色素上皮(RPE)细胞周期成像数据
-胰腺导管腺癌(PDAC)细胞周期成像数据
-CD8+ T细胞分化单细胞RNA测序数据
-人胚胎干细胞向确定性内胚层分化的单细胞RNA测序数据
-
+    b. 真实数据:
+    - 视网膜色素上皮(RPE)细胞周期成像数据
+    - 胰腺导管腺癌(PDAC)细胞周期成像数据
+    - CD8+ T细胞分化单细胞RNA测序数据
+    - 人胚胎干细胞向确定性内胚层分化的单细胞RNA测序数据
 
 ## 计算机语言， 软件包 以及 计算资源
 根据文章的方法部分,我们可以总结出以下关于计算机语言、软件包和计算资源的信息:
 1. 计算机语言:
-
-Python:本文主要使用Python进行数据分析、特征选择算法实现以及结果可视化。
-R:部分数据分析和可视化也使用了R语言。
+    - Python:本文主要使用Python进行数据分析、特征选择算法实现以及结果可视化。
+    - R:部分数据分析和可视化也使用了R语言。
 
 2. 软件包:
 
-Python软件包:
+    - Python软件包:
 
-scikit-learn (v0.23.2):机器学习算法,如k近邻分类、支持向量机等。
-scanpy (v1.9.3):单细胞数据分析工具。
-scprep (v1.2.3):单细胞数据预处理。
-networkx (v3.1):复杂网络分析。
-statsmodels (v0.14.0):统计建模和回归分析。
-gseapy (v1.0.4):基因集富集分析。
-phate (v1.0.11):PHATE降维可视化。
+        - scikit-learn (v0.23.2):机器学习算法,如k近邻分类、支持向量机等。
+        - scanpy (v1.9.3):单细胞数据分析工具。
+        - scprep (v1.2.3):单细胞数据预处理。
+        - networkx (v3.1):复杂网络分析。
+        - statsmodels (v0.14.0):统计建模和回归分析。
+        - gseapy (v1.0.4):基因集富集分析。
+        - phate (v1.0.11):PHATE降维可视化。
 
+    - R软件包:
+        - Splatter (v1.18.2):单细胞RNA测序数据模拟。
+        - SymSim (v0.0.0.9000):单细胞RNA测序数据模拟。
+        - slingshot (v2.1.1):细胞轨迹推断。
 
-R软件包:
-
-Splatter (v1.18.2):单细胞RNA测序数据模拟。
-SymSim (v0.0.0.9000):单细胞RNA测序数据模拟。
-slingshot (v2.1.1):细胞轨迹推断。
-
-其他工具:
-
-10X Genomics Cell Ranger (v3.0.2):单细胞RNA测序数据处理。
-Velocyto (v0.17):RNA速度估计。
-ScVelo (v0.2.5):RNA速度分析。
-STRING数据库:蛋白质相互作用数据。
-Enrichr:基因集富集分析。
+    - 其他工具:
+        - 10X Genomics Cell Ranger (v3.0.2):单细胞RNA测序数据处理。
+        - Velocyto (v0.17):RNA速度估计。
+        - ScVelo (v0.2.5):RNA速度分析。
+        - STRING数据库:蛋白质相互作用数据。
+        - Enrichr:基因集富集分析。
