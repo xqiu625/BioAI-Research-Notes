@@ -18,6 +18,10 @@ The key aspects of CASi are:
 2. Detection of potentially novel cell types that emerge over time. CASi uses a pipeline based on correlation and t-tests to reliably distinguish novel cell types that only appear in later timepoints.
 3. Visualization of cell population evolution over time using a combination of UMAP plots and fish plots.
 4. Identification of temporal differentially expressed genes (tDEGs) that change significantly over time and have distinct patterns between different groups/conditions. This is done by combining a generalized linear model with iterative feature selection.
+1. 跨时间点细胞注释：使用人工神经网络分类器，借用跨时间点的信息来准确注释细胞。
+2. 检测潜在的新细胞类型：CASi使用基于相关性和t检验的管道来可靠地区分仅在后期时间点出现的新细胞类型。
+3. 细胞群体演变的可视化：结合使用UMAP图和鱼图来可视化细胞群体随时间的演变。
+4. 识别时间差异表达基因（tDEGs）：通过结合广义线性模型和迭代特征选择，识别在不同组/条件之间随时间显著变化并具有不同模式的基因。
 
 Structure
 1. Introduction

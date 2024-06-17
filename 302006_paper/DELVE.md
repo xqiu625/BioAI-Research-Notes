@@ -9,6 +9,7 @@ github link：
 https://github.com/jranek/delve 
 
 ## Summary
+在从噪声单细胞数据中稳健识别细胞轨迹和特征的有效性及广泛适用性。
 1. Identifying informative features that robustly recapitulate cellular trajectories from noisy single-cell data. The key innovation of DELVE is its bottom up approach, which mitigates the effect of confounding variation by first identifying modules of temporally co-expressed features and then ranking features based on their association with an approximately trajectory graph seeded by these dynamics modules. 
 2. The key innovation of DELVE is its bottom-up approach, which mitigates the effect of confounding variation by first identifying modules of temporally co-expressed features and then ranking features based on their association with an approximate trajectory graph seeded by these dynamic modules.
 3. The authors demonstrate the effectiveness of DELVE through extensive benchmarking on simulated and real single-cell datasets from various biological contexts and technologies, including single-cell RNA sequencing and imaging-based profiling.
@@ -76,6 +77,15 @@ PHATE visualizations
 Aggregate scores
 
 ## Algorithm framework
+
+![alt text](image-1.png)
+特征选择是一个两步过程。
+
+步骤1，DELVE根据在局部代表性细胞邻域内的表达动态对特征进行聚类，这些邻域是通过加权k近邻亲和图定义的。使用一种分布聚焦的草图算法对邻域进行采样，该算法保留了原始数据集的细胞类型频率和光谱特性。然后使用一种基于方差的测试统计量的置换测试来确定一组特征是（1）动态变化（动态）还是（2）表现出随机变化模式（静态）。
+
+步骤2，动态模块用于初始化一个近似的细胞轨迹图，并通过使用拉普拉斯评分（Laplacian Score）对特征进行排序和选择，以最佳保留局部结构，从而优化和细化轨迹图。在本研究中，我们将DELVE与其他无监督特征选择方法进行了比较，评估了它们在保留细胞类型和细胞类型转变方面的效果。
+
+
 本文提出了一种名为DELVE(动态选择局部协变特征)的无监督特征选择方法，用于嘈杂的单细胞数据中识别能够稳健地重构细胞轨迹的信息特征。DELVE采用自下而上的方法，通过两个主要步骤来缓解混杂变异的影响并选择信息特征。
 1. Step 1 动态种子选择(Dynamic Seed Selection):
 - 构建细胞之间的k近邻相似性图，将细胞状态建模为节点，细胞之间的相似性为边。
