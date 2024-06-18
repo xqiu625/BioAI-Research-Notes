@@ -10,16 +10,85 @@ https://github.com/yiqunchen/GenePT
  
  ## Summary
  本文介绍了GenePT，这是一种简单但有效的方法，使用GPT-3.5的自然语言嵌入来表示基因和细胞。
- 1. 基因嵌入：GenePT
-
+ 1. 基因嵌入：GenePT通过将NCBI基因摘要传递给GPT-3.5来嵌入基因。对于细胞，GenePT要么通过基因表达加权平均基因嵌入(GenePT-w),要么通过嵌入按表达排名的基因名称句子(GenePT-s)来表示细胞。
+ 2. 基因级任务：在预测功能类、性质和基因-基因相互作用等基因级任务中，GenePT在不需要预训练的情况下，实现了与Geneformer相当或更好的性能。
+ 3. 细胞级任务：GenePT嵌入捕捉了细胞类型和疾病状态，与scGPT和Geneformer想当。特别是GenePT-s提供了与基于表达的模型互补的信息。
+ 4. 对批次效应的鲁棒性：GenePT嵌入对患者变异等批次效应具有鲁棒性，同时保留了基础生物学信号。
+ 5. 结果：结果表明，基因/细胞描述的语言模型嵌入是一种简单但强大的生物表示学习方法，为大规模基于表达的预训练提供了一种高效的替代或补充。
 
  ## Structure 
+ 1. 引言(Introduction)
+    - 介绍了利用大规模基因表达数据开发单细胞转录组基础模型的最新进展
+    - 提出了一种利用ChatGPT嵌入基因文献信息的简单替代方法GenePT
+    - 阐述了研究问题和贡献
+ 2. 相关工作(Related Work)
+    - 综述了用于单细胞转录组学的基础模型
+    - 讨论了将语言模型应用于细胞生物学的现有工作
+    - 回顾了探究自然语言嵌入表示的方法
+ 3. 方法(Methods)
+    - 数据收集和转换:介绍了如何获取基因摘要并生成GenePT嵌入表示
+    - 下游基因和细胞水平的应用:详细描述了用于评估GenePT性能的各项任务
+ 4. 结果(Results)
+    - GenePT嵌入表示捕获了基因功能的本质属性
+    - GenePT在染色质动力学和基因剂量敏感性预测任务上实现了良好表现
+    - GenePT学习的细胞表示反映了已知的生物学特征
+    - GenePT嵌入表示能够去除批次效应同时保留疾病相关的生物学差异
  ## Workflow
+ 1. 数据收集和预处理
+ 2. 基因嵌入表示学习
+ 3. 细胞嵌入表示学习
+ 4. 下游任务评估
+ 5. 结果比较和分析
+ 6. 讨论和总结
+
  ## Algorithm framework 
  ![alt text](image-4.png)
     (a) 对于每个基因，我们从NCBI提取其相应的文本摘要，并使用GPT-3.5文本嵌入作为其表示。
     (b) 在GenePT-w细胞嵌入框架中，我们对步骤(a)中的基因嵌入按其在细胞中的表达水平进行加权平均，并将这些细胞嵌入归一化到单位ℓ2范数。
     (c) 在GenePT-s细胞嵌入框架中，输入的单细胞数据中的每个细胞都根据基因表达排名被翻译成一句自然语言句子，并使用整句的GPT-3.5嵌入来表示该细胞。
+
+ 1. 第一部分:基因嵌入(Gene Embedding)
+    a. 输入:基因g的NCBI摘要文本 text_g
+    b. 文本预处理:
+        - 去除摘要中的超链接和日期
+        - 对于缺失摘要的基因,使用预定义的提示生成其功能描述
+    c. 使用GPT-3.5对处理后的文本进行编码:embed_g = GPT-3.5(text_g)
+    d. 输出:基因g的嵌入向量表示embed_g
+ 2. 第二部分:细胞嵌入(Cell Embedding)
+    a. 输入:单细胞RNA测序数据矩阵X,其中行对应细胞,列对应基因
+    b. 数据预处理:
+        - 对每个细胞的基因表达量进行归一化,使每个细胞的总表达量为10,000
+        - 对归一化后的矩阵进行log(1+x)变换
+ 3. GenePT-w嵌入:
+    a. 对于每个细胞c,计算其嵌入向量:embed_c = sum(embed_g * X[c, g]) / sum(X[c, g]),其中embed_g为基因g的嵌入向量,X[c, g]为基因g在细胞c中的归一化表达量。
+ 4. GenePT-s嵌入:
+    a. 对于每个细胞c,生成一个由基因名按表达量降序排列构成的"句子":sentence_c = "gene1 gene2 ... geneN",其中gene1到geneN为表达量从高到低排列的基因名。
+    b. 使用GPT-3.5对sentence_c进行编码:embed_c = GPT-3.5(sentence_c)
+ 5. 输出:细胞c的嵌入向量表示embed_c
+    伪代码
+        ```:
+        # Gene Embedding
+        function GeneEmbedding(text_g):
+            text_g = preprocess(text_g)
+            embed_g = GPT-3.5(text_g)
+            return embed_g
+
+        # Cell Embedding
+        function CellEmbedding(X, method):
+            X = normalize(X)
+            X = log_transform(X)
+
+            if method == "GenePT-w":
+                for each cell c:
+                    embed_c = sum(embed_g * X[c, g]) / sum(X[c, g])
+            else if method == "GenePT-s":
+                for each cell c:
+                    sentence_c = rank_genes(X[c, :])
+                    embed_c = GPT-3.5(sentence_c)
+
+            return embed_c
+        ```
+    该算法框架的核心思想在于利用预训练语言模型GPT-3.5对基因的文本描述和细胞的"基因表达句子"进行编码,从而得到它们的低维嵌入表示。这种基于自然语言处理的表示学习方法避免了从头训练深度学习模型的巨大开销,同时还能捕获基因和细胞功能的关键生物学信息。
 
  ## Baseline models, Evaluation metrics, and Datasets
  1. 基线模型(Baseline Models):
@@ -72,4 +141,36 @@ https://github.com/yiqunchen/GenePT
 
 
  ## Computing language，tools, packages and resources
+ 1. 计算语言(Computing Language):
+    - Python:论文中提到使用了多个Python包进行数据处理和分析,如mygene、scanpy和sklearn,因此可以推断本文的主要编程语言为Python。
+ 2. 计算资源(Computing Resources):
+    a. GPT-3.5 API:本文使用了OpenAI的GPT-3.5模型(text-embedding-ada-002)提供的API服务来生成基因和细胞的嵌入表示。这种基于云API的方式避免了在本地部署和训练大型语言模型的计算开销。
+    b. 公共数据库:
+        - NCBI基因数据库:用于获取基因摘要信息
+        - Gene Expression Omnibus (GEO):用于获取基因表达数据集
+        - Human Cell Atlas (HCA):用于获取人类细胞图谱数据
+    c. 数据处理和机器学习库:
+        - mygene:用于将Ensembl基因ID转换为基因名称
+        - scanpy:用于单细胞RNA测序数据的预处理和分析
+        - sklearn:用于机器学习任务,如logistic回归、随机森林等
+    d. 可视化工具:
+        - UMAP:用于生成基因和细胞嵌入的低维可视化
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
