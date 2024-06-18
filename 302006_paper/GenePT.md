@@ -66,7 +66,8 @@ https://github.com/yiqunchen/GenePT
     b. 使用GPT-3.5对sentence_c进行编码:embed_c = GPT-3.5(sentence_c)
  5. 输出:细胞c的嵌入向量表示embed_c
     伪代码
-        ```:
+
+```:
         # Gene Embedding
         function GeneEmbedding(text_g):
             text_g = preprocess(text_g)
@@ -87,7 +88,7 @@ https://github.com/yiqunchen/GenePT
                     embed_c = GPT-3.5(sentence_c)
 
             return embed_c
-        ```
+        
     该算法框架的核心思想在于利用预训练语言模型GPT-3.5对基因的文本描述和细胞的"基因表达句子"进行编码,从而得到它们的低维嵌入表示。这种基于自然语言处理的表示学习方法避免了从头训练深度学习模型的巨大开销,同时还能捕获基因和细胞功能的关键生物学信息。
 
  ## Baseline models, Evaluation metrics, and Datasets
