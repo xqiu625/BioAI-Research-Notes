@@ -163,20 +163,16 @@ https://github.com/yiqunchen/GenePT
  1. 计算语言(Computing Language):
     - Python:论文中提到使用了多个Python包进行数据处理和分析,如mygene、scanpy和sklearn,因此可以推断本文的主要编程语言为Python。
  2. 计算资源(Computing Resources):
-    
-    a. GPT-3.5 API:本文使用了OpenAI的GPT-3.5模型(text-embedding-ada-002)提供的API服务来生成基因和细胞的嵌入表示。这种基于云API的方式避免了在本地部署和训练大型语言模型的计算开销。
-   
-    b. 公共数据库:
+    - GPT-3.5 API:本文使用了OpenAI的GPT-3.5模型(text-embedding-ada-002)提供的API服务来生成基因和细胞的嵌入表示。这种基于云API的方式避免了在本地部署和训练大型语言模型的计算开销。
+    - 公共数据库:
         - NCBI基因数据库:用于获取基因摘要信息
         - Gene Expression Omnibus (GEO):用于获取基因表达数据集
         - Human Cell Atlas (HCA):用于获取人类细胞图谱数据
-    
-    c. 数据处理和机器学习库:
+    - 数据处理和机器学习库:
         - mygene:用于将Ensembl基因ID转换为基因名称
         - scanpy:用于单细胞RNA测序数据的预处理和分析
         - sklearn:用于机器学习任务,如logistic回归、随机森林等
-  
-    d. 可视化工具:
+    - 可视化工具:
         - UMAP:用于生成基因和细胞嵌入的低维可视化
 
 
