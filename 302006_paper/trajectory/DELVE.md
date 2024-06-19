@@ -76,9 +76,9 @@ DELVE采用了一种自下而上的方法来识别信息特征并构建细胞轨
 - PHATE visualizations
 - Aggregate scores
 
-## Algorithm framework
+## Algorithm Framework
 
-![alt text](image-1.png)
+![alt text](../Figures/image-1.png)
 特征选择是一个两步过程。
 
     步骤1，DELVE根据在局部代表性细胞邻域内的表达动态对特征进行聚类，这些邻域是通过加权k近邻亲和图定义的。使用一种分布聚焦的草图算法对邻域进行采样，该算法保留了原始数据集的细胞类型频率和光谱特性。然后使用一种基于方差的测试统计量的置换测试来确定一组特征是（1）动态变化（动态）还是（2）表现出随机变化模式（静态）。

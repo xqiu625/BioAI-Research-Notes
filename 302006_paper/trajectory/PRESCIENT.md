@@ -104,7 +104,7 @@ https://github.com/gifford-lab/prescient
     - 提出未来的拓展方向,如整合谱系示踪数据和RNA速度信息
     - 在设计分化方案和遗传筛选中的应用
 ## Algorithm framework 
-![alt text](image-5.png)
+![alt text](../Figures/image-5.png)
 a. 现有的单细胞发育模型可以描述为在伪时间或实际时间（x轴）中运行，并根据它们对基础分化过程的建模程度（y轴）进行分类。PRESCIENT用红色突出显示。
 
 b. 人口水平时间序列数据的观测值用于一个生成框架，该框架在物理时间中建模基础动态过程。细胞状态的演变由漂移项和噪声项控制。漂移（实线箭头表示）定义为势函数的负梯度（背景中的颜色梯度表示）。虚线表示噪声。模型使用人口水平时间序列数据的观测值（实心圆表示）进行拟合。细胞状态的模拟（虚线圆表示）。
@@ -164,7 +164,8 @@ PRESCIENT算法框架巧妙地将细胞分化建模为扩散过程,通过最小�
         - 最后,我们统计这些模拟轨迹的结果,看看最终有多少小球到达了各种不同的细胞命运(就像数有多少小球最终滚到了每个山谷)。我们将这个结果与正常情况下的结果进行比较,就可以看出我们的扰动对细胞命运分布的影响。
         - 例如,如果我们发现,增加某个基因的表达导致更多的小球最终到达了表示神经元的山谷,我们就可以推测,这个基因可能在促进神经元的分化中起到了重要作用。
 
-## Baseline models, Evaluation metrics, and Datasets
+## Baseline Model, Evaluation Metrics, and Datasets
+
 1. Baseline models:
     - Waddington-OT (WOT): 使用最优传输(optimal transport)方法推断细胞间的长程耦合概率。
     - FateID: 通过迭代构建集成的细胞类型分类器来预测细胞命运。
@@ -184,7 +185,7 @@ PRESCIENT算法框架巧妙地将细胞分化建模为扩散过程,通过最小�
         - 用于演示PRESCIENT在模拟体外扰动实验中的应用
         - 通过扰动内分泌诱导和细胞命运特异性转录因子,验证PRESCIENT预测的细胞命运变化
 
-## Computing language，tools, packages and resources
+## Computing language, tools, packages and resources
 1. Computing language:
     - Python
 2. Tools and packages:

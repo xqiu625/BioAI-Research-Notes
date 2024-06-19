@@ -117,7 +117,7 @@ ForceAtlas2是一种用于网络可视化的连续图布局算法,它模拟了�
 - 引力调整:根据边权重调整节点间吸引力的大小。
 - 自适应速度:根据节点的运动情况动态调整速度。
 
-## Baseline model, Evaluation metrics and Datasets  
+## Baseline Model, Evaluation Metrics, and Datasets
 1. Baseline model (基线模型):
 在 FLOW-MAP 的情况下,基线模型可以是其他常用于分析单细胞数据的降维方法,例如 PCA、t-SNE、diffusion maps、SPADE 和 Monocle 等。通过将 FLOW-MAP 与这些基线模型的结果进行比较,可以评估 FLOW-MAP 在可视化和解释高维单细胞时间序列数据方面的性能和优势。
 2. Evaluation metrics (评估指标):
@@ -127,7 +127,7 @@ ForceAtlas2是一种用于网络可视化的连续图布局算法,它模拟了�
 - 使用质谱流式细胞术测量的小鼠胚胎干细胞分化时间序列数据集,包括分化为内胚层、中胚层和外胚层的三种培养条件。
 - 使用单细胞 RNA 测序技术分析造血细胞分化的已发表数据集。
 
-## 计算机语言， 软件包 以及 计算资源
+## Computing Language, Tools, Packages, and Resources
 1. 计算机语言:
 - R 语言:FLOW-MAP 算法主要在 R 语言环境中实现。R 是一种用于统计计算和图形显示的开源编程语言,在生物信息学领域被广泛使用。
 - C++ 语言:FLOW-MAP 使用的 ForceAtlas2 布局算法是用 C++ 实现的,并通过 R 调用。
