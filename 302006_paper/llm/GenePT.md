@@ -59,7 +59,7 @@ https://github.com/yiqunchen/GenePT
     - 强调了GenePT在提供有效的生物学先验知识方面的独特优势
 
  ## Algorithm framework 
- ![alt text](image-4.png)
+ ![alt text](../Figures/image-4.png)
     (a) 对于每个基因，我们从NCBI提取其相应的文本摘要，并使用GPT-3.5文本嵌入作为其表示。
     (b) 在GenePT-w细胞嵌入框架中，我们对步骤(a)中的基因嵌入按其在细胞中的表达水平进行加权平均，并将这些细胞嵌入归一化到单位ℓ2范数。
     (c) 在GenePT-s细胞嵌入框架中，输入的单细胞数据中的每个细胞都根据基因表达排名被翻译成一句自然语言句子，并使用整句的GPT-3.5嵌入来表示该细胞。
