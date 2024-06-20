@@ -152,7 +152,7 @@ DELVE采用了一种自下而上的方法来识别信息特征并构建细胞轨
     - 探讨DELVE未来可能的改进方向,如结合先验知识、适应不同的细胞类型和数据类型等。
     - 强调特征选择在单细胞数据分析中的重要性,呼吁开发更加鲁棒、高效、易解释的特征选择方法。
 
-## Baseline model, Evaluation metrics and Datasets
+## Baseline Model, Evaluation Metrics, and Datasets
 1. 基线模型(Baseline Models):
     a. 监督方法:
     - 随机森林(Random Forest)
@@ -194,7 +194,7 @@ DELVE采用了一种自下而上的方法来识别信息特征并构建细胞轨
     - CD8+ T细胞分化单细胞RNA测序数据
     - 人胚胎干细胞向确定性内胚层分化的单细胞RNA测序数据
 
-## 计算机语言， 软件包 以及 计算资源
+## Computing Language, Tools, Packages, and Resources
 根据文章的方法部分,我们可以总结出以下关于计算机语言、软件包和计算资源的信息:
 1. 计算机语言:
     - Python:本文主要使用Python进行数据分析、特征选择算法实现以及结果可视化。

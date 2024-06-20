@@ -47,7 +47,7 @@ The key aspects of CASi are:
 - Summary of CASi's advantages and innovations
 - Potential limitations and future extensions of the framework
 
-## Algorithm framework
+## Algorithm Framework
 ![alt text](../Figures/image-2.png)
 An overview of the CASi framework. The input is scRNA-seq data from different timepoints’ experiments. CASi mainly consists of three steps: (1) cross-time points cell annotation, (2) detection of potential novel cell types, (3) identification of temporal differentially expressed genes.
 
@@ -88,7 +88,7 @@ An overview of the CASi framework. The input is scRNA-seq data from different ti
     - 对CASi的优势和创新点进行总结。
     - 讨论当前方法的局限性以及未来可能的改进方向。
 
-## Baseline model, Evaluation metrics and Datasets
+## Baseline Model, Evaluation Metrics, and Datasets
 
 1. Baseline models for cell annotation:
     1. scmap
@@ -116,7 +116,7 @@ An overview of the CASi framework. The input is scRNA-seq data from different ti
         对于每个情景，作者进行了200次蒙特卡罗模拟，以评估CASi的性能，并使用细胞注释的准确性和ARI指标以及识别tDEGs的TDR指标，将其与基准模型进行比较。
     - 真实数据集，作者将CASi应用于一组来自套细胞淋巴瘤（MCL）患者的真实单细胞RNA-seq数据集。该数据集从欧洲基因-表型档案（EGA）数据库中获取，登录号为EGAS00001005019。MCL数据集包括从5位患者（3位对伊布替尼有反应，2位无反应）在不同时间点（治疗前和治疗后）收集的样本。
 
- ## Baseline models, Evaluation metrics, and Datasets
+## Computing Language, Tools, Packages, and Resources
 1. 计算机语言:
     - Python:主要用于实现神经网络模型和数据分析管道。
     - R:用于部分数据分析和可视化任务。
