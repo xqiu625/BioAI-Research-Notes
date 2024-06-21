@@ -116,7 +116,7 @@ Kernel-estimator设计是CellRank 2的核心创新,它将转移矩阵的推断(i
 e,f, Fate probabilities toward the mTEC terminal state (left) and top 20 lineage-correlated genes identified (right) based on the RealTimeKernel (e) or WOT’s pullback distribution  
 
 ## Algorithm Framework
-![alt text](../Figures/CellRank%202.png)
+![alt text](../Figures/CellRank 2.png)
 1. Kernels: 根据不同的数据模态或先验知识构建转移矩阵
     - VelocityKernel: 基于RNA速度估计
     - PseudotimeKernel: 基于拟时间估计
