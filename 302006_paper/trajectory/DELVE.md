@@ -10,11 +10,11 @@ https://github.com/jranek/delve
 
 ## Summary
 在从噪声单细胞数据中稳健识别细胞轨迹和特征的有效性及广泛适用性。
-1. Identifying informative features that robustly recapitulate cellular trajectories from noisy single-cell data. The key innovation of DELVE is its bottom up approach, which mitigates the effect of confounding variation by first identifying modules of temporally co-expressed features and then ranking features based on their association with an approximately trajectory graph seeded by these dynamics modules. 
-2. The key innovation of DELVE is its bottom-up approach, which mitigates the effect of confounding variation by first identifying modules of temporally co-expressed features and then ranking features based on their association with an approximate trajectory graph seeded by these dynamic modules.
-3. The authors demonstrate the effectiveness of DELVE through extensive benchmarking on simulated and real single-cell datasets from various biological contexts and technologies, including single-cell RNA sequencing and imaging-based profiling.
-4. Application of DELVE to a cell cycle imaging dataset shows its ability to identify progression-associated features and match the performance of supervised methods without requiring cell labels.
-5. The extensive benchmarking against 11 other feature selection methods across diverse datasets and noise conditions establishes the robustness and broad applicability of DELVE.
+1. 识别能够稳健地重现噪声单细胞数据中细胞轨迹的信息特征。DELVE的关键创新在于其自下而上的方法，该方法首先识别时间上共表达特征的模块，然后根据这些动态模块初始化的近似轨迹图与特征的关联性对特征进行排序，从而减轻混杂变异的影响
+2. DELVE的关键创新在于其自下而上的方法，该方法首先识别时间上共表达特征的模块，然后根据这些动态模块初始化的近似轨迹图与特征的关联性对特征进行排序，从而减轻混杂变异的影响。
+3. 作者通过对各种生物学背景和技术（包括单细胞RNA测序和基于成像的分析）的模拟和真实单细胞数据集进行广泛的基准测试，证明了DELVE的有效性。
+4. 将DELVE应用于细胞周期成像数据集，展示了其识别与进程相关的特征的能力，并且无需细胞标签即可匹配监督方法的性能。
+5. 对11种其他特征选择方法在不同数据集和噪声条件下进行的广泛基准测试，确立了DELVE的稳健性和广泛适用性。
 
 ### bottom-up approach
 DELVE采用了一种自下而上的方法来识别信息特征并构建细胞轨迹图。这种方法与传统的自上而下方法形成对比，后者通常直接在全部特征上进行分析。
@@ -78,7 +78,7 @@ DELVE采用了一种自下而上的方法来识别信息特征并构建细胞轨
 
 ## Algorithm Framework
 
-![alt text](../Figures/image-1.png)
+![alt text](../Figures/DELVE_scheme.png)
 特征选择是一个两步过程。
 
     步骤1，DELVE根据在局部代表性细胞邻域内的表达动态对特征进行聚类，这些邻域是通过加权k近邻亲和图定义的。使用一种分布聚焦的草图算法对邻域进行采样，该算法保留了原始数据集的细胞类型频率和光谱特性。然后使用一种基于方差的测试统计量的置换测试来确定一组特征是（1）动态变化（动态）还是（2）表现出随机变化模式（静态）。

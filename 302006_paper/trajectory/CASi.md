@@ -14,10 +14,6 @@ https://github.com/yizhuo-wang/CASi
 ## Summary
 This paper presents CASi, a comprehensive framework for analyzing single-cell RNA seq data from multi-timepoint experiments.
 The key aspects of CASi are:
-1. Cross-timepoint cell annotation using an artificial neural network classifier, which borrows information across timepoints to accurately anntate cells. 
-2. Detection of potentially novel cell types that emerge over time. CASi uses a pipeline based on correlation and t-tests to reliably distinguish novel cell types that only appear in later timepoints.
-3. Visualization of cell population evolution over time using a combination of UMAP plots and fish plots.
-4. Identification of temporal differentially expressed genes (tDEGs) that change significantly over time and have distinct patterns between different groups/conditions. This is done by combining a generalized linear model with iterative feature selection.
 1. 跨时间点细胞注释：使用人工神经网络分类器，借用跨时间点的信息来准确注释细胞。
 2. 检测潜在的新细胞类型：CASi使用基于相关性和t检验的管道来可靠地区分仅在后期时间点出现的新细胞类型。
 3. 细胞群体演变的可视化：结合使用UMAP图和鱼图来可视化细胞群体随时间的演变。
