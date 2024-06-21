@@ -59,7 +59,7 @@ https://github.com/theislab/cellrank
         - 基于估计的动力学参数构建速度场
         - 利用VelocityKernel转化为转移矩阵
 
-![alt text](../Figures/CellRank 2_kernel choice.png)
+![alt text](../Figures/CellRank2_kernelchoice.png)
 
 3. 利用estimators分析转移矩阵
     - 应用广义Perron聚类分析(GPCCA)识别初始态、中间态和终末态
@@ -112,7 +112,8 @@ Kernel-estimator设计是CellRank 2的核心创新,它将转移矩阵的推断(i
 
 #### 命运概率的嵌入式可视化
 这种可视化方法将多维的命运概率数据映射到二维平面上的布局中,使得复杂的细胞命运信息更易于理解和解释。
-![alt text](/Users/xinruqiu/Documents/Projects/Personal_learning/302006_paper/Figures/CellRank 2.png)
+![alt text](../Figures/CellRank2_fateprob.png)
+
 e,f, Fate probabilities toward the mTEC terminal state (left) and top 20 lineage-correlated genes identified (right) based on the RealTimeKernel (e) or WOT’s pullback distribution  
 
 ## Algorithm Framework
