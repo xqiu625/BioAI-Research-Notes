@@ -58,7 +58,7 @@ Anticipated results
 
 ## Algorithm Framework
 ![alt text](../Figures/FLOW-MAP.png)
-The FLOW-MAP algorithm has three major stages: data preprocessing, including optional subsampling or density-dependent downsampling and clustering (Steps 1–3); graph building between nodes from adjacent time points, allotting edges in a density-dependent manner (Step 4); and graph visualization after iterative force-directed layout and postprocessing (Steps 5–9). Workflow and example outputs are shown for the four available modes: a, single time point, single condition; b, single-time point, multiple conditions; c, multiple time points, single condition; and d, multiple-time points, multiple conditions. The default input for FLOW-MAP is an FCS file, but the tool can be applied to other formats. Example FLOW-MAPs are shown on synthetic 2D datasets.
+FLOW-MAP算法分为三个阶段进行处理。首先是数据预处理，包括可选的子采样和聚类。接着是在相邻时间点之间构建节点图，并根据密度分配边。最后是通过迭代力导向布局和后处理进行图形可视化。该算法支持四种工作模式，能够处理不同时间点和条件下的数据。默认输入格式为FCS文件，但也支持其他格式。通过示例展示了在合成2D数据集上的应用效果。
 
 1. Data preprocessing within FLOW-MAP
 
