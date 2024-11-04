@@ -1,7 +1,7 @@
 # UniTVelo: Unified RNA Velocity Analysis [Cross-Reference]
 
 ## Original Paper Location
-Full paper summary: [UniTVelo Model](../../methodology-and-algorithms/statistical-models/2022-11-UniTVelo-RNA-velocity-natcomm.md)
+Full paper summary: [UniTVelo Model](../../../methodology-and-algorithms/statistical-models/2022-11-UniTVelo-RNA-velocity-natcomm.md)
 
 ## Relevance to Genomics/Transcriptomics
 UniTVelo provides enhanced RNA velocity analysis for single-cell transcriptomics, improving trajectory inference through unified temporal modeling.
