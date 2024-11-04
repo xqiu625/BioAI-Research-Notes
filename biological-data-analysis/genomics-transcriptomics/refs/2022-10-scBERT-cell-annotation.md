@@ -1,7 +1,7 @@
 # scBERT: Cell Type Annotation Model [Cross-Reference]
 
 ## Original Paper Location
-Full paper summary: [scBERT Cell Type Annotation](../../methodology-and-algorithms/deep-learning-architectures/2022-10-scBERT-cell-annotation-natmachintell.md)
+Full paper summary: [scBERT Cell Type Annotation](../../../methodology-and-algorithms/deep-learning-architectures/2022-10-scBERT-cell-annotation-natmachintell.md)
 
 ## Relevance to Genomics/Transcriptomics
 scBERT provides a novel approach for analyzing single-cell RNA sequencing data, specifically focusing on cell type annotation. It demonstrates significant improvements in handling batch effects and identifying cell-type-specific markers.
