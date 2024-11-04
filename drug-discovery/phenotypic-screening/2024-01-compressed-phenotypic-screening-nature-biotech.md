@@ -136,3 +136,62 @@
 - Optimized for Synergy Detection?
 - Handling of complex interaction effects?
 
+### Why cannot effectively learn synergy effects?
+1. Mathematical/Model Limitations:
+```python
+# Current Model Design:
+Y = Xβ + ε
+# Where:
+# Y = observed phenotypic effects
+# X = design matrix (perturbation assignments)
+# β = effect coefficients
+# ε = error term
+
+# For Synergy Detection Need:
+Y = Xβ + X_interaction β_interaction + ε
+# Where:
+# X_interaction = pairwise interaction terms
+# β_interaction = interaction effect coefficients
+```
+2. Pool Design Constraints:
+Current Design:
+- Random assignment to pools
+- Each drug appears R times
+- Pool size P compounds
+
+Problem for Synergy:
+- Low statistical power for any specific pair
+- Random co-occurrence is insufficient
+- No guaranteed replication of pairs
+
+3. Experimental Design Limitations:
+a) Sparse Co-occurrence:
+   - Any specific pair rarely appears together
+   - Insufficient replication of pairs
+
+b) Confounding Effects:
+   - Multiple compounds per pool
+   - Cannot isolate pairwise interactions
+   - Higher-order interactions possible
+
+c) Linear Deconvolution:
+   - Assumes additive effects
+   - Cannot distinguish synergy from additivity
+
+4. Computational Challenges:
+Current Limitations:
+- Linear regression assumption
+- Limited parameter space
+- Focus on main effects
+
+Required for Synergy:
+- Nonlinear modeling
+- Interaction parameter estimation
+- Complex statistical inference
+
+
+
+
+
+
+
