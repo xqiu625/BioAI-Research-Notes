@@ -44,60 +44,136 @@ BioAI-Research-Notes/
 Each paper summary follows this structure:
 
 ```markdown
-# Paper Title
+# Research Paper Summary Template
 
-## 📊 Metadata
-- **Authors:** [Names of authors]
-- **Publication Year:** [YYYY]
-- **Venue:** [Conference/Journal]
-- **Link:** [Paper URL]
-- **Categories:** [Primary Category/Secondary Category]
-- **Tags:** #tag1 #tag2
+## 📊 Paper Metadata
+- **Title:** [Paper Title]
+- **Authors:** [Author Names]
+- **Publication:** [Journal/Conference Name (Year, Month)]
+- **Institution:** [Primary Institution]
+- **Paper Link:** [URL]
+- **Code/Data:** [GitHub/Dataset Links]
+- **Tags:** #tag1 #tag2 #tag3
 
-## 🎯 Problem Statement
-[Brief description of the problem the paper addresses]
+## 🎯 Core Contributions
+1. [Key contribution 1]
+2. [Key contribution 2]
+3. [Key contribution 3]
+...
 
-## 💡 Key Contributions
-- Contribution 1
-- Contribution 2
-- ...
+## 📋 Paper Structure
+### 1. Introduction
+- Background & Context
+- Problem Statement
+- Current Limitations
+- Main Innovations
 
-## 📌 Methods & Results
-### Methodology
-[Description of methods, algorithms, or approaches]
+### 2. Results/Methods
+- Key Methodological Innovations
+- Technical Framework
+- Applications & Case Studies
+- Experimental Validation
+
+### 3. Discussion
+- Key Findings
+- Advantages & Limitations
+- Future Directions
+- Broader Impact
+
+## 🔬 Technical Details
+### Algorithm Framework
+1. Core Components:
+   - Component 1
+   - Component 2
+   ...
+
+2. Workflow:
+   - Step 1
+   - Step 2
+   ...
+
+3. Key Algorithms:
+   - Algorithm 1: [Description]
+   - Algorithm 2: [Description]
+   ...
+
+### Implementation Details
+1. Computing Stack:
+   - Languages: [e.g., Python]
+   - Key Libraries: [Major dependencies]
+   - Tools & Frameworks: [Essential tools]
+
+2. Resources:
+   - Code Repositories
+   - Documentation
+   - Datasets
+
+## 📊 Evaluation
+### Baseline Models
+- Model 1: [Description]
+- Model 2: [Description]
+...
+
+### Evaluation Metrics
+1. Metric 1:
+   - Definition
+   - Purpose
+   - Calculation method
+
+2. Metric 2:
+   ...
 
 ### Datasets
-- Dataset 1: [Description, size, source]
-- Dataset 2: [Description, size, source]
+1. Dataset 1:
+   - Description
+   - Size
+   - Source
+   - Usage in paper
 
-### Key Results
-- Result 1
-- Result 2
-- ...
-
-### Validation & Benchmarks
-[Validation methods and comparison with existing approaches]
+2. Dataset 2:
+   ...
 
 ## 💭 Critical Analysis
 ### Strengths
-- Strength 1
-- Strength 2
+1. [Strength 1]
+2. [Strength 2]
+...
 
 ### Limitations
-- Limitation 1
-- Limitation 2
+1. [Limitation 1]
+2. [Limitation 2]
+...
 
 ### Future Directions
-- Potential improvement 1
-- Potential improvement 2
+1. [Direction 1]
+2. [Direction 2]
+...
 
-## 🔬 Implementation Notes
-- [Code availability]
-- [Key dependencies]
-- [Implementation challenges]
+## 📌 Key Takeaways
+1. [Main takeaway 1]
+2. [Main takeaway 2]
+...
 
-## 📚 Related Papers
-- [Links to related papers in your repository]
+## 📚 Related Work
+- Paper 1: [Brief description of relationship]
+- Paper 2: [Brief description of relationship]
+...
+
+## 💡 Personal Notes
+### Implementation Insights
+- [Insight 1]
+- [Insight 2]
+...
+
+### Research Ideas
+- [Idea 1]
+- [Idea 2]
+...
+
+### Questions
+- [Question 1]
+- [Question 2]
+
 ```
 
 ## 🏷️ Common Tags
