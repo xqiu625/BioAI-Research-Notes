@@ -1,12 +1,20 @@
-# scGPT: toward building a foundation model for single-cell multi-omics using generative AI
+# scGPT: Toward Building a Foundation Model for Single-cell Multi-omics using Generative AI
 
-nature methods (February 2024), University of Toronto
+## 📊 Paper Metadata
+- **Title:** scGPT: Toward Building a Foundation Model for Single-cell Multi-omics using Generative AI
+- **Authors:** [Author Names]
+- **Publication:** Nature Methods (February 2024)
+- **Institution:** University of Toronto
+- **Paper Link:** https://www.nature.com/articles/s41592-024-02201-0
+- **Code:** https://github.com/bowang-lab/scGPT
+- **Tags:** #foundation-model #deep-learning #single-cell #multi-omics #transformer
 
-paper link:
-https://www.nature.com/articles/s41592-024-02201-0
-
-github link:
-https://github.com/bowang-lab/scGPT 
+## 🎯 Core Contributions
+1. Large-scale foundation model trained on 33 million human cells using transformer architecture
+2. Simultaneous learning of cell and gene representations capturing complex interactions
+3. Demonstrated versatility across multiple downstream tasks through fine-tuning
+4. Superior performance compared to task-specific models
+5. Ability to extract biologically meaningful gene programs and cell-state-specific networks
 
 ## Summary
 这篇文章介绍了一个名为scGPT的单细胞基因组学基础模型。以下是文章的主要内容概述:
@@ -23,34 +31,42 @@ https://github.com/bowang-lab/scGPT
 6. 研究发现预训练数据量越大,下游任务性能越好,表明该方法有潜力随着测序数据的增长而不断改进。
 7. 作者认为scGPT为单细胞基因组学研究提供了一个通用的基础,可以加速这一领域的发现。
 
-## Structure
-1. 引言
-   - 介绍单细胞测序技术的发展和挑战
-   - 提出基础模型在单细胞分析中的潜力
-   - 简要介绍scGPT及其主要特点和贡献
-2. 结果
-   2.1 单细胞转换器基础模型概述 (Single-cell transformer foundation model overview)
-      - scGPT模型架构介绍
-      - 预训练数据集描述
-      - 预训练模型的初步可视化结果
-   2.2 scGPT提高细胞类型注释的精确度 (scGPT improves the precision of cell type annotation)
-      - 在多个数据集上的细胞类型注释实验
-      - 与其他方法的性能比较
-   2.3 scGPT预测未见过的基因扰动响应 (scGPT predicts unseen genetic perturbation responses)
-      - 扰动预测任务的介绍和实验设置
-      - 预测结果分析和与其他方法的比较
-      - 反向扰动预测的探索
-   2.4 scGPT实现多批次和多组学整合 (scGPT enables multi-batch and multi-omic integration)
-      - scRNA-seq多批次整合实验
-      - 单细胞多组学数据整合实验
-      - 与现有方法的性能比较
-   2.5 scGPT揭示特定细胞状态的基因网络 (scGPT uncovers gene networks for specific cell states)
-      - 基于基因嵌入的基因网络分析
-      - 基于注意力机制的基因交互分析
-      - 生物学验证和通路富集分析
-   2.6 迁移学习中的缩放效应和上下文效应 (Scaling and in-context effects in transfer learning)
-      - 预训练数据规模对性能的影响分析
-      - 预训练上下文（如特定器官）对下游任务的影响分析
+## 📋 Paper Structure
+### 1. Introduction
+- Evolution and challenges in single-cell sequencing
+- Potential of foundation models in single-cell analysis
+- Overview of scGPT's features and contributions
+
+### 2. Results
+#### 2.1 Model Overview
+- Architecture design
+- Pretraining dataset description
+- Initial visualization results
+
+#### 2.2 Cell Type Annotation
+- Multi-dataset experiments
+- Performance comparisons
+- Validation results
+
+#### 2.3 Perturbation Response Prediction
+- Task setup and experiments
+- Comparison with existing methods
+- Reverse perturbation exploration
+
+#### 2.4 Multi-modal Integration
+- scRNA-seq batch integration
+- Multi-omics data integration
+- Comparative analysis
+
+#### 2.5 Gene Network Analysis
+- Gene embedding-based network analysis
+- Attention-based interaction analysis
+- Biological validation
+
+#### 2.6 Transfer Learning Analysis
+- Scale effects on performance
+- Context influence on downstream tasks
+
 
 #### 迁移学习中的缩放效应和上下文效应：
     想象你是一个厨师，正在学习烹饪各种菜肴。
