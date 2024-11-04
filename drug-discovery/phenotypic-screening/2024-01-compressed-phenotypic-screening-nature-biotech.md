@@ -7,7 +7,7 @@
 - **Institution:** MIT, Broad Institute, Harvard
 - **Paper Link:** [[URL]](https://www.nature.com/articles/s41587-024-02403-z)
 - **Code/Data:** [[GitHub/Dataset Links]](https://github.com/ShalekLab/compressed_screening)
-- **Tags:** Tags: #DrugDiscovery #PhenotypicScreening #ComputationalDeconvolution #MachineLearning #SystemsBiology #HighThroughputScreening
+- **Tags: #DrugDiscovery #PhenotypicScreening #ComputationalDeconvolution #MachineLearning #SystemsBiology #HighThroughputScreening
   
 ## 🎯 Core Contributions
 1. Developed a novel compressed screening method that reduces sample size, labor, and cost for phenotypic screens
@@ -179,7 +179,6 @@ c) Linear Deconvolution:
    - Cannot distinguish synergy from additivity
 
 4. Computational Challenges:
-Current Limitations:
 - Linear regression assumption
 - Limited parameter space
 - Focus on main effects
