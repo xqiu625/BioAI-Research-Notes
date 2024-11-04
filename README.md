@@ -15,7 +15,6 @@ BioAI-Research-Notes/
 ├── biological-data-analysis/
 │   ├── genomics-transcriptomics/
 │   ├── proteomics/
-│   ├── imaging-analysis/
 │   └── multi-omics-integration/
 ├── drug-discovery/
 │   ├── virtual-screening/
@@ -33,9 +32,6 @@ BioAI-Research-Notes/
 │   ├── patient-stratification/
 │   ├── clinical-trial-design/
 │   └── biomarker-discovery/
-├── summaries/
-│   └── YYYY-MM/
-│       └── paper-name.md
 └── templates/
     └── paper-template.md
 ```
