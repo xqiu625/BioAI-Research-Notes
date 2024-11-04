@@ -129,7 +129,7 @@ ForceAtlas2是一种用于网络可视化的连续图布局算法,它模拟了�
 
 ## Computing Language, Tools, Packages, and Resources
 1. 计算机语言:
-- R 语言:FLOW-MAP 算法主要在 R 语言环境中实现。R 是一种用于统计计算和图形显示的开源编程语言,在生物信息学领域被广泛使用。
+- R 语言:FLOW-MAP 算法主要在 R 语言环境中实现。
 - C++ 语言:FLOW-MAP 使用的 ForceAtlas2 布局算法是用 C++ 实现的,并通过 R 调用。
 2. 软件包:
 - FLOWMAPR:这是一个专门用于 FLOW-MAP 分析的 R 包。它封装了 FLOW-MAP 算法的主要步骤,并提供了一个用户友好的界面。FLOWMAPR 依赖于多个其他的 R 包,例如:
