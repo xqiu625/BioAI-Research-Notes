@@ -211,6 +211,9 @@ Domain-specific tags for easy filtering:
 3. Update category indexes when adding new papers
 4. Maintain standardized metadata across summaries
 
+📊 Figure References
+All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
+
 ## 📊 Repository Stats
 - Total Papers: [Number]
 - Papers by Category:
