@@ -9,55 +9,88 @@ https://www.nature.com/articles/s41596-019-0246-3
 github link: 
 https://github.com/zunderlab/FLOWMAP/
 
-## Summary
-FLOW-MAP 提供了一种直观的方式来分析和可视化单细胞数据集中的动态变化，特别适用于研究细胞分化和其他复杂生物过程。
--  FLOW-MAP is a GUI-based software tool that uses graph layout analysis with sequential time ordering to visualize cellular trajectories in high-dimensional single-cell datasets obtained from flow cytometry, mass cytometry or single-cell RNA sequencing experiments.
-- The main steps are: 1) data preprocessing within FLOW-MAP (downsampling, transforming data), 2) graph building between nodes from adjacent time points, and 3) graph visualization after iterative force-directed layout.
-- It accommodates multiple FLOW-MAP modes for analyzing a single sample, multiple conditions at one time point, one time course, or multiple time courses.
-- Key parameters that affect the output include the ratio of cells subsampled to number of clusters, edge density parameters, and choice of markers used for clustering.
-- The output is a 2D graph representation showing patterns of change over time across multiple markers. Node size indicates number of cells, color indicates marker expression or metadata.
-- It enables visualization of cellular trajectories, branchpoints, and marker expression patterns in dynamic processes like cell differentiation, without directly tracing individual cells.
-- It can be applied to mass cytometry and single-cell RNA-seq data, with examples shown for mouse embryonic stem cell differentiation and hematopoiesis.
+# FLOW-MAP: A Graph-based Tool for Visualizing Dynamic Single-cell Data
 
-## Structure
-Introduction
+## 📊 Overview
+FLOW-MAP is a GUI-based visualization tool that transforms high-dimensional single-cell data into intuitive graph layouts, revealing cellular trajectories and dynamics over time.
 
-- Overview of FLOW-MAP algorithm and applications
-- Comparison to other single-cell analysis methods
-- Limitations
+## 🎯 Key Features
+1. **Data Compatibility**
+   - Flow cytometry
+   - Mass cytometry
+   - Single-cell RNA sequencing
 
-Overview of FLOW-MAP algorithm
+2. **Analysis Modes**
+   - Single sample analysis
+   - Multi-condition comparison
+   - Single time course
+   - Multiple time courses
 
-- Data preprocessing
-- FLOW-MAP graph building
-- FLOW-MAP graph layout and visualization
+## 🔬 Workflow
+1. **Data Preprocessing**
+   - Downsampling of cells
+   - Data transformation
+   - Quality control
 
-Materials
+2. **Graph Construction**
+   - Node creation from cell clusters
+   - Edge building between adjacent timepoints
+   - Parameter optimization
 
-- Equipment
-- Software
+3. **Visualization**
+   - Force-directed layout generation
+   - Interactive 2D representation
+   - Marker expression mapping
 
-Equipment setup
+## 💡 Visualization Features
+- **Node Properties**
+  * Size: Represents cell count
+  * Color: Shows marker expression or metadata
+  * Position: Indicates relationships between cell populations
 
-- FLOWMAPR installation
+- **Edge Properties**
+  * Connections: Show relationships between timepoints
+  * Density: Reflects strength of relationships
+  * Direction: Indicates temporal progression
 
-Procedure
+## 🛠️ Key Parameters
+1. **Sampling Parameters**
+   - Cell-to-cluster ratio
+   - Downsampling threshold
+   - Cluster size
 
-1. Setting up files and specifying parameters for FLOW-MAP analysis
-2. Running FLOW-MAP
-3. Visualizing FLOW-MAP results
+2. **Graph Parameters**
+   - Edge density
+   - Connection strength
+   - Layout forces
 
-Anticipated results
+3. **Visualization Parameters**
+   - Marker selection
+   - Color schemes
+   - Layout options
 
-- Specifying different FLOW-MAP settings
-- Comparison of FLOW-MAP with other single-cell analysis methods
-- FLOW-MAP analysis of mESC differentiation time course
-    - Combined analysis of all conditions
-    - Individual condition analysis
-- Using FLOW-MAP to analyze scRNA-seq data
+## 📊 Applications
+1. **Cell Differentiation Studies**
+   - Embryonic stem cell differentiation
+   - Hematopoiesis analysis
+   - Developmental trajectories
+
+2. **Time Course Analysis**
+   - Population dynamics
+   - Marker expression changes
+   - Trajectory branching points
+
+## 💪 Advantages
+- Intuitive visualization
+- Flexible data input
+- Interactive exploration
+- Multiple analysis modes
+- No cell tracking required
+
 
 ## Algorithm Framework
-![alt text](../Figures/FLOW-MAP.png)
+![FLOW-MAP Overview](../../paper-figures/FLOW-MAP.png)
+
 FLOW-MAP算法分为三个阶段进行处理。首先是数据预处理，包括可选的子采样和聚类。接着是在相邻时间点之间构建节点图，并根据密度分配边。最后是通过迭代力导向布局和后处理进行图形可视化。该算法支持四种工作模式，能够处理不同时间点和条件下的数据。默认输入格式为FCS文件，但也支持其他格式。通过示例展示了在合成2D数据集上的应用效果。
 
 1. Data preprocessing within FLOW-MAP
