@@ -216,10 +216,4 @@ All paper figures are stored in the paper-figures/ directory and referenced rela
 
 ## 📊 Repository Stats
 - Total Papers: 19
-- Papers by Category:
-  - Methodology & Algorithms: [Number]
-  - Biological Data Analysis: [Number]
-  - Drug Discovery: [Number]
-  - Systems Biology: [Number]
-  - Clinical AI: [Number]
 - Last Updated: 2024-11-04
