@@ -1,10 +1,14 @@
-# TIME-LLM: TIME SERIES FORECASTING BY REPROGRAMMING LARGE LANGUAGE MODELS
+# TIME-LLM: Time Series Forecasting by Reprogramming Large Language Models
 
-ICLR (2024), The Hong Kong University of Science and Technology (Guangzhou)
-
-https://arxiv.org/abs/2310.01728 
-
-https://github.com/KimMeen/Time-LLM 
+## 📊 Paper Metadata
+- **Title:** TIME-LLM: Time Series Forecasting by Reprogramming Large Language Models
+- **Authors:** [Author Names]
+- **Publication:** ICLR 2024
+- **Institution:** The Hong Kong University of Science and Technology (Guangzhou)
+- **Links:** 
+  - Paper: https://arxiv.org/abs/2310.01728
+  - GitHub: https://github.com/KimMeen/Time-LLM
+- **Tags:** #LLM #time-series #forecasting #deep-learning #transfer-learning
 
 ## Summary
 本文提出了 TIME-LLM,这是一个无需微调模型参数就可以将大型语言模型 (LLM) 重新编程用于时间序列预测的框架。其关键思想是:
