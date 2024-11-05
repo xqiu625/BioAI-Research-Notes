@@ -147,7 +147,7 @@
 
 ## Algorithm Framework
 
-![alt text](paper-figures/scBERT_overview.png)
+![alt text](../../../paper-figures/scBERT_overview.png)
 
 a. 无标签数据的自监督学习和特定任务数据的微调。在自监督预训练阶段，从PanglaoDB收集无标签数据。掩码表达嵌入和基因嵌入作为输入被添加，然后输入到Performer块中。重构器用于生成输出。用于掩码基因的输出用于计算重构损失。在监督微调阶段，特定任务的scRNA-seq数据被输入到预训练的编码器中。输出表示随后通过一维卷积层和分类器生成细胞类型预测。
 代表元素逐一相加。Performer编码器是预训练和微调阶段模型共享的组件。重构器和分类器在预训练和微调过程中分别独立使用。
