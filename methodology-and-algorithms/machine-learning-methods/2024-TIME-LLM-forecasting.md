@@ -2,7 +2,6 @@
 
 ## 📊 Paper Metadata
 - **Title:** TIME-LLM: Time Series Forecasting by Reprogramming Large Language Models
-- **Authors:** [Author Names]
 - **Publication:** ICLR 2024
 - **Institution:** The Hong Kong University of Science and Technology (Guangzhou)
 - **Links:** 
