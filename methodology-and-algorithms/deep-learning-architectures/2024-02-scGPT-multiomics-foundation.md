@@ -131,7 +131,8 @@
 
 这个工作流程体现了"普遍预训练，按需微调"的方法，使scGPT能够适应各种单细胞基因组学分析任务。
 ## Algorithm Framework
-![alt text](../Figures/scGPT_schematic.png)
+## 📋 Model Overview
+![scGPT Model Overview](../../paper-figures/scGPT_schematic.png)
 a. scGPT的工作流程。该模型在来自细胞图谱的大规模scRNA-seq数据上进行生成式预训练。scGPT的核心组件包含堆叠的Transformer块，带有专门的注意力掩码用于生成式训练。对于下游应用，预训练模型参数可以在新数据上进行微调。我们将scGPT应用于各种任务，包括细胞类型注释、批次校正、多组学整合、基因扰动预测和基因网络推断。
 
 b. 输入数据嵌入的详细视图。输入包含三层信息：基因标记、表达值和条件标记（模态、批次、扰动条件等）。
