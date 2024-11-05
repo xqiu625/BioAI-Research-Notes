@@ -215,11 +215,11 @@ Domain-specific tags for easy filtering:
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: [Number]
+- Total Papers: 19
 - Papers by Category:
   - Methodology & Algorithms: [Number]
   - Biological Data Analysis: [Number]
   - Drug Discovery: [Number]
   - Systems Biology: [Number]
   - Clinical AI: [Number]
-- Last Updated: [Date]
+- Last Updated: 2024-11-04
