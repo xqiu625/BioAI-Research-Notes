@@ -168,7 +168,7 @@ https://github.com/StatBiomed/UniTVelo
 
 ## Algorithm Framework
 
-![alt text](../Figures/image-6.png)
+![alt text](../../paper-figures/UniTVelo.png)
 
 a. 转录过程的示意图，包括转录速率α、剪接速率β和降解速率γ。绿色虚线表示参数是反向推断的。
 b. 以时间为自变量的模型范式，显示了预测的α随测量表达谱的变化。
