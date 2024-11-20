@@ -104,7 +104,7 @@ https://github.com/biomap-research/scFoundation
 
 ## Workflow
 
-![alt text](../Figures/scFoundation_schematic.png)
+![alt text](../../paper-figures/scFoundation_schematic.png)
 
 这篇文章描述的研究工作流程可以概括如下:
 
