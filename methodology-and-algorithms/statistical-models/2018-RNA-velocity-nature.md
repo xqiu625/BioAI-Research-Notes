@@ -16,7 +16,7 @@ RNA velocity是一种从单细胞RNA测序数据推测细胞命运和状态变�
 4. 把每个细胞的状态变化方向展示在一起,我们就可以推测细胞群体的发育轨迹,判断一个细胞将来会分化成什么细胞类型。
 RNA velocity利用了RNA剪接动力学的信息,相当于在静态的基因表达数据中加入了时间维度,可以用来研究细胞命运决定、分化等动态过程。
 
-![Alt text](image-2.png)
+![Alt text](../../paper-figures/Pseudotime_expression_profiles.png)
 
 Principle-curve pseudotime: 是一种用于分析单细胞RNA测序数据的计算方法，用于推断细胞在一个生物学过程中的进展程度或“时间”。原理如下：
 
