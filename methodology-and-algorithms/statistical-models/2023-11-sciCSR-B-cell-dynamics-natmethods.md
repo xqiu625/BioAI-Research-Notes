@@ -38,7 +38,7 @@ https://github.com/Fraternalilab/sciCSR
 4. 使用B细胞特异的过程,sciCSR可以识别常规RNA速度分析容易遗漏的转变,揭示B细胞类别转换重组动力学的新见解。
 5. 经实验验证,包括模拟数据、真实数据以及免疫、体外培养和基因敲除研究,表明sciCSR可以推断常规方法难以捕捉的B细胞转变。
 
-![alt text](../Figures/sciCSR_pipeline.png) 
+![alt text](../../paper-figures/sciCSR_pipeline.png) 
 The sciCSR pipeline to infer B cell state transitions. 
 本文通过非负矩阵分解（NMF）从小鼠和人类的参考B细胞图谱中提取描述初始和记忆B细胞亚群的同种型特征，并使用这些特征生成了一个称为“CSR潜力”的得分，用于衡量细胞的成熟状态。研究显示了不同数据集中B细胞亚群的CSR潜力得分分布和沿推测的CSR潜力轴的IgH转录本表达水平。最后，说明了sciCSR工作流程如何用于推断B细胞的状态转换。
 
@@ -105,7 +105,7 @@ CSR和SHM是适应性体液免疫反应的关键组成部分。它们允许免�
 
 综上,sciCSR利用单细胞转录组和BCR测序数据,通过定量表征每个B细胞的类别转换重组和体细胞高频突变,构建马尔可夫模型来推断B细胞在不同状态和BCR亚型间的转化概率和方向。整个过程充分利用了B细胞特异的生物学过程信息。
 ## Algorithm Framework
-![alt text](../Figures/sciCSR_Schematic.png)
+![alt text](../../paper-figures/sciCSR_Schematic.png)
 
 1. 从单细胞RNA测序比对结果中提取生产性和无功IgH转录本的表达量
 - 根据reads比对到IgH基因座的V、D、J、C和C上游区域的模式,判断每条转录本属于生产性、无功或无法确定
