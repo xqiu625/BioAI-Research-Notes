@@ -44,7 +44,7 @@ The key aspects of CASi are:
 - Potential limitations and future extensions of the framework
 
 ## Algorithm Framework
-![alt text](../Figures/image-2.png)
+![alt text](../../paper-figures/CASi_framework.png)
 An overview of the CASi framework. The input is scRNA-seq data from different timepoints’ experiments. CASi mainly consists of three steps: (1) cross-time points cell annotation, (2) detection of potential novel cell types, (3) identification of temporal differentially expressed genes.
 
 
