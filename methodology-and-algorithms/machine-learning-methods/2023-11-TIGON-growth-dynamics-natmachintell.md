@@ -104,7 +104,7 @@ TIGON模型通过时间序列scRNA-seq数据来分析细胞谱系动力学，包
         - 最终的目标函数是传输cost和重构误差的加权和。通过最小化该目标函数,我们可以得到最优的速度场和生长项参数,使其能够很好地解释观测到的细胞状态动力学。
 
 ## Algorithm Framework
-![alt text](../Figures/TIGON.png)
+![alt text](../../paper-figures/TIGON.png)
 
 - a. 细胞谱系动力学的示意图，包括细胞生长、转变和基因调控网络（GRNs）。
 - b. 连续的细胞动力学由时间依赖的密度ρ(x,t)描述。时间序列scRNA-seq快照的输入在离散时间点生成密度ρ。
