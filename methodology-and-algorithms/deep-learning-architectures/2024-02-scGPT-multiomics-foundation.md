@@ -2,7 +2,7 @@
 
 ## 📊 Paper Metadata
 - **Title:** scGPT: Toward Building a Foundation Model for Single-cell Multi-omics using Generative AI
-- **Authors:** [Author Names]
+- **Authors:** Bo Wang
 - **Publication:** Nature Methods (February 2024)
 - **Institution:** University of Toronto
 - **Paper Link:** https://www.nature.com/articles/s41592-024-02201-0
