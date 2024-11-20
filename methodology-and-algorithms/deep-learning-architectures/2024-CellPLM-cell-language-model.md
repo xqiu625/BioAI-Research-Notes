@@ -40,20 +40,26 @@
    - 回顾现有的单细胞预训练模型
    - 指出它们的共同点和局限性
 
-3. 方法 (Cell Language Model Beyond Single Cells)
-   3.1 细胞语言模型 (Cell Language Model)
-   3.2 模型架构 (Model Architecture)
-      - 基因表达嵌入器 (Gene Expression Embedder)
-      - Transformer 编码器 (Transformer Encoder)
-      - 高斯混合潜在空间 (Gaussian Mixture Latent Space)
-      - 批次感知解码器 (Batch-aware Decoder)
-   3.3 模型预训练与微调 (Model Pre-training & Fine-tuning)
+# 3. Methods
 
-4. 实验 (Experiment)
-   4.1 初步研究:零样本聚类 (Preliminary Study: Zero-shot Clustering)
-   4.2 任务1:单细胞RNA-seq去噪 (Task 1: scRNA-seq Denoising)
-   4.3 任务2:空间转录组学插补 (Task 2: Spatial Transcriptomic Imputation)
-   4.4 任务3:细胞类型注释 (Task 3: Cell Type Annotation)
+## 3.1 Cell Language Model
+
+## 3.2 Model Architecture
+
+### Gene Expression Embedder
+### Transformer Encoder
+### Gaussian Mixture Latent Space
+### Batch-aware Decoder
+
+## 3.3 Model Pre-training & Fine-tuning
+
+# 4. Experiments
+
+## 4.1 Preliminary Study: Zero-shot Clustering
+## 4.2 Task 1: scRNA-seq Denoising
+## 4.3 Task 2: Spatial Transcriptomic Imputation
+## 4.4 Task 3: Cell Type Annotation
+
 
 5. 结论 (Conclusion)
 
