@@ -1,22 +1,33 @@
 # CellPLM: Pre-training of Cell Language Model Beyond Single Cells
 
-paper link: https://openreview.net/forum?id=BKXvPDekud 
-github link: https://github.com/OmicsML/CellPLM
+## 📊 Metadata
+- **Title:** CellPLM: Pre-training of Cell Language Model Beyond Single Cells
+- **Paper Link:** [OpenReview](https://openreview.net/forum?id=BKXvPDekud)
+- **Code:** [GitHub](https://github.com/OmicsML/CellPLM)
+- **Status:** Preprint
+- **Tags:** #cell-language-model #spatial-transcriptomics #deep-learning #pretraining #single-cell
 
- ## Summary
-1. 提出了"细胞语言模型"的概念,将细胞视为token而不是基因,以更好地建模细胞间关系。
-2. 利用空间转录组学数据进行预训练,获取细胞空间位置信息。
-3. 使用高斯混合模型作为先验分布,以克服数据量和质量的限制。
-4. 在多个下游任务(如聚类、去噪、空间转录组学插补、细胞类型注释等)上进行了实验,表现优于现有方法。
-5. 推理速度比其他预训练模型快100倍。
+## 🎯 Core Contributions
+1. **Novel Cell-Centric Modeling Paradigm**
+   - First to propose treating cells (rather than genes) as tokens in language modeling
+   - Enables better modeling of cell-cell relationships and spatial contexts
 
-主要贡献:
+2. **Spatial Information Integration**
+   - Pioneered the use of spatial transcriptomics data in pre-training
+   - Incorporates physical cell-cell interactions into the model
 
-- 首次提出将细胞作为token的单细胞预训练模型
-- 首次利用空间转录组学数据进行预训练
-- 引入合理的先验分布以解决数据限制问题  
-- 在多个下游任务上验证了模型的有效性
-- 大幅提高了推理速度
+3. **Technical Innovations**
+   - Introduced Gaussian Mixture Model as prior distribution
+   - Addresses limitations in data quantity and quality
+   - Achieves 100x faster inference compared to existing methods
+
+4. **Comprehensive Validation**
+   - Superior performance in multiple downstream tasks:
+     - Cell clustering
+     - Data denoising
+     - Spatial transcriptomics imputation
+     - Cell type annotation
+       
 
  ## Structure 
 
