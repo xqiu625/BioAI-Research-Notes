@@ -304,7 +304,7 @@ C. ChromHMM Analysis:
 4. Findings suggest new therapeutic approaches for weight management
 
 ## 💡 Personal Notes
-### how inflammation was characterized?
+## 1. How inflammation was characterized?
 
 ### 1. Cellular Level Indicators
 ```markdown
