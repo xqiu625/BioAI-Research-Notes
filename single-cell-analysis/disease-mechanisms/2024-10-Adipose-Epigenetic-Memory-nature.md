@@ -51,6 +51,124 @@
   - Bioinformatics tools: Cell Ranger, ChromHMM
   - Statistical analysis frameworks
 
+Here are the key bioinformatic analyses performed in this study:
+
+### 1. Single-nucleus RNA Sequencing (snRNA-seq) Analysis
+```markdown
+- Pipeline: 10x Genomics Cell Ranger (v6.1.2 and v7.2.0)
+- Quality Control:
+  * Used scDblFinder to remove doublets
+  * Filtered nuclei based on feature counts and UMI counts
+  * Removed highly expressed genes (mitochondrial, pseudogenes, Malat1)
+  * Used SoupX for ambient RNA contamination estimation
+
+- Data Processing:
+  * Seurat v4.1.0 for data integration and analysis
+  * Normalization using sctransform
+  * Integration using CCA (canonical correlation analysis)
+  * Clustering using Louvain algorithm
+  * Cell type annotation based on known markers
+  * Reference mapping against published datasets
+
+- Differential Expression Analysis:
+  * Used Wilcoxon rank-sum test
+  * Criteria: |log2FC| > 0.5 and adjusted P < 0.01
+  * Validated using MAST and likelihood-ratio tests
+```
+
+### 2. Multi-modal Data Integration
+```markdown
+- MOFA (Multi-Omics Factor Analysis):
+  * Used for unsupervised integration of multi-omic datasets
+  * Included all data modalities across conditions
+  * Selected top 3,000 variable features per modality
+  * Identified five latent factors explaining data variability
+```
+
+### 3. Epigenomic Analyses
+```markdown
+A. CUT&Tag Analysis:
+  * Peak calling using SEACR v1.3
+  * Peak annotation using ChIPSeeker
+  * Filtered peaks overlapping blacklist regions
+  * Differential analysis using EdgeR
+
+B. ATAC-seq Analysis:
+  * Quality control and bedgraph generation
+  * Peak calling using SEACR
+  * Integration with other modalities
+  * Chromatin accessibility analysis
+
+C. ChromHMM Analysis:
+  * Used for chromatin state identification
+  * Combined all histone modifications and ATAC-seq data
+  * Eight chromatin states model
+  * Enhancer state identification
+```
+
+### 4. TRAP-seq Analysis (Translatome)
+```markdown
+- Quality control using FastQC
+- Trimming using TrimGalore
+- Alignment using HISAT2 to mm10 reference
+- Quantification using featureCounts
+- Differential expression using EdgeR
+  * Criteria: |log2FC| ≥ 1 and nominal P < 0.01
+```
+
+### 5. Integration and Annotation Analyses
+```markdown
+- Gene Set Enrichment Analysis (GSEA):
+  * Used enrichR package
+  * Multiple databases including WikiPathways
+  * Adjusted P-value < 0.01 threshold
+
+- SNP-based Demultiplexing:
+  * Used cellsnp-lite for SNP calling
+  * Vireo for demultiplexing pooled data
+  * 1000 Genomes-based reference for hg38
+```
+
+### 6. Visualization Tools
+```markdown
+- R packages:
+  * SCpubr for snRNA-seq visualization
+  * Seqmonk for visual QC
+  * GraphPad Prism
+  * Basic R plotting
+
+- Other Tools:
+  * Affinity Designer
+  * Affinity Publisher
+```
+
+### 7. Statistical Analysis
+```markdown
+- Multiple testing correction:
+  * Bonferroni method
+  * Benjamini-Hochberg method
+- Various statistical tests:
+  * Wilcoxon rank-sum test
+  * Mann-Whitney tests
+  * t-tests with multiple testing corrections
+```
+
+### 8. Computing Resources and Platforms
+```markdown
+- Languages: R v4.2
+- Key R Packages:
+  * Seurat
+  * EdgeR
+  * chromVAR
+  * ChIPSeeker
+  * enrichR
+- Sequencing Platforms:
+  * NovaSeq 6000
+  * NovaSeqX
+```
+
+
+
 ## 📊 Evaluation
 ### Datasets
 1. Human Studies:
