@@ -7,62 +7,68 @@ This repository contains summaries and critical analyses of research papers focu
 ## 📁 Repository Structure
 ```
 BioAI-Research-Notes/
-├── methodology-and-algorithms/
-│   ├── machine-learning-methods/
-│   ├── deep-learning-architectures/
-│   ├── statistical-models/
-│   └── optimization-techniques/
-├── biological-data-analysis/
-│   ├── genomics-transcriptomics/
-│   ├── proteomics/
-│   └── multi-omics-integration/
-├── drug-discovery/
-│   ├── virtual-screening/
-│   ├── drug-response-prediction/
-│   ├── drug-target-interaction/
-│   ├── phenotypic-screening/
-│   └── compound-design/
-├── systems-biology/
-│   ├── pathway-analysis/
-│   ├── network-inference/
-│   ├── cell-cell-interactions/
-│   └── multi-scale-modeling/
-├── clinical-ai/
-│   ├── disease-prediction/
-│   ├── patient-stratification/
-│   ├── clinical-trial-design/
-│   └── biomarker-discovery/
-└── templates/
-    └── paper-template.md
+├── README.md
+├── drug-discovery
+│   └── phenotypic-screening
+│       └── 2024-01-compressed-phenotypic-screening-nature-biotech.md
+├── foundation-models
+│   ├── methodology
+│   │   └── 2024-TIME-LLM-forecasting.md
+│   ├── protein-models
+│   └── single-cell-models
+│       ├── 2022-10-scBERT-cell-annotation-natmachintell.md
+│       ├── 2023-10-GenePT-foundation-model.md
+│       ├── 2024-02-scGPT-multiomics-foundation.md
+│       ├── 2024-06-scFoundation-foundation-model-natmethods.md
+│       └── 2024-CellPLM-cell-language-model.md
+├── paper-figures/
+├── single-cell-analysis
+│   ├── disease-mechanisms
+│   └── dynamics-and-velocity
+│       ├── 2018-RNA-velocity-nature.md
+│       ├── 2020-01-FLOWMAP-trajectory-visualization-natprotocols.md
+│       ├── 2020-08-scVelo-RNA-velocity-natbiotech.md
+│       ├── 2021-05-PRESCIENT-generative-modeling-natcomm.md
+│       ├── 2022-11-UniTVelo-RNA-velocity-natcomm.md
+│       ├── 2023-08-veloVI-RNA-velocity-natmethods.md
+│       ├── 2023-11-TIGON-growth-dynamics-natmachintell.md
+│       ├── 2023-11-sciCSR-B-cell-dynamics-natmethods.md
+│       ├── 2024-03-DELVE-feature-selection-natcomm.md
+│       ├── 2024-05-CASi-timepoint-analysis-scireports.md
+│       └── 2024-06-CellRank2-fate-mapping-natmethods.md
+└── templates
+    └── paper-summary-template.md
 ```
 
-## 📊 Paper Classification Guide
-### Primary Categories
-- **Methodology & Algorithms**: Novel computational methods, architectural innovations
-- **Biological Data**: Papers focusing on specific biological data types and analysis
-- **Drug Discovery**: Research on computational drug development and screening
-- **Systems Biology**: Network and pathway-based approaches
-- **Clinical AI**: Clinical applications and translational research
+# 📊 Paper Classification Guide
 
-### Cross-Cutting Themes
-- **Methods Development**
-- **Benchmark Studies**
-- **Review Papers**
-- **Clinical Applications**
-- **Tool Development**
+## Primary Categories
 
-## 📥 Maintenance Guidelines
-1. Use consistent naming:
-   - Replace spaces with hyphens
-   - Use lowercase for all folders and files
-   - Include publication year in file names
-2. Cross-reference related papers
-3. Update category indexes when adding new papers
-4. Maintain standardized metadata across summaries
+### 1. Foundation Models
+- **Single-Cell Models**: Large language models for single-cell analysis (e.g., scGPT, CellPLM)
+- **Protein Models**: Language models for protein analysis
+- **Methodology**: General foundation model approaches (e.g., TIME-LLM)
+
+### 2. Single-Cell Analysis
+- **Dynamics and Velocity**: RNA velocity, trajectory inference, cellular dynamics (e.g., scVelo, CellRank2)
+- **Disease Mechanisms**: Disease-specific cellular analysis
+
+
+### 3. Drug Discovery
+- **Phenotypic Screening**: High-throughput screening methods
+- **Drug Response**: Drug effectiveness analysis
+- **Target Identification**: Methods for identifying drug targets
+
+## File Naming Convention
+```
+YYYY-MM-[Name]-[Type]-[Journal].md
+```
+Example: `2024-06-scFoundation-foundation-model-natmethods.md`
+
 
 📊 Figure References
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 19
-- Last Updated: 2024-11-04
+- Total Papers: 18
+- Last Updated: 2024-11-21
