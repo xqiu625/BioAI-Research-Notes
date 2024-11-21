@@ -126,6 +126,12 @@ A-Eos exhibits two main protective mechanisms:
   - Spleen eosinophils (B-Eos)
   - Unconditioned BM-Eos
 
+```markdown
+Measured luminescence values indicate bacterial viability
+Lower luminescence = higher bactericidal activity
+Data shown in Figure 2h
+```
+
 ##### Molecular Mechanisms:
 1. Enhanced Granule Activity:
    - Peripheral distribution of EPX
