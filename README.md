@@ -24,6 +24,8 @@ BioAI-Research-Notes/
 ├── paper-figures/
 ├── single-cell-analysis
 │   ├── disease-mechanisms
+│   │   ├── 2022-12-Active-Eosinophils-in-Colitis-nature.md
+│   │   └── 2024-10-Adipose-Epigenetic-Memory-nature.md
 │   └── dynamics-and-velocity
 │       ├── 2018-RNA-velocity-nature.md
 │       ├── 2020-01-FLOWMAP-trajectory-visualization-natprotocols.md
