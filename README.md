@@ -15,6 +15,7 @@ BioAI-Research-Notes/
 │   ├── methodology
 │   │   └── 2024-TIME-LLM-forecasting.md
 │   ├── protein-models
+│   │   └── 2024-09-dplm-ICML.md
 │   └── single-cell-models
 │       ├── 2022-10-scBERT-cell-annotation-natmachintell.md
 │       ├── 2023-10-GenePT-foundation-model.md
@@ -72,5 +73,5 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 20
+- Total Papers: 21
 - Last Updated: 2024-11-21
