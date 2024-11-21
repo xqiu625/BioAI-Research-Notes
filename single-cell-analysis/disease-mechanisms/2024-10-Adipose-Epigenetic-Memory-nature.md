@@ -1,4 +1,4 @@
-# Research Paper Summary: Adipose tissue retains an epigenetic memory of obesity after weight loss
+# Adipose tissue retains an epigenetic memory of obesity after weight loss
 
 ## 📊 Paper Metadata
 - **Title:** Adipose tissue retains an epigenetic memory of obesity after weight loss
