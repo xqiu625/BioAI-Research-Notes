@@ -304,9 +304,9 @@ C. ChromHMM Analysis:
 4. Findings suggest new therapeutic approaches for weight management
 
 ## 💡 Personal Notes
-## 1. How inflammation was characterized?
+### 1. How inflammation was characterized?
 
-### 1. Cellular Level Indicators
+#### 1. Cellular Level Indicators
 ```markdown
 1. Immune Cell Infiltration:
 - Increased macrophage populations, especially:
@@ -323,7 +323,7 @@ C. ChromHMM Analysis:
 - Collagen deposition (shown by Masson's trichrome staining)
 ```
 
-### 2. Molecular Signatures
+#### 2. Molecular Signatures
 ```markdown
 1. Upregulated Inflammatory Pathways:
 - TGFβ signaling
@@ -340,7 +340,7 @@ C. ChromHMM Analysis:
 - Ctss
 ```
 
-### 3. Epigenetic Changes
+#### 3. Epigenetic Changes
 ```markdown
 1. Active Marks (H3K4me3/H3K27ac) on:
 - Inflammatory pathway genes
@@ -351,7 +351,7 @@ C. ChromHMM Analysis:
 - Associated with lysosome activity
 ```
 
-### 4. Gene Set Enrichment Analysis
+#### 4. Gene Set Enrichment Analysis
 ```markdown
 Enriched Pathways:
 1. In Weight Loss State:
