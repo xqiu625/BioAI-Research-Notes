@@ -22,25 +22,29 @@ BioAI-Research-Notes/
 │       ├── 2024-02-scGPT-multiomics-foundation.md
 │       ├── 2024-06-scFoundation-foundation-model-natmethods.md
 │       └── 2024-CellPLM-cell-language-model.md
-├── paper-figures/
+├── paper-figures
 ├── single-cell-analysis
 │   ├── disease-mechanisms
 │   │   ├── 2022-12-Active-Eosinophils-in-Colitis-nature.md
 │   │   └── 2024-10-Adipose-Epigenetic-Memory-nature.md
-│   └── dynamics-and-velocity
-│       ├── 2018-RNA-velocity-nature.md
-│       ├── 2020-01-FLOWMAP-trajectory-visualization-natprotocols.md
-│       ├── 2020-08-scVelo-RNA-velocity-natbiotech.md
-│       ├── 2021-05-PRESCIENT-generative-modeling-natcomm.md
-│       ├── 2022-11-UniTVelo-RNA-velocity-natcomm.md
-│       ├── 2023-08-veloVI-RNA-velocity-natmethods.md
-│       ├── 2023-11-TIGON-growth-dynamics-natmachintell.md
-│       ├── 2023-11-sciCSR-B-cell-dynamics-natmethods.md
-│       ├── 2024-03-DELVE-feature-selection-natcomm.md
-│       ├── 2024-05-CASi-timepoint-analysis-scireports.md
-│       └── 2024-06-CellRank2-fate-mapping-natmethods.md
+│   ├── dynamics-and-velocity
+│   │   ├── 2018-RNA-velocity-nature.md
+│   │   ├── 2020-01-FLOWMAP-trajectory-visualization-natprotocols.md
+│   │   ├── 2020-08-scVelo-RNA-velocity-natbiotech.md
+│   │   ├── 2021-05-PRESCIENT-generative-modeling-natcomm.md
+│   │   ├── 2022-11-UniTVelo-RNA-velocity-natcomm.md
+│   │   ├── 2023-08-veloVI-RNA-velocity-natmethods.md
+│   │   ├── 2023-11-TIGON-growth-dynamics-natmachintell.md
+│   │   ├── 2023-11-sciCSR-B-cell-dynamics-natmethods.md
+│   │   ├── 2024-03-DELVE-feature-selection-natcomm.md
+│   │   ├── 2024-05-CASi-timepoint-analysis-scireports.md
+│   │   └── 2024-06-CellRank2-fate-mapping-natmethods.md
+│   └── tools
+│       ├── 2023-12-SCimilarity-cell-search-tool-genentech.md
+│       └── 2024-08-GEARS-perturbations-natbiotech.md
 └── templates
     └── paper-summary-template.md
+
 ```
 
 # 📊 Paper Classification Guide
@@ -73,5 +77,5 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 21
-- Last Updated: 2024-11-21
+- Total Papers: 22
+- Last Updated: 2024-11-24
