@@ -35,6 +35,7 @@ I'll help summarize the research paper using the provided template.
 
 🔬 Technical Details
 Algorithm Framework
+![alt text](../../paper-figures/GEARS_model_architecture.png)
 
 
 1. Core Components:
