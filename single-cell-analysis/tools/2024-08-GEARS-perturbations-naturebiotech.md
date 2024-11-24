@@ -64,7 +64,7 @@ Implementation Details
 - CPA [https://github.com/facebookresearch/CPA]
 - pySCENIC (v0.12.0)
 
-### Data Resources & Knowledge Bases
+🗂️ Data Resources & Knowledge Bases
 1. Gene Expression Datasets (GEO Accession Numbers)
 - Dixit et al.: GSE90063
 - Adamson et al.: GSE90546
