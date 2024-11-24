@@ -37,7 +37,6 @@ I'll help summarize the research paper using the provided template.
 Algorithm Framework
 ![alt text](../../paper-figures/GEARS_model_architecture.png)
 
-
 1. Core Components:
    * Gene coexpression graph encoder
    * GO knowledge graph integration
@@ -55,11 +54,94 @@ Implementation Details
    * Code available at GitHub
    * Used deep learning frameworks
    * Integrated with gene ontology databases
+### Software & Libraries
+1. Primary Code Implementation
+- GitHub Repository: https://github.com/snap-stanford/GEARS
+- Results reproduction code: https://github.com/yhr91/gears_misc
+
+2. Dependencies & Other Packages Used
+- CellOracle (v0.12.0) [https://github.com/morris-lab/CellOracle]
+- CPA [https://github.com/facebookresearch/CPA]
+- pySCENIC (v0.12.0)
+
+### Data Resources & Knowledge Bases
+1. Gene Expression Datasets (GEO Accession Numbers)
+- Dixit et al.: GSE90063
+- Adamson et al.: GSE90546
+- Norman et al.: GSE133344
+- Jost et al.: GSE132080
+- Tian et al.: GSE124703
+- Replogle et al.: GSE146194
+- Horlbeck et al.: GSE116198
+
+2. Knowledge Graphs
+- Gene Ontology (GO) database
+- Gene coexpression networks
+- Pathway information
+
+### Model Architecture Components
+1. Neural Network Components
+- Graph Neural Networks (GNNs)
+- Multilayer Perceptrons (MLPs)
+- Gene-specific decoder layers
+- Cross-gene decoder layers
+
+2. Training Parameters
+- Used 5 different random train-test data splits (n=5)
+- For genetic interaction prediction: 3 different model runs (n=3)
+
+💻 Computational Tasks
+1. Main Computational Operations
+- Gene embedding initialization
+- Graph neural network processing
+- Perturbation effect prediction
+- Genetic interaction scoring
+
+2. Evaluation Metrics Computation
+- Mean squared error (MSE)
+- Pearson correlation
+- Precision@10
+- Uncertainty quantification
+
+### Statistical Analysis
+- One-sided t-tests for comparing distributions
+- Bonferroni correction for multiple hypothesis testing
+- Bootstrapped 95% confidence intervals
+- Hypergeometric distribution calculations
+
+### Visualization Tools
+- Generated UMAP representations
+- Created heatmaps for genetic interactions
+- Produced various statistical plots and figures
+
+### Data Processing
+1. Input Data Handling
+- Single-cell RNA sequencing data processing
+- Gene expression normalization
+- Perturbation set encoding
+
+2. Output Processing
+- Postperturbation state prediction
+- Genetic interaction score calculation
+- Uncertainty score computation
+
+### Documentation
+- Methods section in main paper
+- Supplementary notes (1-22)
+- Code documentation on GitHub
+- Online repositories for data access
 
 📊 Evaluation
 * Baseline Models:
   - CPA (existing deep learning approach)
-  - Gene regulatory network-based methods
+      - Based on deep neural networks trained on perturbational screens
+      - Directly maps genetic relationships into a latent space
+      - Skips the network inference step
+      - Requires each gene in combination to be experimentally perturbed before prediction
+  - Gene regulatory network-based methods, adapted from CellOracle
+      - Infers transcriptional relationships between genes
+      - Uses SCENIC algorithm for network construction
+      - Based on gene expression datasets
   - No perturbation baseline
 
 * Evaluation Metrics:
@@ -84,3 +166,5 @@ Limitations
 2. Successfully identifies different types of genetic interactions
 3. Could significantly reduce experimental costs in genetic studies
 4. Potential applications in personalized medicine and drug discovery
+
+
