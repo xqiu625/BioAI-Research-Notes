@@ -79,3 +79,9 @@ All paper figures are stored in the paper-figures/ directory and referenced rela
 ## 📊 Repository Stats
 - Total Papers: 22
 - Last Updated: 2024-11-24
+
+# Paper Analysis Repository
+
+This repository contains personal analyses and summaries of academic papers for educational purposes. All papers are properly cited and linked to their original publications. This is meant for academic discussion and learning.
+
+For official versions, please refer to the original publications through their respective journals.
