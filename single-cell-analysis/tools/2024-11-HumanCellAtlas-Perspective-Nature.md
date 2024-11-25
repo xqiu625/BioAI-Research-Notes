@@ -72,6 +72,26 @@ The paper presents five key perspectives on cell atlases:
 5. Need for continued focus on diversity and ethical considerations
 
 ## 💡 Personal Notes
+### Structural Components of SCFMs
+![alt text](../../paper-figures/Structural_Components_of_scfms.png)
+
+- Key Capabilities:
+
+  - A. Core Functions:
+
+    - Data integration across modalities
+    - Transfer learning between datasets
+    - Generation of missing modalities
+    - Prediction of cell states and features
+
+  - B. Advanced Features:
+
+    - Cross-species generalization
+    - Prediction of new cell types
+    - Generation of cell states from genetic profiles
+    - Integration across anatomical scales
+
+
 ### Research Ideas
 - Development of new computational methods for data integration
 - Creation of specialized foundation models for specific biological systems
@@ -81,3 +101,5 @@ The paper presents five key perspectives on cell atlases:
 ### Questions
 - What are the computational requirements for running these foundation models?
 - How can we validate predictions from foundation models?
+
+
