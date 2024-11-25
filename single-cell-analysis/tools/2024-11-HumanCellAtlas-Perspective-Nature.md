@@ -1,3 +1,8 @@
+# Paper Analysis: Human Cell Atlas
+> Analysis of "The Human Cell Atlas from a cell census to a unified foundation model" (Nature, 2024)
+
+This is a paper summary and analysis intended for educational purposes. For the official paper, please refer to the original publication.
+
 ## 📊 Paper Metadata
 - **Title:** The Human Cell Atlas from a cell census to a unified foundation model
 - **Authors:** Jennifer E. Rood, Samantha Wynne, Lucia Robson, Anna Hupalowska, John Randell, Sarah A. Teichmann & Aviv Regev
