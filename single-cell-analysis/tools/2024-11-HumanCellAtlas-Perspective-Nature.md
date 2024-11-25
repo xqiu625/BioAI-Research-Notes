@@ -72,7 +72,7 @@ The paper presents five key perspectives on cell atlases:
 5. Need for continued focus on diversity and ethical considerations
 
 ## 💡 Personal Notes
-### Structural Components of SCFMs
+### Structural Components of FMs
 ![alt text](../../paper-figures/Structural_Components_of_scfms.png)
 
 - Key Capabilities:
