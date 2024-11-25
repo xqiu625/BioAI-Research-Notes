@@ -74,6 +74,8 @@ The paper presents five key perspectives on cell atlases:
 ## 💡 Personal Notes
 ### Structural Components of FMs
 ![alt text](../../paper-figures/Structural_Components_of_scfms.png)
+*Figure: Self-created visualization of structural components described in the paper*
+
 
 - Key Capabilities:
 
