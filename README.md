@@ -63,11 +63,9 @@ BioAI-Research-Notes/
 - **Dynamics and Velocity**: RNA velocity, trajectory inference, cellular dynamics (e.g., scVelo, CellRank2)
 - **Disease Mechanisms**: Disease-specific cellular analysis
 
-
 ### 3. Drug Discovery
 - **Phenotypic Screening**: High-throughput screening methods
-- **Drug Response**: Drug effectiveness analysis
-- **Target Identification**: Methods for identifying drug targets
+- **Protein Disease Mechanisms**: Studies analyzing disease-causing protein variations and mechanisms
 
 ## File Naming Convention
 ```
