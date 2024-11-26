@@ -9,8 +9,10 @@ This repository contains summaries and critical analyses of research papers focu
 BioAI-Research-Notes/
 ├── README.md
 ├── drug-discovery
-│   └── phenotypic-screening
-│       └── 2024-01-compressed-phenotypic-screening-nature-biotech.md
+│   ├── phenotypic-screening
+│   │   └── 2024-01-compressed-phenotypic-screening-nature-biotech.md
+│   └── protein-disease-mechanisms
+│       └── 2024-11-Protein-Variant-Mislocalization-cell.md
 ├── foundation-models
 │   ├── methodology
 │   │   └── 2024-TIME-LLM-forecasting.md
@@ -41,7 +43,8 @@ BioAI-Research-Notes/
 │   │   └── 2024-06-CellRank2-fate-mapping-natmethods.md
 │   └── tools
 │       ├── 2023-12-SCimilarity-cell-search-tool-genentech.md
-│       └── 2024-08-GEARS-perturbations-natbiotech.md
+│       ├── 2024-08-GEARS-perturbations-natbiotech.md
+│       └── 2024-11-HumanCellAtlas-Perspective-Nature.md
 └── templates
     └── paper-summary-template.md
 
@@ -77,8 +80,8 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 22
-- Last Updated: 2024-11-24
+- Total Papers: 24
+- Last Updated: 2024-11-26
 
 ⚠️ Paper Analysis Repository
 
