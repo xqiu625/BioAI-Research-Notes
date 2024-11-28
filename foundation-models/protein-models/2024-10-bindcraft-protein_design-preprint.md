@@ -128,4 +128,5 @@
 
 
 ![alt text](../../paper-figures/Bindcraft_Workflow_Visualization.png)
-*Figure: Self-created workflow according to my understanding from the paper*
+
+*Figure: Self-created workflow according to my understanding of the paper*
