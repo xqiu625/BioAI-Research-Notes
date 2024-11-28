@@ -125,3 +125,7 @@
    - Bacterial expression system
    - SPR access
    - Structure visualization tools 
+
+
+![alt text](../../paper-figures/Bindcraft_Workflow_Visualization.png)
+*Figure: Self-created workflow according to my understanding from the paper*
