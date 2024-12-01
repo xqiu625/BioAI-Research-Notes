@@ -1,5 +1,3 @@
-Here's a summary of the paper using the template:
-
 📊 Paper Metadata
 * **Title:** Efficient generation of protein pockets with PocketGen
 * **Publication:** Nature Machine Intelligence (2024)
