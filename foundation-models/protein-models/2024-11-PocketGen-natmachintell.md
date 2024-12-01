@@ -19,6 +19,9 @@
 * Innovation: End-to-end generative approach with multi-scale modeling
 
 2. Results/Methods
+
+![alt text](../../paper-figures/pocketgen.png)
+
 * PocketGen Architecture: Bilevel graph transformer + sequence refinement
 * Technical Validation: Benchmarking on CrossDocked and Binding MOAD datasets
 * Applications: Case studies on therapeutic molecules (cortisol, apixaban, fentanyl)
