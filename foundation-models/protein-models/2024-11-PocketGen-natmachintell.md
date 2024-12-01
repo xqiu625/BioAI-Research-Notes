@@ -130,13 +130,14 @@ Structure:
     - Only updates coordinates for pocket residues and ligand, keeping other protein parts fixed
 
   Key Features:
-    1. E(3) Equivariance
+  
+    a) E(3) Equivariance
       - Maintains geometric consistency under rotations and translations
       - Critical for handling 3D molecular structures
-    2. Multi-scale Processing
+    b) Multi-scale Processing
       - Simultaneously processes atomic and residue-level information
       - Helps capture both local and global interaction patterns
-    3. Flexible Architecture
+    c) Flexible Architecture
       - Can handle varying numbers of atoms
       - Adaptable to different types of residues and ligands
 
