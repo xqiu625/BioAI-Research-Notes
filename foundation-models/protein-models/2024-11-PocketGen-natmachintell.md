@@ -143,3 +143,49 @@ Structure:
       - Can handle varying numbers of atoms
       - Adaptable to different types of residues and ligands
 
+## C. Example: Designing Protein Pocket for Apixaban (APX)
+  1. Background：
+
+    - APX is used to reduce stroke risk in patients with atrial fibrillation
+    - Target: Factor Xa (PDB ID: 2P16) - an enzyme crucial in blood clotting
+    - Goal: Design optimized binding pockets for APX
+
+  2. Process & Results
+
+Initial Setup:
+
+    - Used the reference protein-ligand complex (Factor Xa)
+    - PocketGen was pretrained on Binding MOAD dataset
+    - Excluded target complex from training data
+
+Interactions Generated:
+  
+    - Maintained key original interactions:
+      - Hydrophobic contacts
+      - Hydrogen bonds
+      - π-π stacking
+
+    - Added new favorable interactions:
+      - π-cation interaction with LYS192
+      - Additional hydrogen bonds
+
+    - Total interactions: 9 hydrophobic contacts, 5 hydrogen bonds, 2 π-interactions
+
+
+Performance Metrics:
+
+    - Success Rate: 40% of generated pockets showed higher affinity than reference
+    - Outperformed baseline methods (RFAA achieved only 10% success rate)
+    - Maintained structural stability (ΔΔG value of 0.92)
+
+
+Key Improvements:
+
+    - Enhanced binding affinity
+    - Maintained protein stability
+    - Added novel beneficial interactions
+    - Preserved critical binding features
+
+
+
+
