@@ -1,4 +1,3 @@
-# Research Paper Summary Template
 ## 📊 Paper Metadata
 - **Title:** How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities
 - **Authors:** Charlotte Bunne, Yusuf Roohani, Yanay Rosen, et al.
