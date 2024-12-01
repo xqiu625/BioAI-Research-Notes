@@ -69,7 +69,7 @@ Limitations
 4. Demonstrates value of combining structural and sequence information
 
 💡 Personal Notes
-## 1. Environment Setup
+## A. Environment Setup
 ### Hardware Requirements
 - NVIDIA GPU with CUDA support (11.6)
 - Recommended:
@@ -94,20 +94,21 @@ Limitations
    - PyYAML
    - LMDB
    ```
-## 2. Explain the bilevel graph transformer
+## B. Explain the bilevel graph transformer
 The bilevel graph transformer is a key architectural innovation in PocketGen designed to model complex protein-ligand interactions at multiple scales.
 
 Key Concept:
 The model represents the protein-ligand complex as a geometric graph of blocks (sets of atoms), allowing it to handle varying numbers of atoms across different residues and ligands.
 
 Structure:
-  1. Block Representation
-  - Each residue or ligand is treated as a block containing multiple atoms
-  - Each block has:
-    - Feature matrix Hi ∈ ℝni×dh (atom features)
-    - Coordinate matrix Xi ∈ ℝni×3 (3D coordinates)
-    - ni represents number of atoms in the block
-    - dh is the feature dimension
+  1. Block Representation:
+
+    a) Each residue or ligand is treated as a block containing multiple atoms
+    b) Each block has:
+      - Feature matrix Hi ∈ ℝni×dh (atom features)
+      - Coordinate matrix Xi ∈ ℝni×3 (3D coordinates)
+      - ni represents number of atoms in the block
+      - dh is the feature dimension
 
   2. Attention Mechanisms The transformer operates at two levels simultaneously:
    
@@ -125,9 +126,10 @@ Structure:
       - Formula: rij = (1^T Rij 1)/(ninj)
 
   3. The model updates both:
-    - Atom features (Hi)
-    - 3D coordinates (Xi)
-    - Only updates coordinates for pocket residues and ligand, keeping other protein parts fixed
+     
+    a) Atom features (Hi)
+    b) 3D coordinates (Xi)
+    c) Only updates coordinates for pocket residues and ligand, keeping other protein parts fixed
 
   Key Features:
   
