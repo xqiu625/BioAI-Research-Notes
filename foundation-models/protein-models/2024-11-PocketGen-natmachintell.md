@@ -69,7 +69,7 @@ Limitations
 4. Demonstrates value of combining structural and sequence information
 
 💡 Personal Notes
-* Environment Setup
+## 1. Environment Setup
 ### Hardware Requirements
 - NVIDIA GPU with CUDA support (11.6)
 - Recommended:
@@ -78,12 +78,12 @@ Limitations
   - Several GB storage for datasets/checkpoints
 
 ### Software Stack
-1. Core Requirements:
+  1. Core Requirements:
    - Python 3.8
    - PyTorch with CUDA
    - PyG (PyTorch Geometric)
 
-2. Key Dependencies:
+  2. Key Dependencies:
    ```
    - RDKit
    - OpenBabel 
@@ -94,14 +94,14 @@ Limitations
    - PyYAML
    - LMDB
    ```
-* Explain the bilevel graph transformer
+## Explain the bilevel graph transformer
 The bilevel graph transformer is a key architectural innovation in PocketGen designed to model complex protein-ligand interactions at multiple scales.
 
 Key Concept:
 The model represents the protein-ligand complex as a geometric graph of blocks (sets of atoms), allowing it to handle varying numbers of atoms across different residues and ligands.
 
 Structure:
-1. Block Representation
+  1. Block Representation
   - Each residue or ligand is treated as a block containing multiple atoms
   - Each block has:
     - Feature matrix Hi ∈ ℝni×dh (atom features)
@@ -109,33 +109,33 @@ Structure:
     - ni represents number of atoms in the block
     - dh is the feature dimension
 
-2. Attention Mechanisms The transformer operates at two levels simultaneously:
-a) Atom-level Attention
+  2. Attention Mechanisms The transformer operates at two levels simultaneously:
+  a) Atom-level Attention
   - Captures detailed interactions between individual atoms
   - Computes attention weights αij between atoms in different blocks
   - Uses distance and coordinate information
   - Formula: Rij = (1/√dr)(QiKj^T) + σD(RBF(Dij))
   - Sparse attention is used to focus on most relevant interactions
 
-b) Residue/Ligand-level Attention
+  b) Residue/Ligand-level Attention
   - Models higher-level interactions between entire residues or ligands
   - Aggregates atom-level interactions to block level
   - Uses βij attention weights between blocks
   - Formula: rij = (1^T Rij 1)/(ninj)
 
-3. The model updates both:
+  3. The model updates both:
   - Atom features (Hi)
   - 3D coordinates (Xi)
   - Only updates coordinates for pocket residues and ligand, keeping other protein parts fixed
 
-Key Features:
-1. E(3) Equivariance
-  - Maintains geometric consistency under rotations and translations
-  - Critical for handling 3D molecular structures
-2. Multi-scale Processing
-  - Simultaneously processes atomic and residue-level information
-  - Helps capture both local and global interaction patterns
-3. Flexible Architecture
-  - Can handle varying numbers of atoms
-  - Adaptable to different types of residues and ligands
+  Key Features:
+  1. E(3) Equivariance
+    - Maintains geometric consistency under rotations and translations
+    - Critical for handling 3D molecular structures
+  2. Multi-scale Processing
+    - Simultaneously processes atomic and residue-level information
+    - Helps capture both local and global interaction patterns
+  3. Flexible Architecture
+    - Can handle varying numbers of atoms
+    - Adaptable to different types of residues and ligands
 
