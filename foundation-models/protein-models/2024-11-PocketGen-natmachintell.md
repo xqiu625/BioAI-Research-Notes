@@ -94,7 +94,7 @@ Limitations
    - PyYAML
    - LMDB
    ```
-## Explain the bilevel graph transformer
+## 2. Explain the bilevel graph transformer
 The bilevel graph transformer is a key architectural innovation in PocketGen designed to model complex protein-ligand interactions at multiple scales.
 
 Key Concept:
