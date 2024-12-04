@@ -76,7 +76,7 @@
 3. Successfully generalizes across RNA families and types
 4. Demonstrates practical utility for RNA structure analysis and design
 
-💡 Personal Notes
+## 💡 Personal Notes
 A. Cd-hit:
   1. Training Dataset Preparation:
 - They used Cd-hit to cluster RNA sequences at 80% sequence similarity threshold
