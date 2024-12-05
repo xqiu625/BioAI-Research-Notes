@@ -69,19 +69,47 @@
 
 ## 💭 Critical Analysis
 ### Strengths
-1. Zero-shot learning capability
-2. Cross-species applicability
-3. No need for data annotations
+1. Zero-shot Cell Type Classification:
+- Can map new datasets into a universal embedding space without retraining
+- Works across different tissues and species
+- Maintains accuracy without requiring dataset-specific training
 
-### Limitations
-1. Doesn't use raw RNA transcript information
-2. Computationally intensive
-3. Requires significant GPU resources
+2. Cross-species Analysis:
+- Can analyze cell atlas data from different species
+- Doesn't require homologous gene identification
+- Works even for species not included in training data
 
-### Future Directions
-1. Integration of RNA splicing information
-2. Development of "Virtual Cells"
-3. Extension to other molecular modalities
+3. Integration and Batch Effect Handling:
+- Integrates diverse single-cell RNA sequencing datasets
+- Addresses batch effects and experimental artifacts
+- Creates unified representations across different experiments
+
+4. Cell Type Organization:
+- Creates biologically meaningful embeddings
+- Captures relationships between cell types
+- Reflects developmental lineages
+
+5. Novel Cell Type Discovery:
+- Can identify and characterize new cell types
+- Enables comparison with known cell types
+- Helps infer function of newly discovered cell types
+
+6. Disease Analysis:
+- Can study disease-specific cell states
+- Enables comparison across different disease conditions
+- Helps understand disease mechanisms
+
+7. Data Preprocessing:
+- Handles raw gene expression data
+- Doesn't require feature selection
+- Works with different gene sets
+
+These functions make UCE valuable for:
+- Cell type annotation
+- Cross-dataset analysis
+- Disease research
+- Developmental biology studies
+- Comparative genomics
 
 ## 📌 Key Takeaways
 1. Universal cell embeddings enable cross-species analysis
