@@ -14,6 +14,8 @@ BioAI-Research-Notes/
 │   └── protein-disease-mechanisms
 │       └── 2024-11-Protein-Variant-Mislocalization-cell.md
 ├── foundation-models
+│   ├── RNA-models
+│   │   └── 2024-11-RhoFold-RNA-3D-structure-prediction.md
 │   ├── methodology
 │   │   └── 2024-TIME-LLM-forecasting.md
 │   ├── protein-models
@@ -27,7 +29,10 @@ BioAI-Research-Notes/
 │       ├── 2024-02-scGPT-multiomics-foundation.md
 │       ├── 2024-04-CellPLM-cell-language-model.md
 │       ├── 2024-06-scFoundation-foundation-model-natmethods.md
+│       ├── 2024-07-scPRINT-cell-states-gene-network.md
+│       ├── 2024-08-Perturbation-Cell-Atlas-foundation-model-cell.md
 │       └── 2024-09-Virtual-Cell-AI-Framework-arxiv.md
+├── paper-figures
 ├── single-cell-analysis
 │   ├── disease-mechanisms
 │   │   ├── 2022-12-Active-Eosinophils-in-Colitis-nature.md
@@ -81,8 +86,8 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 28
-- Last Updated: 2024-11-30
+- Total Papers: 32
+- Last Updated: 2024-12-04
 
 ⚠️ Paper Analysis Repository
 
