@@ -25,11 +25,12 @@ BioAI-Research-Notes/
 │   │   └── 2024-11-PocketGen-protein-pocket-designnatmachintell.md
 │   └── single-cell-models
 │       ├── 2022-10-scBERT-cell-annotation-natmachintell.md
-│       ├── 2023-10-GenePT-foundation-model.md
-│       ├── 2024-02-scGPT-multiomics-foundation.md
-│       ├── 2024-04-CellPLM-cell-language-model.md
-│       ├── 2024-06-scFoundation-foundation-model-natmethods.md
-│       ├── 2024-07-scPRINT-cell-states-gene-network.md
+│       ├── 2023-10-GenePT-preprint.md
+│       ├── 2023-11-UCE-preprint.md
+│       ├── 2024-02-scGPT-multiomics-natmethods.md
+│       ├── 2024-04-CellPLM-openreview.md
+│       ├── 2024-06-scFoundation-natmethods.md
+│       ├── 2024-07-scPRINT-preprint.md
 │       ├── 2024-08-Perturbation-Cell-Atlas-foundation-model-cell.md
 │       └── 2024-09-Virtual-Cell-AI-Framework-arxiv.md
 ├── paper-figures
@@ -86,7 +87,7 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 32
+- Total Papers: 33
 - Last Updated: 2024-12-04
 
 ⚠️ Paper Analysis Repository
