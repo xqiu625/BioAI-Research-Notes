@@ -59,7 +59,7 @@ Implementation Details
    * scGPT
    * Various baseline methods
 
-##📌 Key Takeaways
+📌 Key Takeaways
 1. First large-scale foundation model specifically for gene network inference
 2. Outperforms existing methods on multiple benchmarks
 3. Demonstrates utility of multi-task pre-training
@@ -70,3 +70,44 @@ Implementation Insights
 * Novel use of attention mechanisms for network inference
 * Efficient scaling strategies for large datasets
 * Integration of biological priors in architecture
+
+### A. scPRINT on mouse data:
+    1. Processes mouse data through the same pipeline as human data
+    2. Successfully benchmarked on mouse embryonic stem cell datasets in the MCalla et al. ground truth evaluations
+    3. Uses ESM2 protein embeddings that work across species since proteins are highly conserved between mice and humans
+
+    The model handles mouse genes by:
+      - Mapping mouse gene symbols to their protein sequences using Ensembl
+      - Converting these into embeddings using ESM2
+      - Processing them through the same transformer architecture
+
+    The authors demonstrate this cross-species capability in their benchmarks, showing competitive performance on mouse datasets. This is particularly useful for researchers working with mouse models.
+
+### B. scPRINT's most unique and innovative function:
+    1. Cell Type Specificity:
+      -  Unlike traditional methods that produce one general network, scPRINT generates networks specific to each cell type or state
+      -  Can differentiate between healthy and disease cell states within the same cell type (as shown in their prostate cancer analysis)
+      
+    2. Implementation Innovation:
+      -  Uses a novel "multi-cell attention" mechanism that aggregates information across similar cells
+      -  Made computationally efficient enough to handle genome-wide networks (1-100,000 cells) on standard hardware
+      -  Can process networks of 2,200 to all expressed genes in a cell
+      
+    3. Head Selection Method:
+      - Introduces a unique way to select relevant attention heads for specific biological contexts
+      - Can fine-tune the network generation for different types of interactions (e.g., protein-protein, transcription factor binding)
+
+    4. This functionality is particularly unique because it:
+      - Doesn't require additional training (zero-shot)
+      - Works across species
+      - Scales to genome-wide analysis
+      - Maintains biological interpretability
+      - Operates on commodity hardware
+      
+### C. Types of Gene Networks that scPRINT can infer:
+      -Gene-to-Gene Interactions
+      -Transcription Factor (TF) to Gene relationships
+      -Cell type-specific networks
+      -Disease-state specific networks
+
+    
