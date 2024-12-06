@@ -105,4 +105,41 @@ A. The key tools, software, and databases mentioned in the paper:
 	5. Software Mentioned in Baselines:
 	- **PROTSEED**: Used as a baseline for comparison
 	- **ESM2+EGNN**: Combined approach used as baseline
+B. Systematic workflow for designing an enzyme using EnzyGen:
 
+	1. Input Preparation:
+	- Select target enzyme family from EC tree classification (e.g., 1.1.1.1 for alcohol dehydrogenase)
+	- Identify functionally important sites using multiple sequence alignment (MSA)
+	  - Use ClustalW2 for MSA analysis 
+	  - Apply 30% identity threshold to identify conserved sites
+	- Define target substrate molecule
+	
+	2. EnzyGen Model Application:
+	- Feed inputs into EnzyGen:
+	  - Enzyme family tags (all 4 levels from EC tree)
+	  - Functionally important sites and their 3D coordinates
+	  - Substrate representation
+	- Generate:
+	  - Complete enzyme sequence
+	  - 3D backbone structure
+	  - Enzyme-substrate binding prediction
+	
+	3. Evaluation & Validation:
+	- Assess computational metrics:
+	  - ESP score (>0.6 indicates positive binding)
+	  - Substrate binding affinity (lower is better)
+	  - AlphaFold2 pLDDT score (>80 indicates good structure)
+	- Generate multiple candidates and rank by performance
+	- Select top candidates meeting all criteria
+	
+	4. Quality Checks:
+	- Verify structural quality using AlphaFold2
+	- Check sequence novelty via Uniprot blastp search
+	- Assess substrate binding using Gnina
+	- Look for polar contacts in enzyme-substrate complex
+	
+	5. Experimental Validation:
+	- Synthesize designed enzyme
+	- Test catalytic activity
+	- Verify substrate binding
+	- Measure structural stability
