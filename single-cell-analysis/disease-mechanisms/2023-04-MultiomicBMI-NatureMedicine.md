@@ -86,6 +86,133 @@
 
 ## 💡 Personal Notes
 ### Research Impact
-- Demonstrates the value of multiomics in understanding complex health conditions
-- Provides framework for improved metabolic health assessment
-- Opens possibilities for personalized intervention strategies
+A. Key biomarkers identified in this study from multiple omic platforms:
+
+	1. Strongest Predictive Proteins:
+	- Positive predictors:
+	   * Leptin (LEP)
+	   * Adrenomedullin (ADM)
+	   * Fatty acid-binding protein 4 (FABP4)
+	
+	- Negative predictors:
+	   * Insulin-like growth factor-binding protein 1 (IGFBP1)  
+	   * Advanced glycosylation end-product-specific receptor (AGER/RAGE)
+	
+	2. Top Single Analyte BMI Predictors:
+	- Only three analytes explained >30% BMI variance individually:
+	   * Leptin (37.9% variance explained)
+	   * FABP4 
+	   * Interleukin 1 receptor antagonist (IL1RN)
+	
+	3. Key Metabolites:
+	- Sphingolipid metabolism
+	- Phospholipid metabolism
+	- Amino acids:
+	   * Homoarginine 
+	   * Phenyllactate (PLA)
+	   * 2-oxoarginine
+	
+	4. Clinical Laboratory Tests:
+	- Insulin
+	- HOMA-IR
+	- HDL cholesterol
+	- Triglycerides
+	- High-sensitivity CRP
+	- Glucose
+	- HbA1c
+	- Adiponectin
+	
+	Important characteristics:
+	1. These biomarkers performed better in combination than individually
+	2. The metabolomic markers showed faster response to lifestyle interventions
+	3. Proteomic markers showed more resistance to change
+	4. The combination of markers could better identify metabolically healthy/unhealthy individuals regardless of BMI
+
+B. Framework components of this study:
+
+	1. Study Design Framework:
+	```mermaid
+	graph TD
+	    A[Participant Cohorts] --> B[Main Cohort: Arivale n=1,277]
+	    A --> C[Validation Cohort: TwinsUK n=1,834]
+	    B --> D[Data Collection]
+	    C --> D
+	    D --> E[Multi-omics Data Integration]
+	    E --> F[Machine Learning Models]
+	    F --> G[Clinical Validation & Application]
+	```
+	
+	2. Multi-omics Data Collection Framework:
+	- Blood Analytics:
+	  * Metabolomics (766 metabolites)
+	  * Proteomics (274 proteins)
+	  * Clinical labs (71 tests)
+	- Supporting Data:
+	  * Genetic information
+	  * Gut microbiome profiles
+	  * Physical activity data
+	  * Health/lifestyle questionnaires
+	
+	3. Machine Learning Framework:
+	```mermaid
+	graph LR
+	    A[Input Data] --> B[LASSO Modeling]
+	    B --> C[10-fold Cross-validation]
+	    B --> D[Individual Models]
+	    D --> E[MetBMI/Metabolomics]
+	    D --> F[ProtBMI/Proteomics]
+	    D --> G[ChemBMI/Clinical Labs]
+	    D --> H[CombiBMI/Combined]
+	    E & F & G & H --> I[Model Evaluation]
+	```
+	
+	4. Analysis Framework:
+	- Cross-sectional Analysis:
+	  * Baseline measurements
+	  * Model development
+	  * Phenotype characterization
+	
+	- Longitudinal Analysis:
+	  * Lifestyle intervention responses
+	  * Temporal changes in biomarkers
+	  * Network dynamics
+	
+	5. Validation Framework:
+	- Internal Validation:
+	  * Cross-validation
+	  * Robustness testing
+	  * Feature importance analysis
+	
+	- External Validation:
+	  * TwinsUK cohort
+	  * Gut microbiome validation
+	  * Clinical phenotype validation
+
+	6. Clinical Application Framework:
+	```mermaid
+	graph TD
+	    A[Patient Assessment] --> B[Blood Sample Collection]
+	    B --> C[Multi-omic Analysis]
+	    C --> D[Machine Learning Prediction]
+	    D --> E[Metabolic Health Classification]
+	    E --> F[Personalized Intervention]
+	    F --> G[Response Monitoring]
+	```
+	
+	This comprehensive framework allows for:
+	1. Robust biomarker identification
+	2. Reliable health state prediction
+	3. Personalized intervention planning
+	4. Treatment response monitoring
+	5. Clinical validation
+	6. Reproducible methodology
+	
+	The framework's strength lies in its:
+	- Integration of multiple data types
+	- Validation at multiple levels
+	- Clinical applicability
+	- Scalability
+	- Reproducibility
+	- Adaptability to other health conditions
+
+
