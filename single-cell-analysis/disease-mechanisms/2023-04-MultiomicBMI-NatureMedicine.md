@@ -132,7 +132,6 @@ B. Framework components of this study:
 
 	1. Study Design Framework:
 	```
-	graph TD
 	    A[Participant Cohorts] --> B[Main Cohort: Arivale n=1,277]
 	    A --> C[Validation Cohort: TwinsUK n=1,834]
 	    B --> D[Data Collection]
@@ -155,7 +154,6 @@ B. Framework components of this study:
 	
 	3. Machine Learning Framework:
 	```
-	graph LR
 	    A[Input Data] --> B[LASSO Modeling]
 	    B --> C[10-fold Cross-validation]
 	    B --> D[Individual Models]
@@ -190,7 +188,7 @@ B. Framework components of this study:
 
 	6. Clinical Application Framework:
 	```	    
- A[Patient Assessment] --> B[Blood Sample Collection]
+	 A[Patient Assessment] --> B[Blood Sample Collection]
 	    B --> C[Multi-omic Analysis]
 	    C --> D[Machine Learning Prediction]
 	    D --> E[Metabolic Health Classification]
