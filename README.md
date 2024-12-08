@@ -8,20 +8,23 @@ This repository contains summaries and critical analyses of research papers focu
 ```
 BioAI-Research-Notes/
 ├── README.md
-├── drug-discovery
-│   ├── phenotypic-screening
-│   └── protein-disease-mechanisms
-├── foundation-models
-│   ├── RNA-models
-│   ├── methodology
-│   ├── protein-models
-│   └── single-cell-models
+├── computational-approaches
+│   ├── foundation-models
+│   │   ├── RNA-models
+│   │   ├── methodology
+│   │   ├── protein-models
+│   │   └── single-cell-models
+│   └── single-cell-analysis
+│       ├── disease-mechanisms
+│       ├── dynamics-and-velocity
+│       └── tools
+├── engineering-approaches
+│   ├── drug-discovery
+│   │   ├── phenotypic-screening
+│   │   └── protein-disease-mechanisms
+│   └── synthetic-biology
 ├── paper-figures
-├── single-cell-analysis
-│   ├── disease-mechanisms
-│   ├── dynamics-and-velocity
 └── templates
-    └── paper-summary-template.md
 
 ```
 
@@ -53,8 +56,8 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 36
-- Last Updated: 2024-12-07
+- Total Papers: 37
+- Last Updated: 2024-12-08
 
 ⚠️ Paper Analysis Repository
 
