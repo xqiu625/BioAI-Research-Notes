@@ -131,7 +131,7 @@ A. Key biomarkers identified in this study from multiple omic platforms:
 B. Framework components of this study:
 
 	1. Study Design Framework:
-	```mermaid
+	```
 	graph TD
 	    A[Participant Cohorts] --> B[Main Cohort: Arivale n=1,277]
 	    A --> C[Validation Cohort: TwinsUK n=1,834]
@@ -154,7 +154,7 @@ B. Framework components of this study:
 	  * Health/lifestyle questionnaires
 	
 	3. Machine Learning Framework:
-	```mermaid
+	```
 	graph LR
 	    A[Input Data] --> B[LASSO Modeling]
 	    B --> C[10-fold Cross-validation]
@@ -189,9 +189,8 @@ B. Framework components of this study:
 	  * Clinical phenotype validation
 
 	6. Clinical Application Framework:
-	```mermaid
-	graph TD
-	    A[Patient Assessment] --> B[Blood Sample Collection]
+	```	    
+ A[Patient Assessment] --> B[Blood Sample Collection]
 	    B --> C[Multi-omic Analysis]
 	    C --> D[Machine Learning Prediction]
 	    D --> E[Metabolic Health Classification]
