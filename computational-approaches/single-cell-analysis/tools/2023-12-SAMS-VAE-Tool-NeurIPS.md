@@ -98,6 +98,7 @@
 ## 💡 Personal Notes
 
 A. What Makes SAMS-VAE Special:
+
   1. **Additive Embedding Structure:**
 - Imagine each cell's representation (zi) as: zi = ziᵇ + ziᵖ
 - ziᵇ: base state (natural cell variation)
