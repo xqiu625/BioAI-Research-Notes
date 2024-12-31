@@ -14,8 +14,7 @@
 
 ## 📋 Paper Structure
 
-![Framework](../../../paper-figures/Modeling Cellular Perturbations with the Sparse Additive Mechanism Shift Variational Autoencoder.png)
-
+![Framework](../../../paper-figures/sams-vae-framework.png)
 
 ### 1. Introduction
 - Background: Need for modeling cellular responses to diverse interventions in drug discovery
