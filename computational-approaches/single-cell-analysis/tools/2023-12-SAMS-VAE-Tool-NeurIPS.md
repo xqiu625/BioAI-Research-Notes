@@ -14,6 +14,8 @@
 
 ## 📋 Paper Structure
 
+
+
 ### 1. Introduction
 - Background: Need for modeling cellular responses to diverse interventions in drug discovery
 - Problem: Existing models lack effective combination of compositionality, disentanglement, and interpretability
@@ -86,11 +88,6 @@
 1. Requires careful tuning of sparsity parameters
 2. Computational complexity of inference
 3. Limited to binary dosage scenarios
-
-### Future Directions
-1. Integration of prior biological knowledge
-2. Extension to more complex perturbation interactions
-3. Application to other data modalities
 
 ## 📌 Key Takeaways
 1. SAMS-VAE effectively combines compositionality, disentanglement, and interpretability
