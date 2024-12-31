@@ -104,7 +104,7 @@ https://github.com/gifford-lab/prescient
     - 提出未来的拓展方向,如整合谱系示踪数据和RNA速度信息
     - 在设计分化方案和遗传筛选中的应用
 ## Algorithm framework 
-![PRESCIENT Framework](../../paper-figures/PRESCIENT.png)
+![PRESCIENT Framework](../../../paper-figures/PRESCIENT.png)
 
 a. 现有的单细胞发育模型可以描述为在伪时间或实际时间（x轴）中运行，并根据它们对基础分化过程的建模程度（y轴）进行分类。PRESCIENT用红色突出显示。
 
