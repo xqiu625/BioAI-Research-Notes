@@ -14,7 +14,7 @@
 
 ## 📋 Paper Structure
 
-![poster](../../../paper-figures/Modeling Cellular Perturbations with the Sparse Additive Mechanism Shift Variational Autoencoder.png)
+![Framework](../../../paper-figures/Modeling Cellular Perturbations with the Sparse Additive Mechanism Shift Variational Autoencoder.png)
 
 
 ### 1. Introduction
