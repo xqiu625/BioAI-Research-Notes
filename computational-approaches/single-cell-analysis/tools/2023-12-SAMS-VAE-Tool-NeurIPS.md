@@ -96,6 +96,39 @@
 4. Advances the field of machine learning-driven scientific discovery
 
 ## 💡 Personal Notes
-- The paper represents a significant advance in modeling cellular perturbations
-- The combination of sparsity and additive effects is particularly elegant
-- The evaluation framework could be valuable for other biological machine learning applications
+- What Makes SAMS-VAE Special:
+  1. **Additive Embedding Structure:**
+- Imagine each cell's representation (zi) as: zi = ziᵇ + ziᵖ
+- ziᵇ: base state (natural cell variation)
+- ziᵖ: perturbation effects (changes from treatments)
+- Like having a "before" and "what changed" picture for each cell
+  2. **Sparse Mechanism Shifts:**
+- Uses a clever masking system (mt) that identifies which parts of the cell actually change
+- Instead of assuming every treatment affects everything, it pinpoints specific changes
+- Example: If you add Drug A, maybe only 20% of cell features actually change
+  3. **Smart Composition for Multiple Treatments:**
+- Can predict what happens when you combine treatments
+- Unlike simpler models that treat each combination as brand new
+- Example: If you know how Drug A and Drug B work separately, it can predict what happens when you use both
+
+Key Embedding Components:
+
+```
+Treatment Effects = Σ di,t(et ⊙ mt)
+where:
+- et: embedding showing how a treatment changes cells
+- mt: binary mask showing which parts change
+- di,t: whether treatment t was applied
+- ⊙: element-wise multiplication
+```
+
+Real-World Example:
+- Think of studying cancer treatments
+- Traditional: Must test every possible drug combination
+- SAMS-VAE: Learn from single drug responses, then predict combinations
+- Saves time and resources in drug development
+
+It creates interpretable, composable embeddings that:
+1. Show which cell parts are affected (through masks)
+2. Can predict combination effects
+3. Separate natural cell variation from treatment effects
