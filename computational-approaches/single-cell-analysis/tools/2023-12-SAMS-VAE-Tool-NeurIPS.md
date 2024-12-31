@@ -99,21 +99,21 @@
 
 A. What Makes SAMS-VAE Special:
 
-  1. **Additive Embedding Structure:**
-- Imagine each cell's representation (zi) as: zi = ziᵇ + ziᵖ
-- ziᵇ: base state (natural cell variation)
-- ziᵖ: perturbation effects (changes from treatments)
-- Like having a "before" and "what changed" picture for each cell
+1. **Additive Embedding Structure:**
+  - Imagine each cell's representation (zi) as: zi = ziᵇ + ziᵖ
+  - ziᵇ: base state (natural cell variation)
+  - ziᵖ: perturbation effects (changes from treatments)
+  - Like having a "before" and "what changed" picture for each cell
 
-  2. **Sparse Mechanism Shifts:**
-- Uses a clever masking system (mt) that identifies which parts of the cell actually change
-- Instead of assuming every treatment affects everything, it pinpoints specific changes
-- Example: If you add Drug A, maybe only 20% of cell features actually change
+2. **Sparse Mechanism Shifts:**
+  - Uses a clever masking system (mt) that identifies which parts of the cell actually change
+  - Instead of assuming every treatment affects everything, it pinpoints specific changes
+  - Example: If you add Drug A, maybe only 20% of cell features actually change
 
-  3. **Smart Composition for Multiple Treatments:**
-- Can predict what happens when you combine treatments
-- Unlike simpler models that treat each combination as brand new
-- Example: If you know how Drug A and Drug B work separately, it can predict what happens when you use both
+3. **Smart Composition for Multiple Treatments:**
+  - Can predict what happens when you combine treatments
+  - Unlike simpler models that treat each combination as brand new
+  - Example: If you know how Drug A and Drug B work separately, it can predict what happens when you use both
 
 Key Embedding Components:
 
