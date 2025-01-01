@@ -3,6 +3,7 @@
 - Authors: Brian L. Hie, Kevin K. Yang, Peter S. Kim
 - Journal: Cell Systems
 - Publication Date: April 20, 2022
+- https://pubmed.ncbi.nlm.nih.gov/35120643/ 
 
 ## 🔄 Key Scientific Insights
 ### 1. Conceptual Innovation
