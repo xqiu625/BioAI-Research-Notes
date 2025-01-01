@@ -1,5 +1,5 @@
 ## 📊 Paper Metadata
-- **Title**: Modeling Cellular Perturbations with the Sparse Additive Mechanism Shift Variational Autoencoder (Protenix)
+- **Title**: Protenix A Reproduction of AlphaFold3
 - **Authors**: ByteDance AML AI4Science Team
 - **Publication**: Technical Report (November 9, 2024)
 - **Institution**: ByteDance
