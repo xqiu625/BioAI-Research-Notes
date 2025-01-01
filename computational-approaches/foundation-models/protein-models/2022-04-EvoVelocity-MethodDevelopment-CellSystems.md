@@ -13,6 +13,10 @@
 - Provides insights into viral immune escape, protein family evolution, and horizontal gene transfer
 
 ### 2. Methodological Framework
+
+[Evo-velocity](../../../paper-figures/Evo-velocity.png)
+
+
 - Uses ESM-1b language model trained on 27M UniRef50 sequences
 - Constructs sequence similarity networks and assigns directional scores
 - Applies diffusion analysis to identify evolutionary roots and order sequences
