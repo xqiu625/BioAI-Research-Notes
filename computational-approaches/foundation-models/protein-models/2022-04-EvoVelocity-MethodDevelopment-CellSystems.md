@@ -18,6 +18,23 @@
 (D) Evo-velocity uses language model likelihoods to assign a directionality to edges in a sequence similarity network, enabling downstream analysis, such as
 predicting root nodes, ordering nodes in pseudotime, and identifying the mutations associated with the largest changes in evo-velocity
 
+左侧部分 - 从局部到全局的预测过程：
+
+- 首先计算不同序列突变之间的似然度差异（Different mutational likelihoods）
+- 根据似然度预测进化方向（Predict directionality）
+- 将局部预测整合成一个有向网络结构（Direct network edges）
+
+右侧部分 - 下游分析（Downstream analysis）包括三个关键步骤：
+
+- 推断进化根源（Infer roots）：找到序列的起源点
+- 计算伪时间排序（Order in pseudotime）：根据进化距离对序列进行时间上的排序
+- 识别关键突变（Identify mutations）：例如图中展示的 S→I 突变
+
+这个方法的创新之处在于它能够将局部的序列变化信息（Local）整合成全局的进化图景（Global），从而预测蛋白质的进化动态。通过语言模型计算的似然度作为指导，可以确定序列之间的进化方向和关系。
+
+图中用蓝色圆圈代表不同的序列状态，箭头表示预测的进化方向，颜色梯度（从蓝到红）表示在伪时间上的进展。整体展示了从微观的序列变化到宏观的进化动态的分析过程。
+
+
 - Uses ESM-1b language model trained on 27M UniRef50 sequences
 - Constructs sequence similarity networks and assigns directional scores
 - Applies diffusion analysis to identify evolutionary roots and order sequences
