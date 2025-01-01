@@ -14,8 +14,9 @@
 
 ### 2. Methodological Framework
 
-[Evo-velocity](../../../paper-figures/Evo-velocity.png)
-
+![Evo-velocity](../../../paper-figures/Evo-velocity.png)
+(D) Evo-velocity uses language model likelihoods to assign a directionality to edges in a sequence similarity network, enabling downstream analysis, such as
+predicting root nodes, ordering nodes in pseudotime, and identifying the mutations associated with the largest changes in evo-velocity
 
 - Uses ESM-1b language model trained on 27M UniRef50 sequences
 - Constructs sequence similarity networks and assigns directional scores
