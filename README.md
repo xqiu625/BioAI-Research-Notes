@@ -47,7 +47,7 @@ BioAI-Research-Notes/
 
 ## File Naming Convention
 ```
-YYYY-MM-[Name]-[Type]-[Journal].md
+YYYY-MM-[Method Name]-[Study Type]-[Journal].md
 ```
 Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 
