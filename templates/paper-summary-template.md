@@ -1,7 +1,12 @@
 # Research Paper Summary Template
 
 ## 📊 Paper Metadata
-[Previous metadata remains the same]
+Title: 
+Authors: 
+Publication: 
+Institution: 
+Paper Link: 
+Code/Data: 
 
 ## 🔄 Key Scientific Insights
 
