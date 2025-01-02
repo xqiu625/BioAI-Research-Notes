@@ -56,8 +56,8 @@ Example: `2024-06-scFoundation-foundation-model-natmethods.md`
 All paper figures are stored in the paper-figures/ directory and referenced relatively in markdown files.
 
 ## 📊 Repository Stats
-- Total Papers: 37
-- Last Updated: 2024-12-08
+- Total Papers: 44
+- Last Updated: 2025-01-02
 
 ⚠️ Paper Analysis Repository
 
