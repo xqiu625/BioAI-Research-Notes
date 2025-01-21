@@ -167,3 +167,52 @@ Let me break down the baseline models, evaluation metrics, and datasets used in 
 - Balance between stability and activity
 - Proper experimental validation
 - Statistical rigor in analysis
+
+![Model Overview](../../../paper-figures/2024-11-PRIME_temperature_guided_LLM-sciadv_1.png)
+![Model Overview](../../../paper-figures/2024-11-PRIME_temperature_guided_LLM-sciadv_2.png)
+
+### A. The Basic Architecture 🏗️
+Think of PRIME like a smart protein-reading machine with three main parts:
+
+1. **Main Brain (BERT-oriented transformer encoder)**:
+   - This is like the central processing unit
+   - It learns to understand protein sequences, kind of like how we understand sentences
+
+2. **Two Special Modules**:
+   - **MLM Module**: Like a word prediction game - it learns to guess missing amino acids
+   - **OGT Module**: Predicts the optimal temperature where the protein works best
+
+3. **Three Ways of Learning**:
+   - **MLM Loss**: Measures how good it is at predicting amino acids
+   - **OGT Loss**: Checks how accurate its temperature predictions are
+   - **Correlation Loss**: Makes sure its predictions make sense together
+
+### B. Temperature Prediction 🌡️
+Imagine you have a new protein sequence:
+- PRIME can predict what temperature this protein likes best
+- It can learn from different types of temperature data
+- Useful for finding proteins that work well at high temperatures
+
+### C. Mutation Scoring 🎯
+This is like spell-checking for proteins:
+1. Takes a normal (wild-type) protein sequence
+2. When you want to change one amino acid (mutation)
+3. PRIME calculates whether this change is likely to be good or bad
+4. Uses math (log-odds ratio) to give each mutation a score
+
+### D. Making Multiple Changes 🔄
+This is like a step-by-step recipe:
+1. First, try single changes and pick the best ones
+2. Test these in the lab
+3. Use these results to make PRIME even smarter
+4. Then predict which combinations of changes might work best
+5. Test the best combinations in the lab
+
+Think of it like cooking:
+- First, you try changing one ingredient at a time
+- Learn what works
+- Then try combining the successful changes
+- Finally, test your best recipes
+
+
+
