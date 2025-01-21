@@ -5,6 +5,7 @@
 - Institution: Shanghai Jiao Tong University and collaborating institutions
 - Code/Data: Available at https://github.com/ai4protein/Pro-Prime
 - Paper Link: DOI: 10.1126/sciadv.adr2641
+- Date: 2025-01-18
 
 ## 🔄 Key Scientific Insights
 ### 1. Conceptual Innovation
