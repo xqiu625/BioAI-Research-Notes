@@ -70,7 +70,7 @@
 
 ## Workflow
 ## 📋 Model Overview
-![TimeLLM Model Overview](../../paper-figures/TimeLLM_framework.png)
+![TimeLLM Model Overview](../../../paper-figures/TimeLLM_framework.png)
 
 给定一个输入时间序列，我们首先通过**(1) 补丁化和(2) 定制嵌入层对数据进行标记和嵌入处理。接着，将这些补丁嵌入与浓缩的文本原型进行重新编程，以对齐两种模态。为增强LLM的推理能力，(3) 我们在输入中添加额外的提示前缀**，以引导输入补丁的转换过程。(4) 最终，来自LLM的输出补丁被投影以生成预测结果。
 
