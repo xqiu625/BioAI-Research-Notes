@@ -94,7 +94,7 @@
    - 可视化细胞和基因嵌入，分析模型学到的表示
 
  ## Algorithm framework 
-![alt text](../../paper-figures/cellPLM.png)
+![alt text](../../../paper-figures/cellPLM.png)
 
 CellPLM在大量的scRNA-seq和空间转录组学数据（总计超过1000万个细胞）上，通过细胞级掩码语言模型任务进行预训练。模型架构由四个关键模块组成：
 
