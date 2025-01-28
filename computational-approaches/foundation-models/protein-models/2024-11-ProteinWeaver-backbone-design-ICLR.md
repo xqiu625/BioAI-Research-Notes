@@ -1,9 +1,8 @@
 ## 📊 Paper Metadata
 - Title: ProteinWeaver: A Divide-and-Assembly Approach for Protein Backbone Design
 - Authors: Yiming Ma, Fei Ye, Yi Zhou, Zaixiang Zheng, Dongyu Xue, Quanquan Gu
-- Publication: ICLR 2025 (Conference Paper)
 - Institution: ByteDance Research
-- Paper Link: arXiv:2411.16686v1
+- Paper Link: [arXiv:2411.16686v1](https://arxiv.org/abs/2411.16686)
 - Code/Data: Not specified
 - Date: 2025-01-27
 
