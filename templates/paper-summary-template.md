@@ -6,7 +6,8 @@
 - Publication: 
 - Institution: 
 - Paper Link: 
-- Code/Data: 
+- Code/Data:
+- Date:
 
 ## 🔄 Key Scientific Insights
 
