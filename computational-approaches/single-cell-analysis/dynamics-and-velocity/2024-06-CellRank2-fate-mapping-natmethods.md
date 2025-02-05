@@ -59,7 +59,7 @@ https://github.com/theislab/cellrank
         - 基于估计的动力学参数构建速度场
         - 利用VelocityKernel转化为转移矩阵
 
-![alt text](../../paper-figures/CellRank2_kernelchoice.png)
+![alt text](../../../paper-figures/CellRank2_kernelchoice.png)
 
 3. 利用estimators分析转移矩阵
     - 应用广义Perron聚类分析(GPCCA)识别初始态、中间态和终末态
