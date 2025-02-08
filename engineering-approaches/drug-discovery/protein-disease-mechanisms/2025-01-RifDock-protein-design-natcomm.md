@@ -1,5 +1,3 @@
-Let me help summarize this research paper using the template.
-
 ## 📊 Paper Metadata
 - Title: De novo design of protein minibinder agonists of TLR3
 - Authors: Chloe S. Adams, Hyojin Kim, Abigail E. Burtner, et al.
