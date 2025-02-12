@@ -127,6 +127,6 @@
    - Structure visualization tools 
 
 
-![alt text](../../paper-figures/Bindcraft_Workflow_Visualization.png)
+![alt text](../../../paper-figures/Bindcraft_Workflow_Visualization.png)
 
 *Figure: Self-created workflow according to my understanding of the paper*
