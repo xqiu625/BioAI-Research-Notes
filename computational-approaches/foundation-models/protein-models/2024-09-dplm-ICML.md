@@ -1,4 +1,3 @@
-I'll help organize the key information from this paper using the provided template structure.
 
 ## 📊 Paper Metadata
 - **Title:** Diffusion Language Models Are Versatile Protein Learners
