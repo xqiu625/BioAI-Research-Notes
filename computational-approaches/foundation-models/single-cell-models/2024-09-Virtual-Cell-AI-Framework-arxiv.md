@@ -71,4 +71,4 @@
 3. Universal representations and Virtual Instruments provide a framework for implementation
 4. Emphasis on responsible development and ethical considerations
 
-![alt text](../../paper-figures/AIVC.png)
+![alt text](../../../paper-figures/AIVC.png)
