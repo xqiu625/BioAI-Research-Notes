@@ -5,8 +5,9 @@
 2. Computational Approaches/Foundation Models/RNA-models (1):
 - 2024-11-RhoFold-RNA-3D-structure-prediction.md
 
-3. Computational Approaches/Foundation Models/Methodology (1):
+3. Computational Approaches/Foundation Models/Methodology (2):
 - 2024-TIME-LLM-forecasting.md
+- 2024-11-NucleotideTransformer-BenchmarkEvaluation-NatureMethods.md
 
 4. Computational Approaches/Foundation Models/Protein-models (12):
 - 2022-04-EvoVelocity-MethodDevelopment-CellSystems.md
