@@ -20,7 +20,7 @@
 
 2. Results/Methods
 
-![alt text](../../paper-figures/pocketgen.png)
+![alt text](../../../paper-figures/pocketgen.png)
 
 * PocketGen Architecture: Bilevel graph transformer + sequence refinement
 * Technical Validation: Benchmarking on CrossDocked and Binding MOAD datasets
