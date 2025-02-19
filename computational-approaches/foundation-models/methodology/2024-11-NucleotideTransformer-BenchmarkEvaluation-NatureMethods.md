@@ -36,6 +36,8 @@
 
 ## 🔬 Critical Technical Details
 
+![Overview of NT training](../../../paper-figures/Nucleotide_Transformer.png)
+
 ### 1. Model Architecture and Training
 - Encoder-only transformer architecture
 - 6-mer tokenization (vocabulary of 4,104 tokens)
