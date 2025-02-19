@@ -12,6 +12,22 @@
 ### 1. Conceptual Innovation
 - Development of transformer-based foundation models (Nucleotide Transformer) pre-trained on DNA sequences
 - Models can learn context-specific representations of nucleotide sequences without task-specific supervision
+```
+这些模型能够在没有针对特定任务进行专门训练（没有任务特定监督）的情况下，学习到核苷酸序列的上下文特定表示。
+
+详细解释：
+
+1. **无需任务特定监督**：传统的深度学习方法通常需要大量带标签的数据来训练模型完成特定任务（如预测启动子、增强子或剪接位点）。这种方法被称为"有监督学习"，因为模型是在明确知道"正确答案"的情况下学习的。
+
+2. **上下文特定表示**：这些模型能够理解DNA序列中核苷酸的上下文含义。例如，同一个核苷酸序列在不同基因环境中可能有不同的功能，模型可以捕捉到这种差异。这些表示（也称为嵌入或embeddings）编码了序列的生物学特性和功能信息。
+
+3. **自监督学习方法**：Nucleotide Transformer使用了类似于BERT的掩码语言建模方法，通过预测被遮盖的核苷酸来学习DNA的通用表示。这种预训练方式不需要任何特定功能的标注数据。
+
+4. **迁移学习潜力**：这种通用表示可以被"迁移"到各种下游任务，如启动子预测、增强子预测、剪接位点识别等，只需少量的微调或简单的探测。
+
+简单类比：这就像一个人通过大量阅读各类文章学习了语言的一般规律，然后可以将这种理解应用到写作、翻译、文法分析等特定任务上，而不需要为每项任务从头学习语言。
+```
+  
 - Models acquire knowledge about genomic elements and can predict variant effects
 - Demonstrates that training on diverse species outperforms training on only human sequences
 
