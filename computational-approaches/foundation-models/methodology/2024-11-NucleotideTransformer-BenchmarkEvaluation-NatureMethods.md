@@ -275,7 +275,8 @@ $$
 - Swish：可以调节流量的水龙头，使水更平稳流动。
 - SwiGLU：带有**智能开关**的水龙头，只让重要的信息流过，提高计算效率。
 
-<details>
+</details>
+
 
 ---
 
@@ -299,7 +300,9 @@ $$
 
 ### 2. Parameter-Efficient Fine-Tuning
 - IA3 technique requiring only 0.1% of total parameters
-```
+
+<details>
+  <summary><b>IA3</b></summary>
 # IA3 (Infused Adapter by Inhibiting and Amplifying Inner Activations) 技术
 
 IA3是一种参数高效的微调技术，在Nucleotide Transformer研究中用于适应预训练模型到特定下游任务。
@@ -346,7 +349,8 @@ IA3的核心思想是通过微调几个关键"旋钮"来调整模型行为，而
 - 不是重新训练整个模型识别不同的模式，而是通过强化或抑制已习得的模式来适应新任务
 
 通过这种方式，IA3能够有效利用预训练知识，同时使模型适应特定的基因组预测任务。
-```
+</details>
+
 - Introduces three learned vectors per transformer layer
 - Allows fine-tuning on a single GPU in under 15 minutes
 - Comparable performance to full model fine-tuning
@@ -398,7 +402,8 @@ Tasks predicting RNA splicing sites:
 
 ### Evaluation Metrics
 - Matthews Correlation Coefficient (MCC) for classification tasks
-```
+<details>
+  <summary><b>Matthews Correlation Coefficient (MCC)</b></summary>
 # Matthews Correlation Coefficient (MCC)
 
 Matthews Correlation Coefficient (MCC) 是一种用于评估二分类模型性能的指标，在 Nucleotide Transformer 研究中用于评估分类任务的效果。
@@ -444,8 +449,9 @@ MCC 在基因组学研究中的优势：
 - 增强子识别
 - 剪接位点预测
 
-研究者计算了不同模型在各任务上的 MCC 值，然后计算每类任务的平均 MCC 来比较模型整体性能。这种方法使研究者能够公平比较不同模型架构在不同基因组预测任务上的表现。
-```
+计算了不同模型在各任务上的 MCC 值，然后计算每类任务的平均 MCC 来比较模型整体性能。这种方法使研究者能够公平比较不同模型架构在不同基因组预测任务上的表现。
+</details>
+
 - Area Under Curve (AUC) for chromatin profiles
 - Precision-Recall AUC and top-k accuracy for splice prediction
 - Pearson correlation for enhancer activity prediction
