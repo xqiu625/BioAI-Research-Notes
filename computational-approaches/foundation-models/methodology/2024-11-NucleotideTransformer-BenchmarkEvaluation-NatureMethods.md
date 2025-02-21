@@ -131,7 +131,8 @@ NT-v2模型引入了几项架构改进，这些改进基于最新的自然语言
   - 提高了模型对位置信息的编码效率
     
 ---
-
+<details>
+  <summary><b>Explanation</b></summary>
 ## **1. 什么是“位置编码”？（Positional Embeddings）**
 在神经网络（如Transformer）中，文本序列中的**每个单词（Token）** 都需要转换成一个数值向量来输入模型。但是，**自注意力机制（Self-Attention）** 本身不理解单词在句子中的顺序，因此需要给每个 Token **添加位置信息**，这样模型才能正确理解句子结构。
 
@@ -219,6 +220,7 @@ $$
 以下是**不使用 LaTeX 语法**的 **Markdown** 版本，适用于 **GitHub README.md**、普通 Markdown 编辑器（如 Notion、Obsidian）、Jupyter Notebook（无 LaTeX 渲染插件）等：
 
 ---
+</details>
 
 ```md
 ## **2. SwiGLU Activations**
