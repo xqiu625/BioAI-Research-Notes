@@ -57,7 +57,9 @@
 ### 1. Model Architecture and Training
 - Encoder-only transformer architecture
 - 6-mer tokenization (vocabulary of 4,104 tokens)
-```
+<details>
+  <summary><b>6-mer tokenization</b></summary>
+  
 **"6-mer tokenization (vocabulary of 4,104 tokens)"**的详细解释：
 
 1. **什么是6-mer**：
@@ -109,7 +111,8 @@
    - 当无法匹配（如序列中含N或长度不是6的倍数）时，使用单核苷酸标记
 
 这种分词方式允许模型处理长达6kb（v1模型）或12kb（v2模型）的DNA序列，同时保持计算效率和有效捕获序列模式的能力。
-```
+</details>
+
 - Context length: 6kb for v1 models, 12kb for v2 models
 - Pre-training using masked language modeling approach (BERT-style)
 - Training infrastructure: 128 A100 GPUs across 16 nodes
@@ -129,8 +132,7 @@ NT-v2模型引入了几项架构改进，这些改进基于最新的自然语言
   - 更容易扩展到更长的序列
   - 在每个注意力层应用，而不仅是在输入层
   - 提高了模型对位置信息的编码效率
-    
----
+
 <details>
   <summary><b> 什么是“位置编码”？（Positional Embeddings）</b></summary>
 ## **1. 什么是“位置编码”？（Positional Embeddings）**
@@ -217,9 +219,16 @@ $$
 ✅ 这样，即使输入序列变长，模型仍然可以正确理解 **相对位置关系**。  
 ✅ RoPE 可以在**每一层注意力机制中使用**，而不仅限于输入层，提高模型的**计算效率和泛化能力**。
 
----
 </details>
 
+### 2. SwiGLU activations
+- **传统激活函数**：v1模型使用GELU(Gaussian Error Linear Unit)激活函数
+- **SwiGLU**：结合了Swish激活函数和门控线性单元(GLU)的特性
+- **工作原理**：SwiGLU(x) = Swish(xW) ⊙ (xV)，其中⊙是元素间乘法
+- **优势**：
+  - 更平滑的梯度流
+  - 更有效的信息流动
+  - 通常能加快训练速度并提高模型性能
 
 <details>
   <summary><b> GELU vs Swish vs SwiGLU 激活函数 </b></summary>
@@ -277,9 +286,6 @@ $$
 
 </details>
 
-
----
-
 ### 3. 移除MLP偏置和dropout机制
 - **MLP偏置(bias)**：传统前馈网络中的可学习偏置项
 - **Dropout**：训练中随机关闭部分神经元的正则化技术
@@ -295,7 +301,6 @@ $$
 - 训练效率提高
 - 推理速度更快
 - 参数利用效率更高
-
 
 
 ### 2. Parameter-Efficient Fine-Tuning
