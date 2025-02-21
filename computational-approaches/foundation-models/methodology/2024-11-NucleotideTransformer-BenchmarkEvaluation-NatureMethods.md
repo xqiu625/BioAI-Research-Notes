@@ -117,7 +117,8 @@
   - Rotary embeddings instead of learned positional embeddings
   - SwiGLU activations
   - Removal of MLP biases and dropout mechanisms
-```
+
+
 NT-v2模型引入了几项架构改进，这些改进基于最新的自然语言处理研究发现，目的是提高模型性能并增强训练效率:
 
 ### 1. Rotary embeddings 替代 learned positional embeddings
@@ -182,13 +183,16 @@ Token3 → 旋转角度: 30°
 
 其中 $ e^{i\theta} $ 是 **复数旋转**，使得每个 Token 通过 **角度偏移** 来编码它的位置。
 
+
 ---
 
 ## **4. 为什么 RoPE 更好？**
-| **方法** | **特点** | **问题** |
-|---|---|---|
-| 传统位置编码 | 训练时学习固定编码，无法外推 | 不能泛化到更长的序列 |
-| RoPE | 通过旋转角度编码相对位置 | 计算更高效，适用于长文本 |
+
+| **方法**         | **特点**                         | **问题**                     |
+|----------------|--------------------------------|-----------------------------|
+| 传统位置编码    | 训练时学习固定编码，无法外推    | 不能泛化到更长的序列          |
+| RoPE           | 通过旋转角度编码相对位置        | 计算更高效，适用于长文本      |
+
 
 ✅ **相对位置信息**：RoPE 直接编码相对位置，而不是依赖绝对位置。  
 ✅ **更长的序列**：RoPE 的旋转编码可以无限扩展，不像传统方法有长度限制。  
@@ -201,21 +205,22 @@ Token3 → 旋转角度: 30°
 ✅ 这样，即使输入序列变长，模型仍然可以正确理解 **相对位置关系**。  
 ✅ RoPE 可以在**每一层注意力机制中使用**，而不仅限于输入层，提高模型的**计算效率和泛化能力**。
 
-### 2. SwiGLU activations
-- **传统激活函数**：v1模型使用GELU(Gaussian Error Linear Unit)激活函数
-- **SwiGLU**：结合了Swish激活函数和门控线性单元(GLU)的特性
-- **工作原理**：SwiGLU(x) = Swish(xW) ⊙ (xV)，其中⊙是元素间乘法
+## **2. SwiGLU Activations**
+- **传统激活函数**：v1 模型使用 GELU（Gaussian Error Linear Unit）激活函数。
+- **SwiGLU**：结合了 **Swish 激活函数** 和 **门控线性单元（GLU）** 的特性。
+- **工作原理**：  
+  $$ SwiGLU(x) = Swish(xW) \odot (xV) $$  
+  其中 **⊙** 表示逐元素乘法（Hadamard 乘积）。
 - **优势**：
   - 更平滑的梯度流
   - 更有效的信息流动
   - 通常能加快训练速度并提高模型性能
+
 ---
 
 ### **1. 传统激活函数（GELU）**
-- GELU（Gaussian Error Linear Unit） 是 Transformer 里常用的激活函数，它是 ReLU 的改进版本：
-  \[
-  GELU(x) = 0.5x(1 + \tanh(\sqrt{2/\pi} (x + 0.044715x^3)))
-  \]
+- GELU（Gaussian Error Linear Unit）是 Transformer 里常用的激活函数，它是 ReLU 的改进版本：
+  $$ GELU(x) = 0.5x(1 + \tanh(\sqrt{2/\pi} (x + 0.044715x^3))) $$
 - **特点**：
   - 平滑过渡，不像 ReLU 那样直接剪裁负值。
   - 适用于深度学习，梯度稳定。
@@ -223,33 +228,32 @@ Token3 → 旋转角度: 30°
 ---
 
 ### **2. Swish 激活函数**
-- Swish 由 Google 提出，它的公式是：
-  \[
-  Swish(x) = x \cdot \sigma(x)
-  \]
-  其中，\(\sigma(x)\) 是 Sigmoid 函数。
+- Swish 由 Google 提出，计算方式如下：
+  $$ Swish(x) = x \cdot \sigma(x) $$
+  其中，$\sigma(x)$ 是 Sigmoid 函数：
+  $$ \sigma(x) = \frac{1}{1 + e^{-x}} $$
 
 ---
 
 ### **3. SwiGLU（Swish + Gated Linear Unit）**
 - SwiGLU 结合了 **Swish** 和 **门控线性单元（GLU）**，计算方式如下：
-  \[
-  SwiGLU(x) = Swish(xW) \odot (xV)
-  \]
+  $$ SwiGLU(x) = Swish(xW) \odot (xV) $$
   其中：
-  - \(W\) 和 \(V\) 是两个不同的权重矩阵。
-  - \(\odot\) 代表逐元素相乘。
+  - $W$ 和 $V$ 是两个不同的权重矩阵。
+  - $\odot$ 代表逐元素相乘（Hadamard 乘积）。
 
 ---
 
 ### **4. 为什么 SwiGLU 更好？**
-| **方法** | **特点** | **优势** |
-|---|---|---|
-| GELU | 平滑非线性激活 | 训练稳定，但可能信息流不够强 |
-| Swish | 平滑自适应激活 | 信息流更好，梯度稳定 |
-| SwiGLU | 结合 Swish 和门控 | **训练更快、性能更强、计算效率高** |
 
-✅ SwiGLU **提高信息流动**，比 GELU **更高效**，比 Swish **更具灵活性**。
+| **方法** | **特点** | **优势** |
+|----------|------------------|-----------------------------|
+| **GELU**  | 平滑非线性激活   | 训练稳定，但可能信息流不够强 |
+| **Swish** | 平滑自适应激活   | 信息流更好，梯度稳定        |
+| **SwiGLU** | 结合 Swish 和门控 | **训练更快、性能更强、计算效率高** |
+
+✅ **SwiGLU 提高信息流动**，比 GELU **更高效**，比 Swish **更具灵活性**。
+
 
 ---
 
@@ -277,7 +281,7 @@ Token3 → 旋转角度: 30°
 - 推理速度更快
 - 参数利用效率更高
 
-```
+
 
 ### 2. Parameter-Efficient Fine-Tuning
 - IA3 technique requiring only 0.1% of total parameters
