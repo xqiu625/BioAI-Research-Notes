@@ -216,11 +216,16 @@ $$
 ✅ 这样，即使输入序列变长，模型仍然可以正确理解 **相对位置关系**。  
 ✅ RoPE 可以在**每一层注意力机制中使用**，而不仅限于输入层，提高模型的**计算效率和泛化能力**。
 
+以下是**不使用 LaTeX 语法**的 **Markdown** 版本，适用于 **GitHub README.md**、普通 Markdown 编辑器（如 Notion、Obsidian）、Jupyter Notebook（无 LaTeX 渲染插件）等：
+
+---
+
+```md
 ## **2. SwiGLU Activations**
 - **传统激活函数**：v1 模型使用 GELU（Gaussian Error Linear Unit）激活函数。
 - **SwiGLU**：结合了 **Swish 激活函数** 和 **门控线性单元（GLU）** 的特性。
 - **工作原理**：  
-  $$ SwiGLU(x) = Swish(xW) \odot (xV) $$  
+  SwiGLU(x) = Swish(xW) ⊙ (xV)  
   其中 **⊙** 表示逐元素乘法（Hadamard 乘积）。
 - **优势**：
   - 更平滑的梯度流
@@ -231,7 +236,9 @@ $$
 
 ### **1. 传统激活函数（GELU）**
 - GELU（Gaussian Error Linear Unit）是 Transformer 里常用的激活函数，它是 ReLU 的改进版本：
-  $$ GELU(x) = 0.5x(1 + \tanh(\sqrt{2/\pi} (x + 0.044715x^3))) $$
+  ```
+  GELU(x) = 0.5 * x * (1 + tanh(√(2/π) * (x + 0.044715 * x^3)))
+  ```
 - **特点**：
   - 平滑过渡，不像 ReLU 那样直接剪裁负值。
   - 适用于深度学习，梯度稳定。
@@ -240,32 +247,37 @@ $$
 
 ### **2. Swish 激活函数**
 - Swish 由 Google 提出，计算方式如下：
-  $$ Swish(x) = x \cdot \sigma(x) $$
-  其中，$\sigma(x)$ 是 Sigmoid 函数：
-  $$ \sigma(x) = \frac{1}{1 + e^{-x}} $$
+  ```
+  Swish(x) = x * σ(x)
+  ```
+  其中，σ(x) 是 Sigmoid 函数：
+  ```
+  σ(x) = 1 / (1 + e^(-x))
+  ```
 
 ---
 
 ### **3. SwiGLU（Swish + Gated Linear Unit）**
 - SwiGLU 结合了 **Swish** 和 **门控线性单元（GLU）**，计算方式如下：
-  $$ SwiGLU(x) = Swish(xW) \odot (xV) $$
+  ```
+  SwiGLU(x) = Swish(xW) ⊙ (xV)
+  ```
   其中：
-  - $W$ 和 $V$ 是两个不同的权重矩阵。
-  - $\odot$ 代表逐元素相乘（Hadamard 乘积）。
+  - `W` 和 `V` 是两个不同的权重矩阵。
+  - `⊙` 代表逐元素相乘（Hadamard 乘积）。
 
 ---
 
 ### **4. 为什么 SwiGLU 更好？**
 
-| **方法** | **特点** | **优势** |
+| **方法**  | **特点**             | **优势**                      |
 |----------|------------------|-----------------------------|
 | **GELU**  | 平滑非线性激活   | 训练稳定，但可能信息流不够强 |
 | **Swish** | 平滑自适应激活   | 信息流更好，梯度稳定        |
 | **SwiGLU** | 结合 Swish 和门控 | **训练更快、性能更强、计算效率高** |
 
 ✅ **SwiGLU 提高信息流动**，比 GELU **更高效**，比 Swish **更具灵活性**。
-
-
+```
 ---
 
 ### **5. 视觉类比**
