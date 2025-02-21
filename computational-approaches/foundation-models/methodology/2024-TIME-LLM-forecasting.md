@@ -1,5 +1,3 @@
-# TIME-LLM: Time Series Forecasting by Reprogramming Large Language Models
-
 ## 📊 Paper Metadata
 - **Title:** TIME-LLM: Time Series Forecasting by Reprogramming Large Language Models
 - **Publication:** ICLR 2024
