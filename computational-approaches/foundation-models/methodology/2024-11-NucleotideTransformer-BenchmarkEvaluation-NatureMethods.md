@@ -209,11 +209,6 @@ Token3 → 旋转角度: 30°
   - 更平滑的梯度流
   - 更有效的信息流动
   - 通常能加快训练速度并提高模型性能
-
-看起来环境内存不足导致无法加载 PyTorch，我可以用 **NumPy** 来重新绘制 **GELU、Swish 和 SwiGLU 激活函数**，让你直观理解它们的区别。让我重新生成可视化图！
-
-看来环境仍然存在问题，无法执行代码。我可以解释 SwiGLU 的概念，并描述应该如何可视化它：
-
 ---
 
 ### **1. 传统激活函数（GELU）**
@@ -282,11 +277,58 @@ Token3 → 旋转角度: 30°
 - 推理速度更快
 - 参数利用效率更高
 
-这些改进反映了深度学习架构的最新发展趋势，特别是在大规模语言模型领域的进展。
 ```
 
 ### 2. Parameter-Efficient Fine-Tuning
 - IA3 technique requiring only 0.1% of total parameters
+```
+# IA3 (Infused Adapter by Inhibiting and Amplifying Inner Activations) 技术
+
+IA3是一种参数高效的微调技术，在Nucleotide Transformer研究中用于适应预训练模型到特定下游任务。
+
+## 核心原理
+
+IA3通过引入少量可训练向量来调节预训练模型的行为，而无需更新所有模型参数。具体来说：
+
+1. **保持预训练参数冻结**：原始变换器模型的权重保持不变
+2. **添加轻量级可训练向量**：为每个变换器层添加三个可训练向量
+3. **元素级缩放**：这些向量通过元素级乘法来调节模型的内部激活
+
+## 技术细节
+
+对于每个变换器层，IA3添加三个可训练向量：
+- **l<sub>k</sub> ∈ ℝ<sup>d<sub>k</sub></sup>**：用于调节Key计算
+- **l<sub>v</sub> ∈ ℝ<sup>d<sub>v</sub></sup>**：用于调节Value计算
+- **l<sub>f</sub> ∈ ℝ<sup>d<sub>f</sub></sup>**：用于调节前馈网络
+
+这些向量通过以下方式应用：
+1. 在自注意力机制中：`softmax((Q(l_k ⊙ K^T))/√d_k)(l_v ⊙ V)`
+2. 在前馈网络中：`(l_f ⊙ γ(W_1x))W_2`，其中γ是前馈网络的非线性函数
+
+## 主要优势
+
+1. **极少的额外参数**：仅增加约0.1%的参数量（相比全模型微调）
+- 例如：25亿参数模型只需额外训练约250万参数
+
+2. **计算效率**：
+- 微调速度快（15分钟内完成）
+- 只需单个GPU即可处理大型模型
+
+3. **存储效率**：
+- 全模型微调需要存储完整模型副本（例如：9.5GB × 18任务 = 171GB）
+- IA3只需存储少量参数（例如：171MB）
+
+4. **性能相当**：实现与全参数微调相近的性能
+
+## 工作原理解释
+
+IA3的核心思想是通过微调几个关键"旋钮"来调整模型行为，而不是重新训练整个模型。可以将其想象为：
+
+- 不是重新布置整个乐队，而是微调几个关键乐器的音量
+- 不是重新训练整个模型识别不同的模式，而是通过强化或抑制已习得的模式来适应新任务
+
+通过这种方式，IA3能够有效利用预训练知识，同时使模型适应特定的基因组预测任务。
+```
 - Introduces three learned vectors per transformer layer
 - Allows fine-tuning on a single GPU in under 15 minutes
 - Comparable performance to full model fine-tuning
@@ -294,6 +336,36 @@ Token3 → 旋转角度: 30°
 ### 3. Key Results Quantification
 - NT-v2 250M model achieved best performance (MCC 0.769) across benchmark tasks
 - Multispecies 2.5B model matched or exceeded BPNet baselines on 14/18 tasks
+```
+
+These 18 tasks can be grouped into three main categories:
+### 1. Chromatin Profiles (10 tasks)
+Tasks predicting histone marks and chromatin accessibility in the K562 human cell line:
+1. H2AFZ
+2. H3K27ac
+3. H3K27me3
+4. H3K36me3
+5. H3K4me1
+6. H3K4me2
+7. H3K4me3
+8. H3K9ac
+9. H3K9me3
+10. H4K20me1
+
+### 2. Regulatory Elements (5 tasks)
+Tasks predicting gene regulatory regions:
+1. Enhancers (binary classification)
+2. Enhancer types (tissue-specific vs. tissue-invariant)
+3. Promoters (all)
+4. Promoters with TATA-box motif
+5. Promoters without TATA-box motif
+
+### 3. Splicing (3 tasks)
+Tasks predicting RNA splicing sites:
+1. Splice site (both acceptor and donor)
+2. Splice acceptor
+3. Splice donor
+```
 - Zero-shot variant effect prediction: AUC 0.7-0.8 for functional variants
 - NT-v2 500M-parameter model with 12kb context matched/outperformed SpliceAI-10k
 - NT-v2 models reduced parameters by 50x while maintaining/improving performance
@@ -308,6 +380,54 @@ Token3 → 旋转角度: 30°
 
 ### Evaluation Metrics
 - Matthews Correlation Coefficient (MCC) for classification tasks
+```
+# Matthews Correlation Coefficient (MCC)
+
+Matthews Correlation Coefficient (MCC) 是一种用于评估二分类模型性能的指标，在 Nucleotide Transformer 研究中用于评估分类任务的效果。
+
+## 基本概念
+
+MCC 是一种考虑了所有混淆矩阵元素（真阳性、真阴性、假阳性、假阴性）的平衡指标，特别适用于类别不平衡的数据集。它的值域在 -1 到 1 之间：
+- +1：完美预测
+- 0：等同于随机预测
+- -1：完全相反的预测
+
+## 计算公式
+
+MCC 的计算公式如下：
+
+
+MCC = (TP × TN - FP × FN) / √[(TP + FP)(TP + FN)(TN + FP)(TN + FN)]
+
+
+其中：
+- TP：真阳性（True Positive）
+- TN：真阴性（True Negative）
+- FP：假阳性（False Positive）
+- FN：假阴性（False Negative）
+
+## 为什么在基因组学中使用 MCC
+
+MCC 在基因组学研究中的优势：
+
+1. **类别不平衡鲁棒性**：基因组数据通常高度不平衡（如增强子、启动子区域在基因组中占比很小），MCC 不受类别比例影响
+
+2. **综合考量**：同时考虑所有预测类型（TP、TN、FP、FN），提供更全面的评估
+
+3. **严格性**：比准确率、精确率或召回率更难获得高分，能更好区分模型质量
+
+4. **一致性**：允许在不同任务间进行性能比较
+
+## 在论文中的应用
+
+在 Nucleotide Transformer 研究中，MCC 用于评估各种分类任务的性能，包括：
+- 染色质标记预测
+- 启动子识别
+- 增强子识别
+- 剪接位点预测
+
+研究者计算了不同模型在各任务上的 MCC 值，然后计算每类任务的平均 MCC 来比较模型整体性能。这种方法使研究者能够公平比较不同模型架构在不同基因组预测任务上的表现。
+```
 - Area Under Curve (AUC) for chromatin profiles
 - Precision-Recall AUC and top-k accuracy for splice prediction
 - Pearson correlation for enhancer activity prediction
