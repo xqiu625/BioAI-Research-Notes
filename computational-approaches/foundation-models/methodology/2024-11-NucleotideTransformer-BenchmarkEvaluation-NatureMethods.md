@@ -176,10 +176,19 @@ Token3 → 旋转角度: 30°
 所有 Token 的角度**一起旋转**，这样它们的**相对角度**始终保持一致，意味着模型能**自动捕捉 Token 之间的相对位置**。
 
 ### **数学表示**
-- 传统编码：$ Pos(i) = Embedding(i) $
-- RoPE：$ Token_i = e^{i\theta} \times Token_i $
 
-其中 $ e^{i\theta} $ 是 **复数旋转**，使得每个 Token 通过 **角度偏移** 来编码它的位置。
+#### **传统位置编码**
+$$
+Pos(i) = Embedding(i)
+$$
+
+#### **旋转位置编码（RoPE）**
+$$
+Token_i = e^{i\theta} \times Token_i
+$$
+
+其中，$ e^{i\theta} $ 是 **复数旋转**，使得每个 Token 通过 **角度偏移** 来编码它的位置。
+
 
 
 ---
