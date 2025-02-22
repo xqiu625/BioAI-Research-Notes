@@ -32,6 +32,7 @@
 - 2024-07-scPRINT-preprint.md
 - 2024-08-Perturbation-Cell-Atlas-foundation-model-cell.md
 - 2024-09-Virtual-Cell-AI-Framework-arxiv.md
+- 2024-10-SSL-BenchmarkStudy-NatureMachineIntelligence.md
 
 6. Computational Approaches/Single-cell-analysis/Disease-mechanisms (3):
 - 2022-12-Active-Eosinophils-in-Colitis-nature.md
