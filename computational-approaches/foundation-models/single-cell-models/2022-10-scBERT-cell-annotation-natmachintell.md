@@ -256,6 +256,3 @@ b. scBERT嵌入的示意图。预处理的scRNA-seq数据首先转换为离散�
     - 其他公开数据集:如Zheng68K、胰腺数据集、MacParland等,主要来自GEO、ArrayExpress等公共数据库,用于模型的微调和测试。
     - CellMarker数据库:一个手工注释的细胞类型标记基因数据库,部分实验中用于提供marker基因的信息。
     - Enrichr:一个基因富集分析的在线工具,用于对scBERT关注的基因进行功能解释。
-
-![流程图](../../../paper-figures/2024-10-SSL-BenchmarkStudy-NatureMachineIntelligence_flowchart.png)
-![模型架构](../../../paper-figures/2024-10-SSL-BenchmarkStudy-NatureMachineIntelligence_model_architechture.png)
