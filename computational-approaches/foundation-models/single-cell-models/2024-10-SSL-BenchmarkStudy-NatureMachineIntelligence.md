@@ -214,3 +214,46 @@ Tested across multiple downstream tasks:
 * **Data augmentation** - 数据增强，通过修改数据创建不同视角
 * **Random masking** - 随机掩码，随机选择特征进行掩盖
 * **Gene programme (GP) masking** - 基因程序掩码，基于生物学功能掩盖基因集
+
+
+## SSL策略：
+
+### 1. 掩码自编码器策略（Masked Autoencoder Strategies）
+- **随机掩码（Random Masking）**
+  - 随机选择50%的基因进行掩码
+  - 最基本的掩码策略
+  
+- **基因程序掩码（Gene Programme Masking）**
+  - 基于已知的生物功能掩码基因集
+  - 使用MSigDB Collections中的C8细胞类型特征基因集
+  
+- **隔离掩码（Isolated Masking）**
+  - **GP到GP (Gene Programme to Gene Programme)**
+    - 保持一个基因程序未掩码，用来预测自身
+  - **GP到TF (Gene Programme to Transcription Factor)**
+    - 预测与基因程序相对应的转录因子表达值
+    - 使用TFT转录因子靶标基因集
+
+### 2. 对比学习策略（Contrastive Learning）
+- **BYOL (Bootstrap Your Own Latent)**
+  - 无需负样本对的对比学习方法
+  - 使用教师-学生网络架构
+  
+- **Barlow twins**
+  - 通过冗余度减少进行学习
+  - 避免表示崩溃的信息最大化方法
+
+### 3. 数据增强策略
+- **负二项噪声（Negative Binomial Noise）**
+  - 模拟单细胞数据中的技术噪声
+  
+- **掩码增强（Masking Augmentation）**
+  - 作为数据增强的一种方式
+  - 创建同一数据点的不同"视角"
+
+### 关键发现
+- 在SCG中，掩码自编码器的表现优于对比学习方法
+- 随机掩码策略在多种任务中表现稳定
+- GP到TF掩码在基因表达重建任务中表现最好
+- 掩码策略的选择应根据具体任务和生物学背景来决定
+
