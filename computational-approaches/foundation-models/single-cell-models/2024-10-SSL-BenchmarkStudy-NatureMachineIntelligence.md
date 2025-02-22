@@ -80,26 +80,6 @@ Tested across multiple downstream tasks:
 - Demonstrates potential for SSL to improve data integration while preserving biological variability
 - Illustrates how cell-type classifications can be improved through transfer learning
 
-## 📊 Future Research Directions
-
-### 1. Technical Extensions
-- Application to other architectures (e.g., transformers)
-- Development of more biologically-informed masking strategies
-- Extension to other modalities beyond transcriptomics
-- Optimization of consensus strategies for different downstream tasks
-
-### 2. Biological Questions
-- Exploring SSL for temporal dynamics in single-cell data
-- Investigating SSL for smaller, specialized datasets
-- Understanding how SSL captures meaningful biological variation
-- Examining cross-species transfer learning potential
-
-### 3. Practical Applications
-- Integration into cell atlas projects
-- Application in clinical diagnostics with limited samples
-- Development of foundation models for single-cell biology
-- Improvement of multi-modal data analysis frameworks
-
 ## 💡 Implementation Notes
 
 ### 1. Key Requirements
@@ -114,15 +94,99 @@ Tested across multiple downstream tasks:
 - Batch effects should be addressed with covariates when working with fewer datasets
 - Appropriate evaluation metrics (macro F1 score) needed for imbalanced cell type distributions
 
+## 📝 中文
+
+# 研究摘要翻译
+
+### 1. 概念创新
+- 该论文研究了自监督学习(SSL)在单细胞基因组学(SCG)中何时以及如何提供优势
+- 关键发现：SSL在迁移学习场景中表现出色，在这些场景中，从大型辅助数据集获得的见解可以应用于较小或未见过的数据集
+- 表明掩码自编码器在SCG中的表现优于对比学习方法，这与计算机视觉领域的趋势相反
+- 证明了SSL在零样本设置、跨模态预测和数据整合方面的实用性
+
+### 2. 方法论框架
+- 使用全连接自编码器架构以最小化架构影响
+- 两阶段框架：预训练(前置任务)，然后是可选的微调
+- 在scTab数据集(>2000万个细胞)上进行预训练，包含所有19,331个人类蛋白编码基因
+- 实现了多种SSL策略：
+  1. 带随机掩码的掩码自编码器
+  2. 基因程序(GP)掩码
+  3. 隔离掩码(GP到GP，GP到TF)
+  4. 对比学习(BYOL，Barlow twins)
+
+### 3. 验证策略
+在多个下游任务中进行测试：
+- 在人类肺细胞图谱、外周血单核细胞(PBMCs)、Tabula Sapiens上进行细胞类型预测
+- 基因表达重建
+- 跨模态预测(RNA到蛋白质，RNA到ATAC-seq)
+- 跨数据集的数据整合，处理批次效应
+
+## 🔬 关键技术细节
+
+### 1. 自监督学习实现
+- 掩码自编码器：掩盖输入基因的重要部分，训练模型重建缺失部分
+- 随机掩码：随机选择并掩盖50%的基因
+- GP掩码：掩盖已知具有生物功能的基因集
+- 隔离掩码：除了定义集之外的所有基因都被掩盖
+- 对比学习：使用负二项噪声和掩码作为数据增强，实现BYOL和Barlow twins
+
+### 2. 实验验证框架
+- 细胞类型预测：使用宏F1分数(针对类别不平衡的稳健性)和微F1分数进行评估
+- 基因表达重建：使用加权解释方差进行评估
+- 跨模态预测：预测值与真实值之间的皮尔逊相关性
+- 数据整合：scIB指标(批次校正+生物学保存)
+
+### 3. 关键结果量化
+- 在辅助数据上的SSL预训练将PBMC细胞类型预测从0.7013提高到0.7466宏F1分数
+- Tabula Sapiens从0.2722提高到0.3085宏F1分数
+- 零样本SSL在scTab测试集上达到高达0.6725的宏F1分数
+- 跨模态预测：皮尔逊相关性从0.8809提高到0.8943
+- 数据整合：总scIB分数从0.5354提高到0.5638
+
+## 基线模型、评估指标和数据集
+- 基线模型：监督学习、无监督学习、PCA、GeneFormer
+- 关键数据集：scTab(2220万个细胞，164种细胞类型)、HLCA(228万个细胞，51种细胞类型)、PBMCs(42.2万个细胞)、Tabula Sapiens(48.3万个细胞)
+- 五个未见过的数据集用于迁移学习评估
+- NeurIPS多组学数据集用于跨模态预测
+- 三个肺部数据集用于数据整合
+
+## 💭 关键研究意义
+
+### 1. 方法论影响
+- 明确了SSL在SCG中何时有益：迁移学习和未见过数据的场景
+- 表明掩码自编码器在SCG中优于对比学习
+- 证明当在与微调相同的数据集上进行预训练时，SSL的优势不会出现
+- 为在生物数据分析中有效使用SSL提供了框架
+
+### 2. 实际相关性
+- 能够利用大型数据集(如细胞图谱)来改善对较小实验的分析
+- 在类别不平衡的数据集上提供稳健性能，这在生物学环境中很常见
+- 减少对精心策划的标签的依赖，解决获取准确注释的挑战
+- 当一种模态更丰富时，增强跨模态预测能力
+
+### 3. 生物学见解
+- 表明不同的掩码策略可以捕获特定的生物变异
+- 显示了定制掩码策略对捕获基因相互作用的重要性
+- 展示了SSL在保持生物变异性的同时改善数据整合的潜力
+- 说明了如何通过迁移学习改进细胞类型分类
+
+## 💡 实施注意事项
+
+### 1. 关键要求
+- GPU硬件(Tesla V100或同等产品)，具有32GB+内存
+- 160GB系统内存用于完整的scTab数据集(批量大小8,192)
+- PyTorch实现
+- 使用Scanpy进行数据预处理
+
+### 2. 关键考虑因素
+- 可以通过较小的批量大小减少内存需求(但会增加训练时间)
+- 需要固定随机种子以确保可重复性
+- 使用较少数据集时应通过协变量解决批次效应
+- 不平衡的细胞类型分布需要适当的评估指标(宏F1分数)
+
 
 
 ## 📝 Personal Notes
-
-该论文研究了自监督学习(SSL)在单细胞基因组学(SCG)中何时以及如何提供优势：
-
-* 关键发现：SSL在迁移学习场景中表现出色，在这些场景中，从大型辅助数据集获得的见解可以应用于较小或未见过的数据集
-* 表明掩码自编码器在SCG中的表现优于对比学习方法，这与计算机视觉领域的趋势相反
-* 证明了SSL在零样本设置、跨模态预测和数据整合方面的实用性
 
 ## 自监督学习(SSL)相关术语
 
