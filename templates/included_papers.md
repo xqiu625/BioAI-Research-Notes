@@ -10,7 +10,6 @@
 - 2024-11-NucleotideTransformer-BenchmarkEvaluation-NatureMethods.md
 
 4. Computational Approaches/Foundation Models/Protein-models (12):
-- 2022-04-EvoVelocity-MethodDevelopment-CellSystems.md
 - 2024-03-RoseTTAFold-AllAtom-Structure-Science.md
 - 2024-05-EnzyGen-Paper-ICML.md
 - 2024-09-dplm-ICML.md
