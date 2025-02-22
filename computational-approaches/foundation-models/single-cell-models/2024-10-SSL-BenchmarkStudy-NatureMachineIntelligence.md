@@ -309,3 +309,6 @@ Tested across multiple downstream tasks:
 5. 定期验证模型性能和收敛性
 
 
+![流程图](../../../paper-figures/2024-10-SSL-BenchmarkStudy-NatureMachineIntelligence_flowchart.png)
+![模型架构](../../../paper-figures/2024-10-SSL-BenchmarkStudy-NatureMachineIntelligence_model_architechture.png)
+
