@@ -1,11 +1,12 @@
 
-# 📄 **Paper Summary**  
-**Title**: *Scaling Large Language Models for Next-Generation Single-Cell Analysis*  
-**Authors**: Syed Asad Rizvi, Daniel Levine, Aakash Patel, Shiyang Zhang, Eric Wang, et al.  
-**Institutions**: Yale University, Google Research, Google DeepMind  
-**Published**: bioRxiv, April 17, 2025  
-**DOI**: [https://doi.org/10.1101/2025.04.14.648850](https://doi.org/10.1101/2025.04.14.648850)
-**Code**: [https://github.com/vandijklab/cell2sentence](https://github.com/vandijklab/cell2sentence)
+## 📄 Paper Metadata
+
+- **Title**: *Scaling Large Language Models for Next-Generation Single-Cell Analysis*  
+- **Authors**: Syed Asad Rizvi, Daniel Levine, Aakash Patel, Shiyang Zhang, Eric Wang, et al.  
+- **Institutions**: Yale University, Google Research, Google DeepMind  
+- **Published**: bioRxiv, April 17, 2025  
+- **DOI**: [10.1101/2025.04.14.648850](https://doi.org/10.1101/2025.04.14.648850)  
+- **Code Repository**: [GitHub – vandijklab/cell2sentence](https://github.com/vandijklab/cell2sentence)
 ---
 
 # 🔬 **Scientific Contributions**
