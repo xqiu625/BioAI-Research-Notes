@@ -115,3 +115,13 @@ A biologically meaningful metric for evaluating generative models in single-cell
 
 > 🔎 *scFID makes it possible to evaluate single-cell generation not just by expression statistics, but by biologically meaningful features.*
 
+* C2S-Scale工具的一个重要功能是能够生成模拟细胞数据。论文中详细介绍了几种生成类型：
+
+- 条件细胞生成：模型可以根据指定条件（如细胞类型、组织类型或生物学摘要）生成相应的细胞数据。例如，你可以要求生成"胰腺中的CD8+ T细胞"。
+- 扰动响应预测：模型能预测细胞在受到特定药物、细胞因子或基因敲除等扰动后的基因表达情况。这对药物研发特别有价值。
+- 多细胞生成：不仅能生成单个细胞，还能同时生成多个相互关联的细胞，这对研究细胞间相互作用非常重要。
+- 邻居细胞生成：在空间分析中，模型可以为给定的细胞群生成符合生物学逻辑的邻居细胞。
+
+- C2S-Scale的独特之处在于，它不仅能生成这些模拟细胞数据，还能通过自然语言交互方式操作（如"生成7个来自肾脏组织的人类细胞"），并能根据复杂的生物学条件定制生成过程。
+- 论文中还使用了scFID指标专门评估这些生成细胞的质量，确保它们不仅在统计上接近真实细胞，也在生物学功能层面上具有意义。
+- 这种生成能力对于扩充稀有细胞类型数据、预测药物反应、模拟疾病过程等研究都有巨大价值。
