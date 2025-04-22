@@ -115,5 +115,3 @@ A biologically meaningful metric for evaluating generative models in single-cell
 
 > 🔎 *scFID makes it possible to evaluate single-cell generation not just by expression statistics, but by biologically meaningful features.*
 
-![C2S-Scale bridges scRNA-seq data and natural language by training LLMs to perform single-cell analysis tasks on diverse multimodal data.](../../../paper-figures/2025-04-Cell2Sentence-ScalePreprint-bioRxiv.png)
-
