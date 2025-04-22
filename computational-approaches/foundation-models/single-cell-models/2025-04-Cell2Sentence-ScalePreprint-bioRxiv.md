@@ -5,7 +5,7 @@
 **Institutions**: Yale University, Google Research, Google DeepMind  
 **Published**: bioRxiv, April 17, 2025  
 **DOI**: [https://doi.org/10.1101/2025.04.14.648850](https://doi.org/10.1101/2025.04.14.648850)
-📝 Google AI blog post: [https://lnkd.in/epvw2eeH](https://github.com/vandijklab/cell2sentence)
+**Code**: (https://github.com/vandijklab/cell2sentence)
 ---
 
 # 🔬 **Scientific Contributions**
