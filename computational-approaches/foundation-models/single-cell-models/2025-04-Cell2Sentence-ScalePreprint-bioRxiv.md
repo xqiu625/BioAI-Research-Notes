@@ -11,6 +11,8 @@
 - The paper scales up the Cell2Sentence (C2S) framework to create C2S-Scale, using large language models (LLMs) for single-cell RNA sequencing (scRNA-seq) analysis
 - Key innovation: Representing scRNA-seq profiles as textual "cell sentences" (sequences of gene names ordered by expression level)
 - Demonstrates that LLMs can model complex biological relationships when scaled to 27 billion parameters
+![C2S-Scale bridges scRNA-seq data and natural language by training LLMs to perform single-cell analysis tasks on diverse multimodal data.](../../../paper-figures/2025-04-Cell2Sentence-ScalePreprint-bioRxiv.png)
+
 
 ### 2. Multimodal Integration Capabilities
 - Integrates transcriptomic data with biological text, metadata, and annotations
@@ -56,23 +58,6 @@
 - Generalizes to novel combinations of cell type, perturbations, and exposure
 - Captures nonlinear synergistic effects better than existing methods
 
-## 📊 Future Research Directions
-
-### 1. Integration of Additional Modalities
-- Potential for incorporating epigenomic, proteomic, and clinical data
-- Extension to other cellular measurement technologies
-- Development of true multimodal biological models
-
-### 2. Explainability and Interpretation
-- Need for increased transparency in LLM decision-making for biological contexts
-- Exploration of causal relationships learned by the model
-- Development of interactive interfaces for biologists
-
-### 3. Clinical Applications
-- Virtual cell platforms for drug discovery and disease modeling
-- Patient-specific response prediction
-- Integration with electronic health records and clinical data
-
 ## 💡 Implementation Notes
 
 ### 1. Cell Sentence Transformation
@@ -85,8 +70,21 @@
 - Natural language prompts for conditioning generation tasks
 - Question-answering capabilities for complex biological reasoning
 
-### 3. Limitations
-- Causal attention's unidirectionality may constrain some biological modeling
-- Potential for hallucinations in open-ended interpretation tasks
-- Computational requirements for largest model sizes
+C2S-Scale（Cell2Sentence Scale）与其他单细胞基础模型（scFMs）的主要区别在于:
+
+1. **数据表示方法**：C2S将基因表达数据转换为"细胞句子"（cell sentences）- 按表达水平排序的基因名称序列，而不是使用原始表达矩阵。这使得它可以直接利用LLM架构，无需自定义修改。
+
+2. **模型架构**：C2S-Scale使用通用LLM架构（如Gemma-2和Pythia），而不是设计专门的单细胞架构。其他scFMs如scGPT、Geneformer、scFoundation等通常使用定制架构。
+
+3. **模型规模**：C2S-Scale探索了大规模模型（最大到27B参数），展示了规模扩展的好处。相比之下，其他scFMs通常规模较小。
+
+4. **多模态整合**：C2S-Scale将转录组数据与自然语言文本（论文摘要、基因集、疾病标签等）无缝整合，创建了连接基因表达和自然语言的桥梁。
+
+5. **任务多样性**：C2S能够处理多种任务类型，包括预测性任务（细胞类型注释）和生成性任务（扰动响应预测、条件细胞生成），而许多专门的scFMs通常聚焦于特定类型的任务。
+
+6. **自然语言解释**：C2S-Scale在生物学不同尺度（单细胞、聚类、数据集）提供自然语言解释，创建了更直观的生物学数据交互方式。
+
+7. **多细胞上下文**：C2S-Scale支持多细胞分析和空间推理，能够同时处理和生成多个细胞的数据，使其能分析细胞间相互作用。
+
+8. **强化学习优化**：使用GRPO（Group Relative Policy Optimization）进一步优化模型性能，特别是在复杂的生物学推理任务上。
 
