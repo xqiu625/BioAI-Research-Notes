@@ -1,9 +1,9 @@
 📊 Paper Metadata
 * **Title:** scPRINT: pre-training on 50 million cells allows robust gene network predictions
 * **Authors:** Jérémie Kalfon, Jules Samaran, Gabriel Peyré, Laura Cantini
-* **Publication:** bioRxiv (2024, July)
+* **Publication:** Nature Communications (2025, May)
 * **Institution:** Institut Pasteur, Université Paris Cité
-* **Paper Link:** https://doi.org/10.1101/2024.07.29.605556
+* **Paper Link:** [https://doi.org/10.1101/2024.07.29.605556](https://www.nature.com/articles/s41467-025-58699-1)
 * **Code:** https://github.com/cantinilab/scPRINT
 * **Tags:** #SingleCell #GeneNetworks #DeepLearning #Transformers #Bioinformatics
 
