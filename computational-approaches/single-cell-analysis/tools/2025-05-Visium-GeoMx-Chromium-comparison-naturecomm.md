@@ -99,3 +99,14 @@
 - Throughput: Estimated maximum throughput is highest for Chromium and lowest for GeoMx
 - Selection of appropriate cell markers for GeoMx to optimize cell type specificity
 
+## 💡 Personal Notes
+AOI是"Area of Illumination"（照明区域）的缩写，是GeoMx DSP（Digital Spatial Profiling）技术中的一个关键概念。
+
+在GeoMx DSP技术中：
+1. 首先，研究人员会选择感兴趣区域（Region of Interest, ROI）
+2. 然后，在这些ROI内，根据荧光标记物（如CD3、CD68、PanCK/CD20等）划分出不同的AOI
+3. 这些AOI代表特定的细胞类型或微环境区域，如T细胞（CD3+）、巨噬细胞（CD68+）、恶性细胞（PanCK+/CD20+）或其他没有特定标记的区域
+
+AOI的主要目的是让研究人员能够有针对性地收集和分析特定细胞类型或组织区域的转录组数据。这与Visium技术不同，Visium会均匀地在整个组织上放置点，而不预先选择特定的细胞类型区域。
+
+在这篇论文中，研究人员发现，尽管GeoMx DSP技术旨在通过AOI选择特定细胞类型，但这些AOI仍然含有混合的细胞类型信号，特别是对于组织中分散的细胞类型（如T细胞）。这是该技术的一个限制，可能是由于临近区域的转录物泄漏或者沿组织Z轴方向的细胞物理重叠造成的。
