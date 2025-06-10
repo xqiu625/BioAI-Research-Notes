@@ -55,11 +55,12 @@
 
 ## 🔄 Key Scientific Insights
 
+```python
 ### 1. Conceptual Innovation
 - **Foundation Model for Immunotherapy Response:** COMPASS introduces the first generalizable AI model that predicts immunotherapy response across multiple cancer types and treatments using a concept bottleneck architecture
 - **Biological Interpretability:** Novel integration of 44 biologically grounded immune concepts representing cell states, tumor-microenvironment interactions, and signaling pathways
 - **Cross-Domain Generalization:** Demonstrates ability to predict responses for unseen cancer types, treatments, and immune checkpoint targets with minimal additional training
-
+```
 ### 2. Methodological Framework
 - **Concept Bottleneck Architecture:** Maps gene expression through 132 gene signatures → 44 high-level immune concepts → response prediction
 - **Self-Supervised Pre-training:** Trained on 10,184 tumors across 33 cancer types using contrastive learning
