@@ -1,4 +1,3 @@
-```markdown
 # 2025-05-COMPASS-PredictiveModel-medRxiv.md
 
 ## 📊 Paper Metadata
