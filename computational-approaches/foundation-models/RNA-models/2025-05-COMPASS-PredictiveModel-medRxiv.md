@@ -79,7 +79,7 @@
 ## 🔬 Critical Technical Details
 
 ### 1. Transformer-Based Gene Language Model
-```python
+
 # Key architecture components:
 - Gene abundance embedding: Expression-scaled gene vectors
 - Learnable positional encoding: Gene-specific contextual biases  
@@ -167,4 +167,3 @@
 - **Implementation Strategy:** Integration with existing clinical workflows and electronic health records
 
 
-```
