@@ -26,7 +26,7 @@
 - Quantitative specifications (parameter counts, dataset sizes)
 
 ### Figure 6: COMPASS-clinical-validation.png
-![COMPASS Clinical Validation](../paper-figures/COMPASS-clinical-validation.png)
+![COMPASS Clinical Validation](../../../paper-figures/COMPASS-clinical-validation.png)
 
 **Clinical validation excellence:**
 - **Comprehensive survival analysis:** Kaplan-Meier curves comparing COMPASS to established biomarkers (TMB, PD-L1)
@@ -40,7 +40,7 @@
 - Proper statistical reporting with confidence intervals and p-values
 
 ### Figure 7: COMPASS-personalized-maps.png
-![COMPASS Personalized Response Maps](../paper-figures/COMPASS-personalized-maps.png)
+![COMPASS Personalized Response Maps](../../../paper-figures/COMPASS-personalized-maps.png)
 
 **Interpretability innovation:**
 - **Individual patient analysis:** Shows how global model provides patient-specific mechanistic insights
