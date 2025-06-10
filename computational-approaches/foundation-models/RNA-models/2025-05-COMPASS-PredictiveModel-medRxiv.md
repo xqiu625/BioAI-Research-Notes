@@ -60,7 +60,7 @@
 - **Foundation Model for Immunotherapy Response:** COMPASS introduces the first generalizable AI model that predicts immunotherapy response across multiple cancer types and treatments using a concept bottleneck architecture
 - **Biological Interpretability:** Novel integration of 44 biologically grounded immune concepts representing cell states, tumor-microenvironment interactions, and signaling pathways
 - **Cross-Domain Generalization:** Demonstrates ability to predict responses for unseen cancer types, treatments, and immune checkpoint targets with minimal additional training
-```
+
 ### 2. Methodological Framework
 - **Concept Bottleneck Architecture:** Maps gene expression through 132 gene signatures → 44 high-level immune concepts → response prediction
 - **Self-Supervised Pre-training:** Trained on 10,184 tumors across 33 cancer types using contrastive learning
@@ -76,9 +76,9 @@
 - **1,133 patients** with pre-treatment RNA-seq data
 - **6 immune checkpoint inhibitors** (anti-PD1/PD-L1, anti-CTLA4, combinations)
 - **Phases I-III clinical trials** with varying cohort sizes
-
+```
 ## 🔬 Critical Technical Details
-
+```python
 ### 1. Transformer-Based Gene Language Model
 
 # Key architecture components:
@@ -97,9 +97,9 @@
 - **Matthews Correlation Coefficient:** +12.3% improvement  
 - **Area Under Precision-Recall Curve:** +15.7% improvement
 - **Survival Analysis:** HR = 4.7 (p < 0.0001) for COMPASS-stratified responders
-
+```
 ## Baseline Models, Evaluation Metrics, and Datasets
-
+```python
 ### Baseline Models (22 methods)
 - **Single Biomarkers:** PD1, PD-L1, CTLA4, TMB
 - **Immune Signatures:** TIDE, IMPRES, T-effector-IFNγ, Cytotoxic Immune Signature
@@ -114,9 +114,9 @@
 - **Pre-training:** TCGA (10,184 patients, 33 cancer types)
 - **Clinical Validation:** 16 cohorts (BLCA, GBM, KIRC, LUAD, LUSC, SKCM, STAD)
 - **Notable Cohorts:** IMvigor210 (n=298), IMmotion150 (n=165), multiple melanoma studies
-
+```
 ## 💭 Critical Research Implications
-
+```python
 ### 1. Methodological Impact
 - **Interpretable AI in Oncology:** Demonstrates how concept bottleneck architectures can provide mechanistic insights while maintaining predictive performance
 - **Transfer Learning Success:** Shows that pan-cancer pre-training enables effective adaptation to specific clinical contexts
@@ -131,40 +131,4 @@
 - **Beyond Immune Phenotypes:** Reveals functional immune states that transcend traditional inflamed/excluded/desert classifications
 - **Multi-Scale Immune Profiling:** Captures both cellular composition and functional pathway activation
 - **Cross-Cancer Patterns:** Identifies shared immune response principles across diverse tumor types
-
-## 📊 Future Research Directions
-
-### 1. Technical Extensions
-- **Spatial Integration:** Incorporation of spatial transcriptomics data for location-specific immune states
-- **Single-Cell Resolution:** Integration with single-cell RNA-seq for enhanced cellular characterization
-- **Multimodal Fusion:** Combination with genomic alterations, imaging, and clinical features
-
-### 2. Biological Questions
-- **Temporal Dynamics:** Monitoring immune concept evolution during treatment
-- **Combination Therapy Prediction:** Extending to novel immunotherapy combinations
-- **Resistance Evolution:** Tracking immune escape mechanisms over time
-
-### 3. Therapeutic Applications
-- **Real-Time Clinical Integration:** Development of clinical decision support systems
-- **Biomarker Discovery:** Identification of novel therapeutic targets from concept analysis
-- **Drug Development:** Guidance for combination therapy design and patient selection
-
-## 💡 Implementation Notes
-
-### 1. Key Requirements
-- **Computational:** GPU infrastructure for transformer training and inference
-- **Data:** Pre-treatment bulk RNA-seq (TPM values), clinical outcomes
-- **Software:** PyTorch implementation with transformer libraries
-
-### 2. Critical Considerations
-- **Data Preprocessing:** Standardized RNA-seq pipeline (STAR alignment, GENCODE v36)
-- **Model Selection:** Choose fine-tuning strategy based on cohort size and data availability
-- **Validation Strategy:** Implement proper cross-cohort evaluation to assess generalization
-- **Interpretability:** Utilize personalized response maps for clinical insights
-
-### 3. Clinical Translation Pathway
-- **Validation Requirements:** Prospective clinical validation in diverse populations
-- **Regulatory Considerations:** FDA guidance for AI/ML-based medical devices
-- **Implementation Strategy:** Integration with existing clinical workflows and electronic health records
-
-
+```
