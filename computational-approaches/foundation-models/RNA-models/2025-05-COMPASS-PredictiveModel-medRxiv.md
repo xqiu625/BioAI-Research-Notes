@@ -11,7 +11,7 @@
 ## 🎨 Key Figures
 
 ### Figure 1: COMPASS-methodology-overview.png
-![COMPASS Methodology Overview](../paper-figures/COMPASS-methodology-overview.png)
+![COMPASS Methodology Overview](../../../paper-figures/COMPASS-methodology-overview.png)
 
 **Why this figure is exceptional:**
 - **Complete pipeline visualization:** Shows biological knowledge integration → model architecture → training strategies → clinical applications
