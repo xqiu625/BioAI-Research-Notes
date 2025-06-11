@@ -1,108 +1,164 @@
-# Research Paper Summary Template
+# [PAPER-TITLE]-[VENUE]-[YEAR].md
 
 ## 📊 Paper Metadata
-- Title: 
-- Authors: 
-- Publication: 
-- Institution: 
-- Paper Link: 
-- Code/Data:
+- **Title:** [Full paper title]
+- **Authors:** [First author, Second author, etc.]
+- **Publication:** [Journal/Conference/Preprint] ([Year])
+- **Institution:** [Primary affiliations]
+- **Paper Link:** [DOI or URL]
+- **Code/Data:** [GitHub repo or data availability]
+
+## 🎨 Key Figures
+
+### Figure [X]: [descriptive-filename.png]
+![Figure Description](../../../paper-figures/[filename])
+
+**Why this figure is exceptional:**
+- **[Key strength 1]:** [Detailed explanation of what makes this visualization effective]
+- **[Key strength 2]:** [Technical or conceptual innovation demonstrated]
+- **[Key strength 3]:** [Practical implementation insights]
+- **[Key strength 4]:** [Information flow or design clarity]
+
+**Design principles to mimic:**
+- [Principle 1: e.g., Hierarchical panel layout]
+- [Principle 2: e.g., Integration of biological/technical details]
+- [Principle 3: e.g., Clear methodology flow]
+- [Principle 4: e.g., Quantitative specifications]
+
+### Figure [Y]: [descriptive-filename.png]
+![Figure Description](../../../paper-figures/[filename])
+
+**[Category] excellence:** (e.g., Clinical validation, Methodological innovation)
+- **[Strength 1]:** [Specific technical achievement]
+- **[Strength 2]:** [Comparison to existing methods]
+- **[Strength 3]:** [Statistical rigor or significance]
+- **[Strength 4]:** [Practical implications]
+
+**Template value for your studies:**
+- [Reusable framework 1]
+- [Reusable framework 2]
+- [Statistical reporting standards]
 
 ## 🔄 Key Scientific Insights
 
+```python
 ### 1. Conceptual Innovation
-- The paper demonstrates that general evolutionary patterns learned from protein sequences can guide specific functional improvements
-- Critical finding: Restricting mutations to evolutionarily plausible space dramatically increases the probability of finding beneficial mutations
-- Shows that protein language models can learn complex epistatic interactions without task-specific training
+- **[Primary Innovation]:** [Description of main conceptual breakthrough]
+- **[Secondary Innovation]:** [Novel technical or methodological approach]
+- **[Generalization Achievement]:** [Demonstration of broader applicability]
 
 ### 2. Methodological Framework
-- Uses ESM-1b (trained on UniRef50) and ESM-1v ensemble (trained on UniRef90)
-- Key distinction: Models trained on general protein sequences (~98M sequences) rather than antibody-specific data
-- Mutation selection through consensus voting across models
-- Two-round evolution strategy:
-  1. Single substitution screening
-  2. Combination of beneficial mutations
+- **[Architecture/Approach Name]:** [Technical description of core method]
+- **[Training Strategy]:** [Details of model training approach]
+- **[Variant Strategies]:**
+  1. **[Method 1]:** [Description] ([parameter count])
+  2. **[Method 2]:** [Description] ([parameter count])
+  3. **[Method 3]:** [Description] ([parameter count])
+  4. **[Method 4]:** [Description] ([parameter count])
 
 ### 3. Validation Strategy
-Tested on diverse set of antibodies:
-- Highly matured: MEDI8852 (influenza)
-- Clinical relevance: mAb114 (Ebola), S309 (SARS-CoV-2)
-- Unmatured: MEDI8852 UCA, mAb114 UCA
-- Patient-derived: REGN10987, C143
-
-## 🔬 Critical Technical Details
-
-### 1. Language Model Implementation
-```python
-# Key implementation aspects
-- Compute likelihoods of all single-residue substitutions
-- Use consensus across 6 language models
-- Select substitutions with higher likelihood than wild-type
-- Important: Models cannot use disease-specific biases
+**Comprehensive Evaluation Across:**
+- **[Dataset Size]** spanning [diversity metric]
+- **[Sample Size]** with [data characteristics]
+- **[Treatment/Condition Variety]** ([specific examples])
+- **[Study Types]** with [varying characteristics]
 ```
 
-### 2. Experimental Validation Framework
-- BLI for binding measurements
-- DSF for stability assessment 
-- Pseudovirus neutralization assays
-- Polyspecificity assessment for therapeutic viability
+## 🔬 Critical Technical Details
+```python
+### 1. [Core Architecture/Model Component]
 
-### 3. Key Results Quantification
-- Matured antibodies: 1.3-7 fold improvement
-- Unmatured antibodies: up to 160-fold improvement
-- Framework mutations contribute significantly
-- Stability generally maintained or improved
+# Key architecture components:
+- [Component 1]: [Technical description]
+- [Component 2]: [Technical description]
+- [Component 3]: [Technical description]
+- [Component 4]: [Technical description]
 
-## Baseline Model, Evaluation Metrics, and Datasets 
+### 2. [Data Processing/Feature Engineering]
+- **[Level 1]:** [Number] [units] with [processing method]
+- **[Level 2]:** [Number] [units] + [additional processing]
+- **[Integration Method]:** [Description of how components connect]
+
+### 3. [Performance Metrics]
+- **[Metric 1]:** [Improvement percentage] over [baseline]
+- **[Metric 2]:** [Improvement percentage] improvement
+- **[Metric 3]:** [Improvement percentage] improvement
+- **[Clinical Metric]:** [Statistical significance] ([p-value]) for [clinical outcome]
+```
+
+## Baseline Models, Evaluation Metrics, and Datasets
+```python
+### Baseline Models ([Number] methods)
+- **[Category 1]:** [Method 1], [Method 2], [Method 3]
+- **[Category 2]:** [Method 1], [Method 2], [Method 3]
+- **[Category 3]:** [Method 1], [Method 2]
+
+### Evaluation Metrics
+- **Primary:** [Metric 1], [Metric 2], [Metric 3]
+- **[Secondary Category]:** [Metric] with [analysis type]
+- **[Generalization]:** [Cross-validation strategy] ([number] evaluations)
+
+### Datasets
+- **[Training Data]:** [Dataset name] ([sample size], [characteristics])
+- **[Validation Data]:** [Number] cohorts ([sample characteristics])
+- **[Notable Datasets]:** [Specific examples with sample sizes]
+```
 
 ## 💭 Critical Research Implications
-
+```python
 ### 1. Methodological Impact
-- Demonstrates efficient evolution without structural knowledge
-- Shows power of general evolutionary information
-- Provides framework for minimal-screening protein engineering
+- **[Technical Contribution]:** [How this advances the field methodologically]
+- **[Generalization Success]:** [Broader applicability demonstrated]
+- **[Efficiency Achievement]:** [Resource/computational improvements]
 
-### 2. Therapeutic Relevance
-- Rapid antibody optimization potential
-- Maintained stability and specificity
-- Framework region modifications
-- Implications for therapeutic development timelines
+### 2. [Domain-Specific] Relevance
+- **[Application 1]:** [Practical implementation potential]
+- **[Application 2]:** [Impact on existing workflows]
+- **[Discovery Potential]:** [New insights enabled by the method]
 
-### 3. Biological Insights
-- Suggests natural evolution may use similar constraints
-- Highlights importance of framework mutations
-- Questions traditional CDR-focused optimization
+### 3. [Scientific Domain] Insights
+- **[Insight Category 1]:** [Fundamental understanding advanced]
+- **[Insight Category 2]:** [Multi-scale or cross-domain patterns]
+- **[Insight Category 3]:** [Shared principles across [domain]]
+```
 
-## 📊 Future Research Directions
+## 🚀 Future Directions & Limitations
+```python
+### Potential Extensions
+- **[Extension 1]:** [How the method could be expanded]
+- **[Extension 2]:** [Additional applications]
+- **[Extension 3]:** [Technical improvements]
 
-### 1. Technical Extensions
-- Integration with structural information
-- Optimization of consensus strategies
-- Application to other protein families
-- Exploration of larger combinatorial spaces
+### Current Limitations
+- **[Limitation 1]:** [Technical or methodological constraint]
+- **[Limitation 2]:** [Data or validation limitation]
+- **[Limitation 3]:** [Generalization boundary]
 
-### 2. Biological Questions
-- Mechanisms of framework mutations
-- Relationship to natural antibody evolution
-- Limits of improvement without structural changes
+### Open Questions
+- [Question 1 about methodology]
+- [Question 2 about applications]
+- [Question 3 about broader implications]
+```
 
-### 3. Therapeutic Applications
-- Optimization of clinical antibodies
-- Rapid response to emerging pathogens
-- Platform development potential
+## 📋 Implementation Checklist
+```python
+### For Reproducing Results
+- [ ] [Key dataset requirement]
+- [ ] [Computational resource need]
+- [ ] [Software dependency]
+- [ ] [Preprocessing step]
 
-## 💡 Implementation Notes
-For reproducing/extending this work:
+### For Adapting to New Domains
+- [ ] [Domain-specific consideration]
+- [ ] [Data requirement modification]
+- [ ] [Model architecture adjustment]
+- [ ] [Evaluation metric adaptation]
+```
 
-### 1. Key Requirements
-- ESM model implementation
-- Protein expression/purification pipeline
-- Binding measurement capabilities
-- Basic computational infrastructure
+## 🔗 Related Work & Context
+- **[Predecessor Method]:** [How this builds upon prior work]
+- **[Competing Approach]:** [Key differences and advantages]
+- **[Complementary Work]:** [How this fits into broader research landscape]
 
-### 2. Critical Considerations
-- Mutation selection criteria
-- Experimental validation design
-- Quality control measures
-- Statistical analysis framework
-
+---
+*Template based on analysis of: [Original paper citation]*
