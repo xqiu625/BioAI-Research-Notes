@@ -57,7 +57,7 @@ All paper figures are stored in the paper-figures/ directory and referenced rela
 
 ## 📊 Repository Stats
 - Total Papers: 54
-- Last Updated: 2025-06-10
+- Last Updated: 2025-06-11
 
 ⚠️ Paper Analysis Repository
 
